@@ -18,7 +18,7 @@ public enum iPhones {
 %{
 name = row["Name"]
 released = row["Released"]
-codes = row["Codes"]
+codes = row["Codes"].split(";")
 deprecated = row["Deprecated"]
 enum_name = name.replace(" ", "")
 }%

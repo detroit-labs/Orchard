@@ -1,0 +1,57 @@
+//
+% warning = "This file was automatically generated and should not be edited."
+// ${warning}
+//
+//  JKHiOSDevice.h
+//  Orchard
+//
+//  Created by Jeff Kelley on 7/17/18.
+//
+
+#import <Foundation/Foundation.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+% import csv
+typedef NS_ENUM(NSUInteger, JKHiOSDevice) {
+
+% with open('../iPhones.tsv') as file:
+    // iPhones
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+released = row["Released"]
+deprecated = row["Deprecated"]
+enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
+}%
+        % if name and released and deprecated:
+    JKHiOSDevice${enum_name} NS_ENUM_DEPRECATED_IOS(${released}, ${deprecated}) NS_SWIFT_NAME(${enum_name}),
+        % elif name and released:
+    JKHiOSDevice${enum_name} NS_ENUM_AVAILABLE_IOS(${released}) NS_SWIFT_NAME(${enum_name}),
+        % end
+    % end
+% end
+
+% with open('../iPads.tsv') as file:
+    // iPads
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+released = row["Released"]
+deprecated = row["Deprecated"]
+enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
+}%
+        % if name and released and deprecated:
+    JKHiOSDevice${enum_name} NS_ENUM_DEPRECATED_IOS(${released}, ${deprecated}) NS_SWIFT_NAME(${enum_name}),
+        % elif name and released:
+    JKHiOSDevice${enum_name} NS_ENUM_AVAILABLE_IOS(${released}) NS_SWIFT_NAME(${enum_name}),
+        % end
+    % end
+% end
+
+    JKHiOSDeviceSimulator   NS_SWIFT_NAME(simulator),
+    JKHiOSDeviceUnknown     NS_SWIFT_NAME(unknown)
+} NS_SWIFT_NAME(iOSDevice);
+
+
+NS_ASSUME_NONNULL_END
