@@ -49,6 +49,7 @@
 		1FD67D7720FE3A0D008E8C8A /* OrchardiOSDevice.m.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = OrchardiOSDevice.m.gyb; sourceTree = "<group>"; };
 		1FD67D7820FE55DF008E8C8A /* NSString+OrchardUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+OrchardUtilities.h"; sourceTree = "<group>"; };
 		1FD67D7920FE55DF008E8C8A /* NSString+OrchardUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+OrchardUtilities.m"; sourceTree = "<group>"; };
+		1FD67D7C20FE66F0008E8C8A /* GYBUtilities.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = GYBUtilities.py; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +107,7 @@
 				1FD67D7720FE3A0D008E8C8A /* OrchardiOSDevice.m.gyb */,
 				1FD67D7820FE55DF008E8C8A /* NSString+OrchardUtilities.h */,
 				1FD67D7920FE55DF008E8C8A /* NSString+OrchardUtilities.m */,
+				1FD67D7C20FE66F0008E8C8A /* GYBUtilities.py */,
 			);
 			path = Orchard;
 			sourceTree = "<group>";
@@ -257,6 +259,7 @@
 				"$(SRCROOT)/Orchard/iPads.swift.gyb",
 				"$(SRCROOT)/Orchard/OrchardiOSDevice.h.gyb",
 				"$(SRCROOT)/Orchard/OrchardiOSDevice.m.gyb",
+				"$(SRCROOT)/Orchard/GYBUtilities.py",
 			);
 			name = GYB;
 			outputFileListPaths = (
@@ -270,7 +273,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = "GYB_PATH=\"${SRCROOT}/Vendor/gyb/gyb\"\n\nfunction gyb {\n    file=$1\n    if [ ${file: -4} == \".gyb\" ]; then\n        echo \"GYBing file:\" $file\n        \"${GYB_PATH}\" --line-directive '' -o \"${file%.gyb}\" \"$file\";\n    else\n        echo \"Skipping file\" $file \"since it's not a .gyb file\"\n    fi\n}\n\nif [ $SCRIPT_INPUT_FILE_COUNT -ne 0 ]; then\n    for i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_COUNT - 1)); do\n        inputFileVar=\"SCRIPT_INPUT_FILE_${i}\"\n        inputFile=\"${!inputFileVar}\"\n        gyb $inputFile\n    done\nfi\n\nif [ $SCRIPT_INPUT_FILE_LIST_COUNT -ne 0 ]; then\n    for i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_LIST_COUNT - 1)); do\n        inputFileListVar=\"SCRIPT_INPUT_FILE_LIST_${i}\"\n        inputFileList=\"${!inputFileListVar}\"\n        cat \"${inputFileList}\" | while read inputFile; do\n            gyb $inputFile\n        done\n    done\nfi\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 

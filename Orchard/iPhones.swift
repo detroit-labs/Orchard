@@ -65,4 +65,93 @@ public enum iPhones {
     @available (iOS, introduced: 11.0)
     case iPhoneX
 
+    case unknown
+
+    internal init(model: String) {
+        self = .unknown
+
+        switch model {
+//        case "iPhone1,1":
+//            self = .iPhone
+//
+//        case "iPhone1,2":
+//            self = .iPhone3G
+//
+//        case "iPhone2,1":
+//            self = .iPhone3GS
+//
+//        case "iPhone3,1", "iPhone3,2", "iPhone3,3":
+//            self = .iPhone4
+//
+//        case "iPhone4,1":
+//            self = .iPhone4S
+//
+//        case "iPhone5,1", "iPhone5,2":
+//            self = .iPhone5
+//
+//        case "iPhone5,3", "iPhone5,4":
+//            self = .iPhone5c
+//
+        case "iPhone6,1", "iPhone6,2":
+            self = .iPhone5s
+
+        case "iPhone7,2":
+            self = .iPhone6
+
+        case "iPhone7,1":
+            self = .iPhone6Plus
+
+        case "iPhone8,1":
+            self = .iPhone6s
+
+        case "iPhone8,2":
+            self = .iPhone6sPlus
+
+        case "iPhone8,4":
+            self = .iPhoneSE
+
+        case "iPhone9,1", "iPhone9,3":
+            self = .iPhone7
+
+        case "iPhone9,2", "iPhone9,4":
+            self = .iPhone7Plus
+
+        case "iPhone10,1", "iPhone10,4":
+            self = .iPhone8
+
+        case "iPhone10,2", "iPhone10,5":
+            self = .iPhone8Plus
+
+        case "iPhone10,3", "iPhone10,6":
+            self = .iPhoneX
+
+        default: break
+
+        }
+    }
+
+    public var marketingName: String? {
+        switch self {
+        case .iPhone: return "iPhone"
+        case .iPhone3G: return "iPhone 3G"
+        case .iPhone3GS: return "iPhone 3GS"
+        case .iPhone4: return "iPhone 4"
+        case .iPhone4S: return "iPhone 4S"
+        case .iPhone5: return "iPhone 5"
+        case .iPhone5c: return "iPhone 5c"
+        case .iPhone5s: return "iPhone 5s"
+        case .iPhone6: return "iPhone 6"
+        case .iPhone6Plus: return "iPhone 6 Plus"
+        case .iPhone6s: return "iPhone 6s"
+        case .iPhone6sPlus: return "iPhone 6s Plus"
+        case .iPhoneSE: return "iPhone SE"
+        case .iPhone7: return "iPhone 7"
+        case .iPhone7Plus: return "iPhone 7 Plus"
+        case .iPhone8: return "iPhone 8"
+        case .iPhone8Plus: return "iPhone 8 Plus"
+        case .iPhoneX: return "iPhone X"
+
+        default: return nil
+        }
+    }
 }
