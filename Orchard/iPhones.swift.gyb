@@ -1,0 +1,35 @@
+//
+% warning = "This file was automatically generated and should not be edited."
+// ${warning}
+//
+//  iPhones.swift
+//  Orchard
+//
+//  Created by Jeff Kelley on 7/16/18.
+//
+
+import Foundation
+
+% import csv
+public enum iPhones {
+
+% with open('../Devices.tsv') as file:
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+released = row["Released"]
+codes = row["Codes"]
+deprecated = row["Deprecated"]
+enum_name = name.replace(" ", "")
+}%
+        % if name and released and deprecated:
+    @available (iOS, introduced: ${released}, deprecated: ${deprecated})
+    case ${enum_name}
+        % elif name and released:
+    @available (iOS, introduced: ${released})
+    case ${enum_name}
+        % end
+
+    % end
+% end
+}
