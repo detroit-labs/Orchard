@@ -25,7 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F4FE72520FD95B700A6BC4F /* Devices.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Devices.tsv; sourceTree = "<group>"; usesTabs = 1; };
+		1F4FE72520FD95B700A6BC4F /* iPhones.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPhones.tsv; sourceTree = "<group>"; usesTabs = 1; };
 		1F521F8D20FD885700E99897 /* iPads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPads.swift; sourceTree = "<group>"; };
 		1F521F8F20FD886700E99897 /* iPads.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPads.swift.gyb; sourceTree = "<group>"; };
 		1F9B8A8A20FD85790039D518 /* Orchard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Orchard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +38,7 @@
 		1F9B8AA420FD85C40039D518 /* iPhones.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPhones.swift.gyb; sourceTree = "<group>"; };
 		1F9B8AA820FD860B0039D518 /* gyb.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = gyb.py; sourceTree = "<group>"; };
 		1F9B8AA920FD860B0039D518 /* gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = gyb; sourceTree = "<group>"; };
+		1FD67D7120FE2F43008E8C8A /* iPads.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPads.tsv; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +63,8 @@
 		1F9B8A4820FD80600039D518 = {
 			isa = PBXGroup;
 			children = (
-				1F4FE72520FD95B700A6BC4F /* Devices.tsv */,
+				1F4FE72520FD95B700A6BC4F /* iPhones.tsv */,
+				1FD67D7120FE2F43008E8C8A /* iPads.tsv */,
 				1F9B8AA620FD860B0039D518 /* Vendor */,
 				1F9B8A8C20FD85790039D518 /* Orchard */,
 				1F9B8A9720FD85790039D518 /* OrchardTests */,
@@ -231,9 +233,10 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/iPhones.tsv",
+				"$(SRCROOT)/iPads.tsv",
 				"$(SRCROOT)/Orchard/iPhones.swift.gyb",
 				"$(SRCROOT)/Orchard/iPads.swift.gyb",
-				"$(SRCROOT)/Devices.tsv",
 			);
 			name = GYB;
 			outputFileListPaths = (

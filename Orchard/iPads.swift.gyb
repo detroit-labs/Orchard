@@ -1,4 +1,7 @@
 //
+% warning = "This file was automatically generated and should not be edited."
+// ${warning}
+//
 //  iPads.swift
 //  Orchard
 //
@@ -6,3 +9,27 @@
 //
 
 import Foundation
+
+% import csv
+public enum iPads {
+
+% with open('../iPads.tsv') as file:
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+released = row["Released"]
+codes = row["Codes"]
+deprecated = row["Deprecated"]
+enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("2nd", "2").replace("inch", "Inch").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
+}%
+        % if name and released and deprecated:
+    @available (iOS, introduced: ${released}, deprecated: ${deprecated})
+    case ${enum_name}
+        % elif name and released:
+    @available (iOS, introduced: ${released})
+    case ${enum_name}
+        % end
+
+    % end
+% end
+}
