@@ -35,7 +35,7 @@ public enum iPads {
     @available (iOS, introduced: 8.1)
     case iPadAir2
 
-    @available (iOS, introduced: 8.0)
+    @available (iOS, introduced: 8.1)
     case iPadMini3
 
     @available (iOS, introduced: 9.0)
