@@ -1,0 +1,182 @@
+//
+% warning = "This file was automatically generated and should not be edited."
+// ${warning}
+//
+//  OrchardiOSDevice.m
+//  Orchard
+//
+//  Created by Jeff Kelley on 7/17/18.
+//
+
+#import "OrchardiOSDevice.h"
+
+#import "NSString+OrchardUtilities.h"
+
+OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
+
+    // Disable deprecation warnings for historical accuracy
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#pragma clang diagnostic ignored "-Wunguarded-availability"
+
+    if ([string orchard_isEqualToOneOfStrings:@[@"i386", @"x86_64"]]) {
+        return OrchardiOSDeviceSimulator;
+    }
+
+% import csv
+% def objcString(x): return "@\"" + x + "\""
+% with open('../iPhones.tsv') as file:
+#pragma mark - iPhones
+
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+released = row["Released"]
+codes = list(map(objcString, row["Codes"].split(";")))
+deprecated = row["Deprecated"]
+enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
+}%
+        % if name and len(codes) == 1:
+    else if ([string isEqualToString:${codes[0]}]) {
+        return OrchardiOSDevice${enum_name};
+    }
+        % elif name and len(codes) > 1:
+    else if ([string orchard_isEqualToOneOfStrings:@[${",\n\
+                                                     ".join(codes)}]]) {
+        return OrchardiOSDevice${enum_name};
+    }
+        % end
+    % end
+% end
+
+% with open('../iPads.tsv') as file:
+#pragma mark - iPads
+
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+released = row["Released"]
+codes = list(map(objcString, row["Codes"].split(";")))
+deprecated = row["Deprecated"]
+enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
+}%
+        % if name and len(codes) == 1:
+    else if ([string isEqualToString:${codes[0]}]) {
+        return OrchardiOSDevice${enum_name};
+    }
+        % elif name and len(codes) > 1:
+    else if ([string orchard_isEqualToOneOfStrings:@[${",\n\
+                                                     ".join(codes)}]]) {
+        return OrchardiOSDevice${enum_name};
+    }
+        % end
+    % end
+% end
+
+#pragma mark -
+
+#pragma clang diagnostic pop
+
+    return OrchardiOSDeviceUnknown;
+}
+
+OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device)
+{
+    // Disable deprecation warnings for historical accuracy
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    switch (device) {
+        case OrchardiOSDeviceSimulator: return OrchardiOSDeviceFamilySimulator;
+
+% with open('../iPhones.tsv') as file:
+#pragma mark - iPhones
+
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+released = row["Released"]
+codes = list(map(objcString, row["Codes"].split(";")))
+deprecated = row["Deprecated"]
+enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
+}%
+        case OrchardiOSDevice${enum_name}:
+    % end
+% end
+            return OrchardiOSDeviceFamilyiPhone;
+
+% with open('../iPads.tsv') as file:
+#pragma mark - iPads
+
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+released = row["Released"]
+codes = list(map(objcString, row["Codes"].split(";")))
+deprecated = row["Deprecated"]
+enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
+}%
+        case OrchardiOSDevice${enum_name}:
+    % end
+% end
+            return OrchardiOSDeviceFamilyiPad;
+
+#pragma mark -
+
+        case OrchardiOSDeviceUnknown:
+        default:
+            return OrchardiOSDeviceFamilyUnknown;
+    }
+#pragma clang diagnostic pop
+}
+
+NSString *OrchardMarketingNameForDevice(OrchardiOSDevice device)
+{
+    // Disable deprecation warnings for historical accuracy
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#pragma clang diagnostic ignored "-Wunguarded-availability"
+
+    switch (device) {
+
+        case OrchardiOSDeviceSimulator: return nil;
+
+% with open('../iPhones.tsv') as file:
+#pragma mark - iPhones
+
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+released = row["Released"]
+codes = list(map(objcString, row["Codes"].split(";")))
+deprecated = row["Deprecated"]
+enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
+}%
+        case OrchardiOSDevice${enum_name}: return @"${name}";
+    % end
+% end
+
+% with open('../iPads.tsv') as file:
+#pragma mark - iPads
+
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+released = row["Released"]
+codes = list(map(objcString, row["Codes"].split(";")))
+deprecated = row["Deprecated"]
+enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
+}%
+        case OrchardiOSDevice${enum_name}: return @"${name}";
+    % end
+% end
+
+#pragma mark -
+
+        default:
+            break;
+    }
+
+    return nil;
+
+#pragma clang diagnostic pop
+}

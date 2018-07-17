@@ -12,8 +12,10 @@
 		1F9B8A9920FD85790039D518 /* OrchardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B8A9820FD85790039D518 /* OrchardTests.swift */; };
 		1F9B8A9B20FD85790039D518 /* Orchard.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B8A8D20FD85790039D518 /* Orchard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F9B8AA320FD85B10039D518 /* iPhones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B8AA220FD85B10039D518 /* iPhones.swift */; };
-		1FD67D7420FE3421008E8C8A /* JKHiOSDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FD67D7220FE3421008E8C8A /* JKHiOSDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1FD67D7520FE3421008E8C8A /* JKHiOSDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD67D7320FE3421008E8C8A /* JKHiOSDevice.m */; };
+		1FD67D7420FE3421008E8C8A /* OrchardiOSDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FD67D7220FE3421008E8C8A /* OrchardiOSDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FD67D7520FE3421008E8C8A /* OrchardiOSDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD67D7320FE3421008E8C8A /* OrchardiOSDevice.m */; };
+		1FD67D7A20FE55DF008E8C8A /* NSString+OrchardUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FD67D7820FE55DF008E8C8A /* NSString+OrchardUtilities.h */; };
+		1FD67D7B20FE55DF008E8C8A /* NSString+OrchardUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD67D7920FE55DF008E8C8A /* NSString+OrchardUtilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +43,12 @@
 		1F9B8AA820FD860B0039D518 /* gyb.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = gyb.py; sourceTree = "<group>"; };
 		1F9B8AA920FD860B0039D518 /* gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = gyb; sourceTree = "<group>"; };
 		1FD67D7120FE2F43008E8C8A /* iPads.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPads.tsv; sourceTree = "<group>"; usesTabs = 1; };
-		1FD67D7220FE3421008E8C8A /* JKHiOSDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKHiOSDevice.h; sourceTree = "<group>"; };
-		1FD67D7320FE3421008E8C8A /* JKHiOSDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKHiOSDevice.m; sourceTree = "<group>"; };
-		1FD67D7620FE3436008E8C8A /* JKHiOSDevice.h.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = JKHiOSDevice.h.gyb; sourceTree = "<group>"; };
-		1FD67D7720FE3A0D008E8C8A /* JKHiOSDevice.m.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = JKHiOSDevice.m.gyb; sourceTree = "<group>"; };
+		1FD67D7220FE3421008E8C8A /* OrchardiOSDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrchardiOSDevice.h; sourceTree = "<group>"; };
+		1FD67D7320FE3421008E8C8A /* OrchardiOSDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrchardiOSDevice.m; sourceTree = "<group>"; };
+		1FD67D7620FE3436008E8C8A /* OrchardiOSDevice.h.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = OrchardiOSDevice.h.gyb; sourceTree = "<group>"; };
+		1FD67D7720FE3A0D008E8C8A /* OrchardiOSDevice.m.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = OrchardiOSDevice.m.gyb; sourceTree = "<group>"; };
+		1FD67D7820FE55DF008E8C8A /* NSString+OrchardUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+OrchardUtilities.h"; sourceTree = "<group>"; };
+		1FD67D7920FE55DF008E8C8A /* NSString+OrchardUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+OrchardUtilities.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +100,12 @@
 				1F9B8AA420FD85C40039D518 /* iPhones.swift.gyb */,
 				1F521F8D20FD885700E99897 /* iPads.swift */,
 				1F521F8F20FD886700E99897 /* iPads.swift.gyb */,
-				1FD67D7220FE3421008E8C8A /* JKHiOSDevice.h */,
-				1FD67D7620FE3436008E8C8A /* JKHiOSDevice.h.gyb */,
-				1FD67D7320FE3421008E8C8A /* JKHiOSDevice.m */,
-				1FD67D7720FE3A0D008E8C8A /* JKHiOSDevice.m.gyb */,
+				1FD67D7220FE3421008E8C8A /* OrchardiOSDevice.h */,
+				1FD67D7620FE3436008E8C8A /* OrchardiOSDevice.h.gyb */,
+				1FD67D7320FE3421008E8C8A /* OrchardiOSDevice.m */,
+				1FD67D7720FE3A0D008E8C8A /* OrchardiOSDevice.m.gyb */,
+				1FD67D7820FE55DF008E8C8A /* NSString+OrchardUtilities.h */,
+				1FD67D7920FE55DF008E8C8A /* NSString+OrchardUtilities.m */,
 			);
 			path = Orchard;
 			sourceTree = "<group>";
@@ -138,7 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F9B8A9B20FD85790039D518 /* Orchard.h in Headers */,
-				1FD67D7420FE3421008E8C8A /* JKHiOSDevice.h in Headers */,
+				1FD67D7A20FE55DF008E8C8A /* NSString+OrchardUtilities.h in Headers */,
+				1FD67D7420FE3421008E8C8A /* OrchardiOSDevice.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,8 +255,8 @@
 				"$(SRCROOT)/iPads.tsv",
 				"$(SRCROOT)/Orchard/iPhones.swift.gyb",
 				"$(SRCROOT)/Orchard/iPads.swift.gyb",
-				"$(SRCROOT)/Orchard/JKHiOSDevice.h.gyb",
-				"$(SRCROOT)/Orchard/JKHiOSDevice.m.gyb",
+				"$(SRCROOT)/Orchard/OrchardiOSDevice.h.gyb",
+				"$(SRCROOT)/Orchard/OrchardiOSDevice.m.gyb",
 			);
 			name = GYB;
 			outputFileListPaths = (
@@ -257,8 +264,8 @@
 			outputPaths = (
 				"$(SRCROOT)/Orchard/iPhones.swift",
 				"$(SRCROOT)/Orchard/iPads.swift",
-				"$(SRCROOT)/Orchard/JKHiOSDevice.h",
-				"$(SRCROOT)/Orchard/JKHiOSDevice.m",
+				"$(SRCROOT)/Orchard/OrchardiOSDevice.h",
+				"$(SRCROOT)/Orchard/OrchardiOSDevice.m",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
@@ -272,7 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FD67D7520FE3421008E8C8A /* JKHiOSDevice.m in Sources */,
+				1FD67D7B20FE55DF008E8C8A /* NSString+OrchardUtilities.m in Sources */,
+				1FD67D7520FE3421008E8C8A /* OrchardiOSDevice.m in Sources */,
 				1F9B8AA320FD85B10039D518 /* iPhones.swift in Sources */,
 				1F521F8E20FD885700E99897 /* iPads.swift in Sources */,
 			);

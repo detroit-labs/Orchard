@@ -2,7 +2,7 @@
 % warning = "This file was automatically generated and should not be edited."
 // ${warning}
 //
-//  JKHiOSDevice.h
+//  OrchardiOSDevice.h
 //  Orchard
 //
 //  Created by Jeff Kelley on 7/17/18.
@@ -12,8 +12,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, OrchardiOSDeviceFamily) {
+    OrchardiOSDeviceFamilyiPhone    NS_SWIFT_NAME(iPhone),
+    OrchardiOSDeviceFamilyiPad      NS_SWIFT_NAME(iPad),
+    OrchardiOSDeviceFamilyiPodTouch NS_SWIFT_NAME(iPodTouch),
+    OrchardiOSDeviceFamilySimulator NS_SWIFT_NAME(simulator),
+    OrchardiOSDeviceFamilyUnknown   NS_SWIFT_NAME(unknown)
+} NS_SWIFT_NAME(iOSDeviceFamily);
+
 % import csv
-typedef NS_ENUM(NSUInteger, JKHiOSDevice) {
+typedef NS_ENUM(NSUInteger, OrchardiOSDevice) {
 
 % with open('../iPhones.tsv') as file:
     // iPhones
@@ -25,9 +33,9 @@ deprecated = row["Deprecated"]
 enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
 }%
         % if name and released and deprecated:
-    JKHiOSDevice${enum_name} NS_ENUM_DEPRECATED_IOS(${released}, ${deprecated}) NS_SWIFT_NAME(${enum_name}),
+    OrchardiOSDevice${enum_name} NS_ENUM_DEPRECATED_IOS(${released}, ${deprecated}) NS_SWIFT_NAME(${enum_name}),
         % elif name and released:
-    JKHiOSDevice${enum_name} NS_ENUM_AVAILABLE_IOS(${released}) NS_SWIFT_NAME(${enum_name}),
+    OrchardiOSDevice${enum_name} NS_ENUM_AVAILABLE_IOS(${released}) NS_SWIFT_NAME(${enum_name}),
         % end
     % end
 % end
@@ -42,16 +50,19 @@ deprecated = row["Deprecated"]
 enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
 }%
         % if name and released and deprecated:
-    JKHiOSDevice${enum_name} NS_ENUM_DEPRECATED_IOS(${released}, ${deprecated}) NS_SWIFT_NAME(${enum_name}),
+    OrchardiOSDevice${enum_name} NS_ENUM_DEPRECATED_IOS(${released}, ${deprecated}) NS_SWIFT_NAME(${enum_name}),
         % elif name and released:
-    JKHiOSDevice${enum_name} NS_ENUM_AVAILABLE_IOS(${released}) NS_SWIFT_NAME(${enum_name}),
+    OrchardiOSDevice${enum_name} NS_ENUM_AVAILABLE_IOS(${released}) NS_SWIFT_NAME(${enum_name}),
         % end
     % end
 % end
 
-    JKHiOSDeviceSimulator   NS_SWIFT_NAME(simulator),
-    JKHiOSDeviceUnknown     NS_SWIFT_NAME(unknown)
+    OrchardiOSDeviceSimulator   NS_SWIFT_NAME(simulator),
+    OrchardiOSDeviceUnknown     NS_SWIFT_NAME(unknown)
 } NS_SWIFT_NAME(iOSDevice);
 
+OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString *string) NS_SWIFT_NAME(iOSDevice(from:));
+OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device) NS_SWIFT_NAME(iOSDeviceFamily(for:));
+NSString * _Nullable OrchardMarketingNameForDevice(OrchardiOSDevice device) NS_SWIFT_NAME(marketingName(for:));
 
 NS_ASSUME_NONNULL_END
