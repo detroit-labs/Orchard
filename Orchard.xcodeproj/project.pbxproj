@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,6 +34,8 @@
 		1F19583420FEED73001DFA65 /* iPods.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPods.tsv; sourceTree = "<group>"; usesTabs = 1; };
 		1F19583620FEEF6F001DFA65 /* iPods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPods.swift; sourceTree = "<group>"; };
 		1F19583820FEEF7A001DFA65 /* iPods.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPods.swift.gyb; sourceTree = "<group>"; };
+		1F19583B20FEF082001DFA65 /* InputFiles.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = InputFiles.xcfilelist; sourceTree = "<group>"; };
+		1F19583C20FEF0E0001DFA65 /* OutputFiles.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = OutputFiles.xcfilelist; sourceTree = "<group>"; };
 		1F4FE72520FD95B700A6BC4F /* iPhones.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPhones.tsv; sourceTree = "<group>"; usesTabs = 1; };
 		1F521F8D20FD885700E99897 /* iPads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPads.swift; sourceTree = "<group>"; };
 		1F521F8F20FD886700E99897 /* iPads.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPads.swift.gyb; sourceTree = "<group>"; };
@@ -82,6 +84,8 @@
 				1F4FE72520FD95B700A6BC4F /* iPhones.tsv */,
 				1FD67D7120FE2F43008E8C8A /* iPads.tsv */,
 				1F19583420FEED73001DFA65 /* iPods.tsv */,
+				1F19583B20FEF082001DFA65 /* InputFiles.xcfilelist */,
+				1F19583C20FEF0E0001DFA65 /* OutputFiles.xcfilelist */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -268,27 +272,15 @@
 			files = (
 			);
 			inputFileListPaths = (
+				"$(SRCROOT)/Data/InputFiles.xcfilelist",
 			);
 			inputPaths = (
-				"$(SRCROOT)/Data/iPhones.tsv",
-				"$(SRCROOT)/Data/iPads.tsv",
-				"$(SRCROOT)/Orchard/iPhones.swift.gyb",
-				"$(SRCROOT)/Orchard/iPads.swift.gyb",
-				"$(SRCROOT)/Orchard/OrchardiOSDevice.h.gyb",
-				"$(SRCROOT)/Orchard/OrchardiOSDevice.m.gyb",
-				"$(SRCROOT)/Orchard/GYBUtilities.py",
-				"$(SRCROOT)/Data/iPods.tsv",
-				"$(SRCROOT)/Orchard/iPods.swift.gyb",
 			);
 			name = GYB;
 			outputFileListPaths = (
+				"$(SRCROOT)/Data/OutputFiles.xcfilelist",
 			);
 			outputPaths = (
-				"$(SRCROOT)/Orchard/iPhones.swift",
-				"$(SRCROOT)/Orchard/iPads.swift",
-				"$(SRCROOT)/Orchard/OrchardiOSDevice.h",
-				"$(SRCROOT)/Orchard/OrchardiOSDevice.m",
-				"$(SRCROOT)/Orchard/iPods.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
@@ -401,11 +393,7 @@
 				INFOPLIST_FILE = Orchard/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -477,11 +465,7 @@
 				INFOPLIST_FILE = Orchard/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.slaunchaman.Orchard;
@@ -554,11 +538,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = OrchardTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -622,11 +602,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = OrchardTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.slaunchaman.OrchardTests;
