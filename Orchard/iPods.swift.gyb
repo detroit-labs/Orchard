@@ -1,0 +1,100 @@
+//
+% warning = "This file was automatically generated and should not be edited."
+// ${warning}
+//
+//  iPods.swift
+//  Orchard
+//
+//  Created by Jeff Kelley on 7/17/18.
+//
+
+import Foundation
+
+% from GYBUtilities import ( DeviceFamily, DataPath, canSupport, needsAvailabilityCheck, enumName )
+% import csv
+% def swiftString(x): return "\"" + x + "\""
+public enum iPods {
+
+% with open(DataPath(DeviceFamily.IPOD)) as file:
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+released = row["Released"]
+deprecated = row["Deprecated"]
+enum_name = enumName(name)
+}%
+        % if name and released and deprecated:
+    @available (iOS, introduced: ${released}, deprecated: ${deprecated})
+    case ${enum_name}
+        % elif name and released:
+    @available (iOS, introduced: ${released})
+    case ${enum_name}
+        % end
+
+    % end
+% end
+    case unknown
+
+    internal init(model: String) {
+        self = .unknown
+
+        switch model {
+% with open(DataPath(DeviceFamily.IPOD)) as file:
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+released = row["Released"]
+codes = list(map(swiftString, row["Codes"].split(";")))
+deprecated = row["Deprecated"]
+enum_name = enumName(name)
+}%
+        % if name and released and deprecated:
+            % if not canSupport(deprecated):
+//        case ${", ".join(codes)}:
+//            self = .${enum_name}
+//
+            % else:
+        case ${", ".join(codes)}:
+                % if needsAvailabilityCheck(released):
+            if #available(iOS ${released}, *) {
+                self = .${enum_name}
+            }
+                % else:
+            self = .${enum_name}
+                %end
+
+            %end
+        %elif name and released:
+        case ${", ".join(codes)}:
+            % if needsAvailabilityCheck(released):
+            if #available(iOS ${released}, *) {
+                self = .${enum_name}
+            }
+            % else:
+            self = .${enum_name}
+            %end
+
+        %end
+    %end
+%end
+        default: break
+
+        }
+    }
+
+    public var marketingName: String? {
+        switch self {
+% with open(DataPath(DeviceFamily.IPOD)) as file:
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+enum_name = enumName(name)
+}%
+        case .${enum_name}: return "${name}"
+    % end
+% end
+
+        default: return nil
+        }
+    }
+}

@@ -23,7 +23,7 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
         return OrchardiOSDeviceSimulator;
     }
 
-% from GYBUtilities import ( DeviceFamily, DataPath )
+% from GYBUtilities import ( DeviceFamily, DataPath, enumName )
 % import csv
 % def objcString(x): return "@\"" + x + "\""
 % for family in DeviceFamily:
@@ -36,7 +36,7 @@ name = row["Name"]
 released = row["Released"]
 codes = list(map(objcString, row["Codes"].split(";")))
 deprecated = row["Deprecated"]
-enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
+enum_name = enumName(name)
 }%
             % if name and len(codes) == 1:
     else if ([string isEqualToString:${codes[0]}]) {
@@ -77,7 +77,7 @@ name = row["Name"]
 released = row["Released"]
 codes = list(map(objcString, row["Codes"].split(";")))
 deprecated = row["Deprecated"]
-enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
+enum_name = enumName(name)
 }%
         case OrchardiOSDevice${enum_name}:
         % end
@@ -115,7 +115,7 @@ name = row["Name"]
 released = row["Released"]
 codes = list(map(objcString, row["Codes"].split(";")))
 deprecated = row["Deprecated"]
-enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
+enum_name = enumName(name)
 }%
         case OrchardiOSDevice${enum_name}: return @"${name}";
         % end

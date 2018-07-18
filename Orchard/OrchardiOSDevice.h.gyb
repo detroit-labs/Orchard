@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-% from GYBUtilities import ( DeviceFamily, DataPath, longestEnumNameLength )
+% from GYBUtilities import ( DeviceFamily, DataPath, longestEnumNameLength, enumName )
 % import csv
 typedef NS_ENUM(NSUInteger, OrchardiOSDeviceFamily) {
 % for family in DeviceFamily:
@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, OrchardiOSDevice) {
 name = row["Name"]
 released = row["Released"]
 deprecated = row["Deprecated"]
-enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
+enum_name = enumName(name)
 formatted_enum_name = '{:{width}s}'.format("OrchardiOSDevice" + enum_name, width=enumNameLength)
 
 if name and released and deprecated:

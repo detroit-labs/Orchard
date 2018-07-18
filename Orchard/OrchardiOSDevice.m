@@ -163,6 +163,27 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
         return OrchardiOSDeviceiPad6;
     }
 
+#pragma mark - iPods
+
+    else if ([string isEqualToString:@"iPod1,1"]) {
+        return OrchardiOSDeviceiPodTouch;
+    }
+    else if ([string isEqualToString:@"iPod2,1"]) {
+        return OrchardiOSDeviceiPodTouch2;
+    }
+    else if ([string isEqualToString:@"iPod3,1"]) {
+        return OrchardiOSDeviceiPodTouch3;
+    }
+    else if ([string isEqualToString:@"iPod4,1"]) {
+        return OrchardiOSDeviceiPodTouch4;
+    }
+    else if ([string isEqualToString:@"iPod5,1"]) {
+        return OrchardiOSDeviceiPodTouch5;
+    }
+    else if ([string isEqualToString:@"iPod7,1"]) {
+        return OrchardiOSDeviceiPodTouch6;
+    }
+
 #pragma mark -
 
 #pragma clang diagnostic pop
@@ -219,6 +240,16 @@ OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice devic
         case OrchardiOSDeviceiPadPro10_5Inch:
         case OrchardiOSDeviceiPad6:
             return OrchardiOSDeviceFamilyiPad;
+
+#pragma mark - iPods
+
+        case OrchardiOSDeviceiPodTouch:
+        case OrchardiOSDeviceiPodTouch2:
+        case OrchardiOSDeviceiPodTouch3:
+        case OrchardiOSDeviceiPodTouch4:
+        case OrchardiOSDeviceiPodTouch5:
+        case OrchardiOSDeviceiPodTouch6:
+            return OrchardiOSDeviceFamilyiPod;
 
 #pragma mark -
 
@@ -279,6 +310,15 @@ NSString *OrchardMarketingNameForDevice(OrchardiOSDevice device)
         case OrchardiOSDeviceiPadPro12_9Inch2: return @"iPad Pro (12.9-inch, 2nd Generation)";
         case OrchardiOSDeviceiPadPro10_5Inch: return @"iPad Pro (10.5-inch)";
         case OrchardiOSDeviceiPad6: return @"iPad (6th Generation)";
+
+#pragma mark - iPods
+
+        case OrchardiOSDeviceiPodTouch: return @"iPod touch";
+        case OrchardiOSDeviceiPodTouch2: return @"iPod touch (2nd Generation)";
+        case OrchardiOSDeviceiPodTouch3: return @"iPod touch (3rd Generation)";
+        case OrchardiOSDeviceiPodTouch4: return @"iPod touch (4th Generation)";
+        case OrchardiOSDeviceiPodTouch5: return @"iPod touch (5th Generation)";
+        case OrchardiOSDeviceiPodTouch6: return @"iPod touch (6th Generation)";
 
 #pragma mark -
 

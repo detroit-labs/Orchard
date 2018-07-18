@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F19583720FEEF6F001DFA65 /* iPods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19583620FEEF6F001DFA65 /* iPods.swift */; };
+		1F19583920FEEF7A001DFA65 /* iPods.swift.gyb in Resources */ = {isa = PBXBuildFile; fileRef = 1F19583820FEEF7A001DFA65 /* iPods.swift.gyb */; };
 		1F521F8E20FD885700E99897 /* iPads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F521F8D20FD885700E99897 /* iPads.swift */; };
 		1F9B8A9420FD85790039D518 /* Orchard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9B8A8A20FD85790039D518 /* Orchard.framework */; };
 		1F9B8A9920FD85790039D518 /* OrchardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B8A9820FD85790039D518 /* OrchardTests.swift */; };
@@ -29,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F19583420FEED73001DFA65 /* iPods.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPods.tsv; sourceTree = "<group>"; usesTabs = 1; };
+		1F19583620FEEF6F001DFA65 /* iPods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPods.swift; sourceTree = "<group>"; };
+		1F19583820FEEF7A001DFA65 /* iPods.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPods.swift.gyb; sourceTree = "<group>"; };
 		1F4FE72520FD95B700A6BC4F /* iPhones.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPhones.tsv; sourceTree = "<group>"; usesTabs = 1; };
 		1F521F8D20FD885700E99897 /* iPads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPads.swift; sourceTree = "<group>"; };
 		1F521F8F20FD886700E99897 /* iPads.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPads.swift.gyb; sourceTree = "<group>"; };
@@ -76,6 +81,7 @@
 			children = (
 				1F4FE72520FD95B700A6BC4F /* iPhones.tsv */,
 				1FD67D7120FE2F43008E8C8A /* iPads.tsv */,
+				1F19583420FEED73001DFA65 /* iPods.tsv */,
 				1F9B8AA620FD860B0039D518 /* Vendor */,
 				1F9B8A8C20FD85790039D518 /* Orchard */,
 				1F9B8A9720FD85790039D518 /* OrchardTests */,
@@ -101,6 +107,8 @@
 				1F9B8AA420FD85C40039D518 /* iPhones.swift.gyb */,
 				1F521F8D20FD885700E99897 /* iPads.swift */,
 				1F521F8F20FD886700E99897 /* iPads.swift.gyb */,
+				1F19583620FEEF6F001DFA65 /* iPods.swift */,
+				1F19583820FEEF7A001DFA65 /* iPods.swift.gyb */,
 				1FD67D7220FE3421008E8C8A /* OrchardiOSDevice.h */,
 				1FD67D7620FE3436008E8C8A /* OrchardiOSDevice.h.gyb */,
 				1FD67D7320FE3421008E8C8A /* OrchardiOSDevice.m */,
@@ -232,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F19583920FEEF7A001DFA65 /* iPods.swift.gyb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +269,8 @@
 				"$(SRCROOT)/Orchard/OrchardiOSDevice.h.gyb",
 				"$(SRCROOT)/Orchard/OrchardiOSDevice.m.gyb",
 				"$(SRCROOT)/Orchard/GYBUtilities.py",
+				"$(SRCROOT)/iPods.tsv",
+				"$(SRCROOT)/Orchard/iPods.swift.gyb",
 			);
 			name = GYB;
 			outputFileListPaths = (
@@ -269,6 +280,7 @@
 				"$(SRCROOT)/Orchard/iPads.swift",
 				"$(SRCROOT)/Orchard/OrchardiOSDevice.h",
 				"$(SRCROOT)/Orchard/OrchardiOSDevice.m",
+				"$(SRCROOT)/Orchard/iPods.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
@@ -282,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FD67D7B20FE55DF008E8C8A /* NSString+OrchardUtilities.m in Sources */,
+				1F19583720FEEF6F001DFA65 /* iPods.swift in Sources */,
 				1FD67D7520FE3421008E8C8A /* OrchardiOSDevice.m in Sources */,
 				1F9B8AA320FD85B10039D518 /* iPhones.swift in Sources */,
 				1F521F8E20FD885700E99897 /* iPads.swift in Sources */,
