@@ -10,12 +10,12 @@
 
 import Foundation
 
-% from GYBUtilities import ( iPhonesPath, canSupport, needsAvailabilityCheck, enumName )
+% from GYBUtilities import ( DeviceFamily, DataPath, canSupport, needsAvailabilityCheck, enumName )
 % import csv
 % def swiftString(x): return "\"" + x + "\""
 public enum iPhones {
 
-% with open(iPhonesPath) as file:
+% with open(DataPath(DeviceFamily.IPHONE)) as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
@@ -39,7 +39,7 @@ enum_name = enumName(name)
         self = .unknown
 
         switch model {
-% with open(iPhonesPath) as file:
+% with open(DataPath(DeviceFamily.IPHONE)) as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
@@ -84,7 +84,7 @@ enum_name = enumName(name)
 
     public var marketingName: String? {
         switch self {
-% with open(iPhonesPath) as file:
+% with open(DataPath(DeviceFamily.IPHONE)) as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]

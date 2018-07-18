@@ -1,7 +1,27 @@
+import csv
+from enum import Enum
 import os
 
-iPhonesPath='../iPhones.tsv'
-iPadsPath='../iPads.tsv'
+class DeviceFamily(Enum):
+	__order__ = 'IPHONE IPAD'
+	IPHONE = "iPhone"
+	IPAD = "iPad"
+
+def DataPath(deviceFamily = DeviceFamily.IPHONE):
+	if deviceFamily is DeviceFamily.IPHONE:
+		return '../iPhones.tsv'
+	elif deviceFamily is DeviceFamily.IPAD:
+		return '../iPads.tsv'
+
+def longestEnumNameLength(deviceFamily = DeviceFamily.IPHONE):
+	longest = 0
+	with open(DataPath(deviceFamily)) as file:
+		for row in csv.DictReader(file, delimiter='\t'):
+			length = len(enumName(row["Name"]))
+			if length > longest:
+				longest = length
+	return longest
+
 iOSDeploymentTarget=os.environ['IPHONEOS_DEPLOYMENT_TARGET']
 
 def versiontuple(v):

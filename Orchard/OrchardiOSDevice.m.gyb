@@ -23,13 +23,14 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
         return OrchardiOSDeviceSimulator;
     }
 
-% from GYBUtilities import ( iPhonesPath, iPadsPath )
+% from GYBUtilities import ( DeviceFamily, DataPath )
 % import csv
 % def objcString(x): return "@\"" + x + "\""
-% with open(iPhonesPath) as file:
-#pragma mark - iPhones
+% for family in DeviceFamily:
+    % with open(DataPath(family)) as file:
+#pragma mark - ${family.value}s
 
-    % for row in csv.DictReader(file, delimiter='\t'):
+        % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
 released = row["Released"]
@@ -37,43 +38,20 @@ codes = list(map(objcString, row["Codes"].split(";")))
 deprecated = row["Deprecated"]
 enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
 }%
-        % if name and len(codes) == 1:
+            % if name and len(codes) == 1:
     else if ([string isEqualToString:${codes[0]}]) {
         return OrchardiOSDevice${enum_name};
     }
-        % elif name and len(codes) > 1:
+            % elif name and len(codes) > 1:
     else if ([string orchard_isEqualToOneOfStrings:@[${",\n\
                                                      ".join(codes)}]]) {
         return OrchardiOSDevice${enum_name};
     }
+            % end
         % end
     % end
-% end
 
-% with open(iPadsPath) as file:
-#pragma mark - iPads
-
-    % for row in csv.DictReader(file, delimiter='\t'):
-%{
-name = row["Name"]
-released = row["Released"]
-codes = list(map(objcString, row["Codes"].split(";")))
-deprecated = row["Deprecated"]
-enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
-}%
-        % if name and len(codes) == 1:
-    else if ([string isEqualToString:${codes[0]}]) {
-        return OrchardiOSDevice${enum_name};
-    }
-        % elif name and len(codes) > 1:
-    else if ([string orchard_isEqualToOneOfStrings:@[${",\n\
-                                                     ".join(codes)}]]) {
-        return OrchardiOSDevice${enum_name};
-    }
-        % end
-    % end
-% end
-
+%end
 #pragma mark -
 
 #pragma clang diagnostic pop
@@ -89,10 +67,11 @@ OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice devic
     switch (device) {
         case OrchardiOSDeviceSimulator: return OrchardiOSDeviceFamilySimulator;
 
-% with open(iPhonesPath) as file:
-#pragma mark - iPhones
+% for family in DeviceFamily:
+    % with open(DataPath(family)) as file:
+#pragma mark - ${family.value}s
 
-    % for row in csv.DictReader(file, delimiter='\t'):
+        % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
 released = row["Released"]
@@ -101,26 +80,11 @@ deprecated = row["Deprecated"]
 enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
 }%
         case OrchardiOSDevice${enum_name}:
+        % end
     % end
-% end
-            return OrchardiOSDeviceFamilyiPhone;
+            return OrchardiOSDeviceFamily${family.value};
 
-% with open(iPadsPath) as file:
-#pragma mark - iPads
-
-    % for row in csv.DictReader(file, delimiter='\t'):
-%{
-name = row["Name"]
-released = row["Released"]
-codes = list(map(objcString, row["Codes"].split(";")))
-deprecated = row["Deprecated"]
-enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
-}%
-        case OrchardiOSDevice${enum_name}:
-    % end
-% end
-            return OrchardiOSDeviceFamilyiPad;
-
+%end
 #pragma mark -
 
         case OrchardiOSDeviceUnknown:
@@ -141,10 +105,11 @@ NSString *OrchardMarketingNameForDevice(OrchardiOSDevice device)
 
         case OrchardiOSDeviceSimulator: return nil;
 
-% with open(iPhonesPath) as file:
-#pragma mark - iPhones
+% for family in DeviceFamily:
+    % with open(DataPath(family)) as file:
+#pragma mark - ${family.value}s
 
-    % for row in csv.DictReader(file, delimiter='\t'):
+        % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
 released = row["Released"]
@@ -153,24 +118,10 @@ deprecated = row["Deprecated"]
 enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
 }%
         case OrchardiOSDevice${enum_name}: return @"${name}";
+        % end
     % end
-% end
 
-% with open(iPadsPath) as file:
-#pragma mark - iPads
-
-    % for row in csv.DictReader(file, delimiter='\t'):
-%{
-name = row["Name"]
-released = row["Released"]
-codes = list(map(objcString, row["Codes"].split(";")))
-deprecated = row["Deprecated"]
-enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
-}%
-        case OrchardiOSDevice${enum_name}: return @"${name}";
-    % end
-% end
-
+%end
 #pragma mark -
 
         default:

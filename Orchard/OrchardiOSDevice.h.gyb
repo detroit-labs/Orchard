@@ -12,54 +12,43 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+% from GYBUtilities import ( DeviceFamily, DataPath, longestEnumNameLength )
+% import csv
 typedef NS_ENUM(NSUInteger, OrchardiOSDeviceFamily) {
-    OrchardiOSDeviceFamilyiPhone    NS_SWIFT_NAME(iPhone),
-    OrchardiOSDeviceFamilyiPad      NS_SWIFT_NAME(iPad),
-    OrchardiOSDeviceFamilyiPodTouch NS_SWIFT_NAME(iPodTouch),
+% for family in DeviceFamily:
+    % formattedFamilyName = '{:31s}'.format("OrchardiOSDeviceFamily" + family.value)
+    ${formattedFamilyName} NS_SWIFT_NAME(${family.value}),
+% end
     OrchardiOSDeviceFamilySimulator NS_SWIFT_NAME(simulator),
     OrchardiOSDeviceFamilyUnknown   NS_SWIFT_NAME(unknown)
 } NS_SWIFT_NAME(iOSDeviceFamily);
 
-% from GYBUtilities import ( iPhonesPath, iPadsPath )
-% import csv
 typedef NS_ENUM(NSUInteger, OrchardiOSDevice) {
 
-% with open(iPhonesPath) as file:
-    // iPhones
-    % for row in csv.DictReader(file, delimiter='\t'):
+% for family in DeviceFamily:
+    % enumNameLength = longestEnumNameLength(family) + len("OrchardiOSDevice")
+    % with open(DataPath(family)) as file:
+    // ${family.value}s
+        % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
 released = row["Released"]
 deprecated = row["Deprecated"]
 enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
+formatted_enum_name = '{:{width}s}'.format("OrchardiOSDevice" + enum_name, width=enumNameLength)
+
+if name and released and deprecated:
+    formatted_availability = '{:33s}'.format("NS_ENUM_DEPRECATED_IOS(" + released + ", " + deprecated + ")")
+elif name and released:
+    formatted_availability = '{:33s}'.format("NS_ENUM_AVAILABLE_IOS(" + released + ")")
 }%
-        % if name and released and deprecated:
-    OrchardiOSDevice${enum_name} NS_ENUM_DEPRECATED_IOS(${released}, ${deprecated}) NS_SWIFT_NAME(${enum_name}),
-        % elif name and released:
-    OrchardiOSDevice${enum_name} NS_ENUM_AVAILABLE_IOS(${released}) NS_SWIFT_NAME(${enum_name}),
+    ${formatted_enum_name} ${formatted_availability} NS_SWIFT_NAME(${enum_name}),
         % end
     % end
-% end
 
-% with open(iPadsPath) as file:
-    // iPads
-    % for row in csv.DictReader(file, delimiter='\t'):
-%{
-name = row["Name"]
-released = row["Released"]
-deprecated = row["Deprecated"]
-enum_name = name.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6")
-}%
-        % if name and released and deprecated:
-    OrchardiOSDevice${enum_name} NS_ENUM_DEPRECATED_IOS(${released}, ${deprecated}) NS_SWIFT_NAME(${enum_name}),
-        % elif name and released:
-    OrchardiOSDevice${enum_name} NS_ENUM_AVAILABLE_IOS(${released}) NS_SWIFT_NAME(${enum_name}),
-        % end
-    % end
-% end
-
-    OrchardiOSDeviceSimulator   NS_SWIFT_NAME(simulator),
-    OrchardiOSDeviceUnknown     NS_SWIFT_NAME(unknown)
+%end
+    OrchardiOSDeviceSimulator NS_SWIFT_NAME(simulator),
+    OrchardiOSDeviceUnknown   NS_SWIFT_NAME(unknown)
 } NS_SWIFT_NAME(iOSDevice);
 
 OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString *string) NS_SWIFT_NAME(iOSDevice(from:));
