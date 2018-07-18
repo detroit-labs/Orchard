@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F19583720FEEF6F001DFA65 /* iPods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19583620FEEF6F001DFA65 /* iPods.swift */; };
 		1F19583920FEEF7A001DFA65 /* iPods.swift.gyb in Resources */ = {isa = PBXBuildFile; fileRef = 1F19583820FEEF7A001DFA65 /* iPods.swift.gyb */; };
+		1F19584020FEF21D001DFA65 /* DeviceIdentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19583F20FEF21D001DFA65 /* DeviceIdentification.swift */; };
 		1F521F8E20FD885700E99897 /* iPads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F521F8D20FD885700E99897 /* iPads.swift */; };
 		1F9B8A9B20FD85790039D518 /* Orchard.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B8A8D20FD85790039D518 /* Orchard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F9B8AA320FD85B10039D518 /* iPhones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B8AA220FD85B10039D518 /* iPhones.swift */; };
@@ -24,6 +25,7 @@
 		1F19583820FEEF7A001DFA65 /* iPods.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPods.swift.gyb; sourceTree = "<group>"; };
 		1F19583B20FEF082001DFA65 /* InputFiles.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = InputFiles.xcfilelist; sourceTree = "<group>"; };
 		1F19583C20FEF0E0001DFA65 /* OutputFiles.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = OutputFiles.xcfilelist; sourceTree = "<group>"; };
+		1F19583F20FEF21D001DFA65 /* DeviceIdentification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdentification.swift; sourceTree = "<group>"; };
 		1F4FE72520FD95B700A6BC4F /* iPhones.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPhones.tsv; sourceTree = "<group>"; usesTabs = 1; };
 		1F521F8D20FD885700E99897 /* iPads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPads.swift; sourceTree = "<group>"; };
 		1F521F8F20FD886700E99897 /* iPads.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPads.swift.gyb; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				1F9B8A8D20FD85790039D518 /* Orchard.h */,
 				1F9B8A8E20FD85790039D518 /* Info.plist */,
+				1F19583F20FEF21D001DFA65 /* DeviceIdentification.swift */,
 				1F9B8AA220FD85B10039D518 /* iPhones.swift */,
 				1F9B8AA420FD85C40039D518 /* iPhones.swift.gyb */,
 				1F521F8D20FD885700E99897 /* iPads.swift */,
@@ -235,6 +238,7 @@
 				1FD67D7520FE3421008E8C8A /* OrchardiOSDevice.m in Sources */,
 				1F9B8AA320FD85B10039D518 /* iPhones.swift in Sources */,
 				1F521F8E20FD885700E99897 /* iPads.swift in Sources */,
+				1F19584020FEF21D001DFA65 /* DeviceIdentification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
