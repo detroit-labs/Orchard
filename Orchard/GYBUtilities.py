@@ -10,11 +10,11 @@ class DeviceFamily(Enum):
 
 def DataPath(deviceFamily = DeviceFamily.IPHONE):
 	if deviceFamily is DeviceFamily.IPHONE:
-		return '../iPhones.tsv'
+		return '../Data/iPhones.tsv'
 	elif deviceFamily is DeviceFamily.IPAD:
-		return '../iPads.tsv'
+		return '../Data/iPads.tsv'
 	elif deviceFamily is DeviceFamily.IPOD:
-		return '../iPods.tsv'
+		return '../Data/iPods.tsv'
 
 def longestEnumNameLength(deviceFamily = DeviceFamily.IPHONE):
 	longest = 0

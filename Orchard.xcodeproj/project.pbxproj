@@ -76,12 +76,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F9B8A4820FD80600039D518 = {
+		1F19583A20FEF02F001DFA65 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				1F4FE72520FD95B700A6BC4F /* iPhones.tsv */,
 				1FD67D7120FE2F43008E8C8A /* iPads.tsv */,
 				1F19583420FEED73001DFA65 /* iPods.tsv */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		1F9B8A4820FD80600039D518 = {
+			isa = PBXGroup;
+			children = (
+				1F19583A20FEF02F001DFA65 /* Data */,
 				1F9B8AA620FD860B0039D518 /* Vendor */,
 				1F9B8A8C20FD85790039D518 /* Orchard */,
 				1F9B8A9720FD85790039D518 /* OrchardTests */,
@@ -262,14 +270,14 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/iPhones.tsv",
-				"$(SRCROOT)/iPads.tsv",
+				"$(SRCROOT)/Data/iPhones.tsv",
+				"$(SRCROOT)/Data/iPads.tsv",
 				"$(SRCROOT)/Orchard/iPhones.swift.gyb",
 				"$(SRCROOT)/Orchard/iPads.swift.gyb",
 				"$(SRCROOT)/Orchard/OrchardiOSDevice.h.gyb",
 				"$(SRCROOT)/Orchard/OrchardiOSDevice.m.gyb",
 				"$(SRCROOT)/Orchard/GYBUtilities.py",
-				"$(SRCROOT)/iPods.tsv",
+				"$(SRCROOT)/Data/iPods.tsv",
 				"$(SRCROOT)/Orchard/iPods.swift.gyb",
 			);
 			name = GYB;
