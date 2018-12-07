@@ -65,6 +65,15 @@ public enum iPhones {
     @available (iOS, introduced: 11.0)
     case iPhoneX
 
+    @available (iOS, introduced: 12.0)
+    case iPhoneXS
+
+    @available (iOS, introduced: 12.0)
+    case iPhoneXSMax
+
+    @available (iOS, introduced: 12.0)
+    case iPhoneXR
+
     case unknown
 
     internal init(model: String) {
@@ -125,6 +134,15 @@ public enum iPhones {
         case "iPhone10,3", "iPhone10,6":
             self = .iPhoneX
 
+        case "iPhone11,2":
+            self = .iPhoneXS
+
+        case "iPhone11,6":
+            self = .iPhoneXSMax
+
+        case "iPhone11,8":
+            self = .iPhoneXR
+
         default: break
 
         }
@@ -150,6 +168,9 @@ public enum iPhones {
         case .iPhone8: return "iPhone 8"
         case .iPhone8Plus: return "iPhone 8 Plus"
         case .iPhoneX: return "iPhone X"
+        case .iPhoneXS: return "iPhone XS"
+        case .iPhoneXSMax: return "iPhone XS Max"
+        case .iPhoneXR: return "iPhone XR"
 
         default: return nil
         }
