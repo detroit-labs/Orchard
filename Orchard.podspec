@@ -21,7 +21,7 @@ make decisions based on that.
   spec.watchos.deployment_target = "2.0"
   spec.tvos.deployment_target    = "9.0"
 
-  spec.source = { :git => "http://github.com/SlaunchaMan/Orchard.git",
+  spec.source = { :git => "https://github.com/SlaunchaMan/Orchard.git",
                   :tag => "#{spec.version}" }
 
   spec.ios.frameworks     = 'Foundation', 'UIKit'
