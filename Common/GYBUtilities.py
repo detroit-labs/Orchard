@@ -62,7 +62,7 @@ def canSupport(version, os = OSFamily.IOS):
 	elif os == OSFamily.TVOS:
 		minimum = versiontuple(tvOSDeploymentTarget)
 
-	return versiontuple(version) >= minimum
+	return versiontuple(version) > minimum
 
 def needsAvailabilityCheck(version, os = OSFamily.IOS):
 	minimum = versiontuple(iOSDeploymentTarget)
