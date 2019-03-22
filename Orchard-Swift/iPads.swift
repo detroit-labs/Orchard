@@ -67,6 +67,12 @@ public enum iPads {
     @available (iOS, introduced: 12.1)
     case iPadPro11Inch
 
+    @available (iOS, introduced: 12.2)
+    case iPadAir3
+
+    @available (iOS, introduced: 12.2)
+    case iPadMini5
+
     case unknown
 
     internal init(model: String) {
@@ -149,6 +155,16 @@ public enum iPads {
                 self = .iPadPro11Inch
             }
 
+        case "Pending":
+            if #available(iOS 12.2, *) {
+                self = .iPadAir3
+            }
+
+        case "Pending":
+            if #available(iOS 12.2, *) {
+                self = .iPadMini5
+            }
+
         default: break
 
         }
@@ -174,6 +190,8 @@ public enum iPads {
         case .iPad6: return "iPad (6th Generation)"
         case .iPadPro12_9Inch3: return "iPad Pro (12.9-inch, 3rd Generation)"
         case .iPadPro11Inch: return "iPad Pro (11-inch)"
+        case .iPadAir3: return "iPad Air (3rd Generation)"
+        case .iPadMini5: return "iPad mini (5th Generation)"
 
         default: return nil
         }
