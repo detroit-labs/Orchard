@@ -29,7 +29,11 @@ released = row["Released"]
 deprecated = row["Deprecated"]
 enum_name = enumName(name)
 formatted_enum_name = '{:{width}s}'.format("OrchardtvOSDevice" + enum_name, width=enumNameLength)
-formatted_availability = '{:27s}'.format("NS_ENUM_AVAILABLE_IOS(" + released + ")")
+
+if name and released and deprecated:
+    formatted_availability = '{:27s}'.format("NS_ENUM_DEPRECATED_IOS(" + released + ", " + deprecated + ")")
+elif name and released:
+    formatted_availability = '{:27s}'.format("NS_ENUM_AVAILABLE_IOS(" + released + ")")
 }%
     ${formatted_enum_name} ${formatted_availability} NS_SWIFT_NAME(${enum_name}),
     % end

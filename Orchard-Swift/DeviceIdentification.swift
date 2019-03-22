@@ -5,7 +5,7 @@
 //  Created by Jeff Kelley on 7/17/18.
 //
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 #elseif os(watchOS)
 import WatchKit
@@ -19,6 +19,8 @@ public enum DeviceIdentity: Equatable {
     case iPod(iPods)
     #elseif os(watchOS)
     case watch(Watches)
+    #elseif os(tvOS)
+    case tv(TVs)
     #endif
     
     case simulator
@@ -37,6 +39,9 @@ public enum DeviceIdentity: Equatable {
             return a == b
             #elseif os(watchOS)
         case let (.watch(a), .watch(b)):
+            return a == b
+            #elseif os(tvOS)
+        case let (.tv(a), .tv(b)):
             return a == b
             #endif
 
@@ -67,6 +72,10 @@ internal func parseDeviceIdentity(from modelString: String) -> DeviceIdentity {
     if modelString.hasPrefix("Watch") {
         return .watch(Watches(model: modelString))
     }
+    #elseif os(tvOS)
+    if modelString.hasPrefix("AppleTV") {
+        return .tv(TVs(model: modelString))
+    }
     #endif
     
     if modelString == "i386" || modelString == "x86_64" {
@@ -76,7 +85,7 @@ internal func parseDeviceIdentity(from modelString: String) -> DeviceIdentity {
     return .unknown
 }
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 extension UIDevice {
     public var deviceIdentity: DeviceIdentity {
         guard let modelName = DeviceModelName() else { return .unknown }

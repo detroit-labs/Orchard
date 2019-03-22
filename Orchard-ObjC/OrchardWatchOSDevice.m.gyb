@@ -20,7 +20,7 @@ OrchardWatchOSDevice OrchardWatchOSDeviceFromNSString(NSString *string) {
     }
 % import sys
 % sys.path.insert(0, '../Common')
-% from GYBUtilities import ( OSFamily, enumName, canSupport )
+% from GYBUtilities import ( OSFamily, enumName, needsAvailabilityCheck )
 % import csv
 % def objcString(x): return "@\"" + x + "\""
 % with open('../Data/Watches.tsv') as file:
@@ -39,7 +39,7 @@ enum_name = enumName(name) + "_" + size
     else if ([string orchard_isEqualToOneOfStrings:@[${",\n\
                                                      ".join(codes)}]]) {
         % end
-        %if canSupport(released, OSFamily.WATCHOS):
+        %if needsAvailabilityCheck(released, OSFamily.WATCHOS):
         if (@available(watchOS ${released}, *)) {
             return OrchardWatchOSDevice${enum_name};
         }

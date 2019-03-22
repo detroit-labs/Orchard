@@ -15,7 +15,7 @@ import Foundation
 
 % import sys
 % sys.path.insert(0, '../Common')
-% from GYBUtilities import ( OSFamily, canSupport, enumName )
+% from GYBUtilities import ( OSFamily, canSupport, needsAvailabilityCheck, enumName )
 % import csv
 % def swiftString(x): return "\"" + x + "\""
 public enum TVs {
@@ -54,13 +54,13 @@ deprecated = row["Deprecated"]
 enum_name = enumName(name)
 }%
         % if name and released and deprecated:
-            % if not canSupport(deprecated, OSFamily.WATCHOS):
+            % if not canSupport(deprecated, OSFamily.TVOS):
 //        case ${", ".join(codes)}:
 //            self = .${enum_name}
 //
             % else:
         case ${", ".join(codes)}:
-                % if canSupport(released, OSFamily.WATCHOS):
+                % if needsAvailabilityCheck(released, OSFamily.TVOS):
             if #available(tvOS ${released}, *) {
                 self = .${enum_name}
             }
@@ -71,7 +71,7 @@ enum_name = enumName(name)
             %end
         %elif name and released:
         case ${", ".join(codes)}:
-            % if canSupport(released, OSFamily.TVOS):
+            % if needsAvailabilityCheck(released, OSFamily.TVOS):
             if #available(tvOS ${released}, *) {
                 self = .${enum_name}
             }

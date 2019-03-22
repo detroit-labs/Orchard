@@ -91,9 +91,9 @@ public enum iPhones {
 //        case "iPhone2,1":
 //            self = .iPhone3GS
 //
-//        case "iPhone3,1", "iPhone3,2", "iPhone3,3":
-//            self = .iPhone4
-//
+        case "iPhone3,1", "iPhone3,2", "iPhone3,3":
+            self = .iPhone4
+
         case "iPhone4,1":
             self = .iPhone4S
 

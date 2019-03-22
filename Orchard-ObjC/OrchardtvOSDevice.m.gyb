@@ -20,7 +20,7 @@ OrchardtvOSDevice OrchardtvOSDeviceFromNSString(NSString *string) {
     }
 % import sys
 % sys.path.insert(0, '../Common')
-% from GYBUtilities import ( OSFamily, enumName, canSupport )
+% from GYBUtilities import ( OSFamily, enumName, needsAvailabilityCheck )
 % import csv
 % def objcString(x): return "@\"" + x + "\""
 % with open('../Data/TVs.tsv') as file:
@@ -38,7 +38,7 @@ enum_name = enumName(name)
     else if ([string orchard_isEqualToOneOfStrings:@[${",\n\
                                                      ".join(codes)}]]) {
         % end
-        %if canSupport(released, OSFamily.TVOS):
+        %if needsAvailabilityCheck(released, OSFamily.TVOS):
         if (@available(tvOS ${released}, *)) {
             return OrchardtvOSDevice${enum_name};
         }
