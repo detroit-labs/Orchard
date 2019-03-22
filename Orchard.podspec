@@ -1,32 +1,42 @@
-Pod::Spec.new do |s|
-  s.name         = "Orchard"
-  s.version      = "0.0.1"
-  s.summary      = "A library to identify iOS devices."
+Pod::Spec.new do |spec|
 
-  s.description  = <<-DESC
-Orchard is a library for identifying iOS devices and displaying their marketing names.
+  spec.name         = "Orchard"
+  spec.version      = "0.0.1"
+  spec.summary      = "Device identification for iOS, watchOS, and tvOS."
+
+  spec.description  = <<-DESC
+Orchard is a library to identify the device your code is running on. For iOS,
+watchOS, and tvOS, you use Orchard to identify the exact model of device and
+make decisions based on that.
                    DESC
 
-  s.homepage     = "http://EXAMPLE/Orchard"
+  spec.homepage     = "http://github.com/SlaunchaMan/Orchard"
 
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+  spec.license      = "MIT"
 
-  s.author             = { "Jeff Kelley" => "SlaunchaMan@gmail.com" }
-  s.social_media_url   = "https://twitter.com/SlaunchaMan"
+  spec.author             = { "Jeff Kelley" => "SlaunchaMan@gmail.com" }
+  spec.social_media_url   = "https://twitter.com/SlaunchaMan"
 
-  s.platform     = :ios, "8.0"
+  spec.ios.deployment_target     = "8.0"
+  spec.watchos.deployment_target = "2.0"
+  spec.tvos.deployment_target    = "9.0"
 
-  s.source       = { :git => "https://github.com/SlaunchaMan/Orchard.git", :tag => "#{s.version}" }
+  spec.source = { :git => "http://github.com/SlaunchaMan/Orchard.git",
+                  :tag => "#{spec.version}" }
 
-  s.default_subspec = 'Swift'
+  spec.ios.frameworks     = 'Foundation', 'UIKit'
+  spec.watchos.frameworks = 'Foundation', 'WatchKit'
+  spec.tvos.frameworks    = 'Foundation', 'UIKit'
 
-  s.subspec 'Swift' do |ss|
-    ss.source_files = "Orchard/*.swift"
+  spec.subspec 'Swift' do |ss|
+    ss.source_files = 'Orchard-Swift/*.swift'
   end
 
-  s.subspec 'Objective-C' do |ss|
-    ss.source_files = "Orchard/*.{h,m}"
-    ss.public_header_files = "Orchard/Orchard*.h"
+  spec.subspec 'ObjC' do |ss|
+    ss.source_files = 'Orchard-ObjC/**/*.{h,m}'
+    ss.public_header_files = 'Orchard-ObjC/*.h'
   end
+
+  spec.default_subspec = 'Swift'
 
 end
