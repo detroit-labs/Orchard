@@ -28,8 +28,9 @@ make decisions based on that.
   spec.watchos.frameworks = 'Foundation', 'WatchKit'
   spec.tvos.frameworks    = 'Foundation', 'UIKit'
 
+  spec.swift_version = "4.2"
+
   spec.subspec 'Swift' do |ss|
-    ss.swift_version = "4.2"
     ss.source_files = 'Orchard-Swift/*.swift'
   end
 
