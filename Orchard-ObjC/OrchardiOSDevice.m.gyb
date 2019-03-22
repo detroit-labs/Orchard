@@ -10,6 +10,8 @@
 
 #import "OrchardiOSDevice.h"
 
+#if TARGET_OS_IOS
+
 #import "NSString+OrchardUtilities.h"
 
 OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
@@ -23,10 +25,12 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
         return OrchardiOSDeviceSimulator;
     }
 
-% from GYBUtilities import ( DeviceFamily, DataPath, enumName )
+% import sys
+% sys.path.insert(0, '../Common')
+% from GYBUtilities import ( iOSDeviceFamily, DataPath, enumName )
 % import csv
 % def objcString(x): return "@\"" + x + "\""
-% for family in DeviceFamily:
+% for family in iOSDeviceFamily:
     % with open(DataPath(family)) as file:
 #pragma mark - ${family.value}s
 
@@ -59,15 +63,15 @@ enum_name = enumName(name)
     return OrchardiOSDeviceUnknown;
 }
 
-OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device)
+OrchardiOSiOSDeviceFamily OrchardiOSiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device)
 {
     // Disable deprecation warnings for historical accuracy
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
     switch (device) {
-        case OrchardiOSDeviceSimulator: return OrchardiOSDeviceFamilySimulator;
+        case OrchardiOSDeviceSimulator: return OrchardiOSiOSDeviceFamilySimulator;
 
-% for family in DeviceFamily:
+% for family in iOSDeviceFamily:
     % with open(DataPath(family)) as file:
 #pragma mark - ${family.value}s
 
@@ -82,19 +86,21 @@ enum_name = enumName(name)
         case OrchardiOSDevice${enum_name}:
         % end
     % end
-            return OrchardiOSDeviceFamily${family.value};
+            return OrchardiOSiOSDeviceFamily${family.value};
 
 %end
 #pragma mark -
 
         case OrchardiOSDeviceUnknown:
         default:
-            return OrchardiOSDeviceFamilyUnknown;
+            return OrchardiOSiOSDeviceFamilyUnknown;
     }
+
 #pragma clang diagnostic pop
+
 }
 
-NSString *OrchardMarketingNameForDevice(OrchardiOSDevice device)
+NSString *OrchardMarketingNameForiOSDevice(OrchardiOSDevice device)
 {
     // Disable deprecation warnings for historical accuracy
 #pragma clang diagnostic push
@@ -103,9 +109,10 @@ NSString *OrchardMarketingNameForDevice(OrchardiOSDevice device)
 
     switch (device) {
 
-        case OrchardiOSDeviceSimulator: return nil;
+        case OrchardiOSDeviceSimulator:
+            return nil;
 
-% for family in DeviceFamily:
+% for family in iOSDeviceFamily:
     % with open(DataPath(family)) as file:
 #pragma mark - ${family.value}s
 
@@ -117,10 +124,11 @@ codes = list(map(objcString, row["Codes"].split(";")))
 deprecated = row["Deprecated"]
 enum_name = enumName(name)
 }%
-        case OrchardiOSDevice${enum_name}: return @"${name}";
+        case OrchardiOSDevice${enum_name}:
+            return @"${name}";
+
         % end
     % end
-
 %end
 #pragma mark -
 
@@ -131,4 +139,7 @@ enum_name = enumName(name)
     return nil;
 
 #pragma clang diagnostic pop
+
 }
+
+#endif

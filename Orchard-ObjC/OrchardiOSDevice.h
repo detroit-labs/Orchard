@@ -9,15 +9,17 @@
 
 #import <Foundation/Foundation.h>
 
+#if TARGET_OS_IOS
+
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSUInteger, OrchardiOSDeviceFamily) {
-    OrchardiOSDeviceFamilyiPhone    NS_SWIFT_NAME(iPhone),
-    OrchardiOSDeviceFamilyiPad      NS_SWIFT_NAME(iPad),
-    OrchardiOSDeviceFamilyiPod      NS_SWIFT_NAME(iPod),
-    OrchardiOSDeviceFamilySimulator NS_SWIFT_NAME(simulator),
-    OrchardiOSDeviceFamilyUnknown   NS_SWIFT_NAME(unknown)
-} NS_SWIFT_NAME(iOSDeviceFamily);
+typedef NS_ENUM(NSUInteger, OrchardiOSiOSDeviceFamily) {
+    OrchardiOSiOSDeviceFamilyiPhone NS_SWIFT_NAME(iPhone),
+    OrchardiOSiOSDeviceFamilyiPad   NS_SWIFT_NAME(iPad),
+    OrchardiOSiOSDeviceFamilyiPod   NS_SWIFT_NAME(iPod),
+    OrchardiOSiOSDeviceFamilySimulator NS_SWIFT_NAME(simulator),
+    OrchardiOSiOSDeviceFamilyUnknown   NS_SWIFT_NAME(unknown)
+} NS_SWIFT_NAME(iOSiOSDeviceFamily);
 
 typedef NS_ENUM(NSUInteger, OrchardiOSDevice) {
 
@@ -74,10 +76,13 @@ typedef NS_ENUM(NSUInteger, OrchardiOSDevice) {
 
     OrchardiOSDeviceSimulator NS_SWIFT_NAME(simulator),
     OrchardiOSDeviceUnknown   NS_SWIFT_NAME(unknown)
+
 } NS_SWIFT_NAME(iOSDevice);
 
 OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString *string) NS_SWIFT_NAME(iOSDevice(from:));
-OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device) NS_SWIFT_NAME(iOSDeviceFamily(for:));
-NSString * _Nullable OrchardMarketingNameForDevice(OrchardiOSDevice device) NS_SWIFT_NAME(marketingName(for:));
+OrchardiOSiOSDeviceFamily OrchardiOSiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device) NS_SWIFT_NAME(iOSiOSDeviceFamily(for:));
+NSString * _Nullable OrchardMarketingNameForiOSDevice(OrchardiOSDevice device) NS_SWIFT_NAME(marketingName(for:));
 
 NS_ASSUME_NONNULL_END
+
+#endif

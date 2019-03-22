@@ -92,15 +92,15 @@ public enum iPhones {
 //        case "iPhone3,1", "iPhone3,2", "iPhone3,3":
 //            self = .iPhone4
 //
-//        case "iPhone4,1":
-//            self = .iPhone4S
-//
-//        case "iPhone5,1", "iPhone5,2":
-//            self = .iPhone5
-//
-//        case "iPhone5,3", "iPhone5,4":
-//            self = .iPhone5c
-//
+        case "iPhone4,1":
+            self = .iPhone4S
+
+        case "iPhone5,1", "iPhone5,2":
+            self = .iPhone5
+
+        case "iPhone5,3", "iPhone5,4":
+            self = .iPhone5c
+
         case "iPhone6,1", "iPhone6,2":
             self = .iPhone5s
 
@@ -111,37 +111,59 @@ public enum iPhones {
             self = .iPhone6Plus
 
         case "iPhone8,1":
-            self = .iPhone6s
+            if #available(iOS 9.0, *) {
+                self = .iPhone6s
+            }
 
         case "iPhone8,2":
-            self = .iPhone6sPlus
+            if #available(iOS 9.0, *) {
+                self = .iPhone6sPlus
+            }
 
         case "iPhone8,4":
-            self = .iPhoneSE
+            if #available(iOS 9.3, *) {
+                self = .iPhoneSE
+            }
 
         case "iPhone9,1", "iPhone9,3":
-            self = .iPhone7
+            if #available(iOS 10.0, *) {
+                self = .iPhone7
+            }
 
         case "iPhone9,2", "iPhone9,4":
-            self = .iPhone7Plus
+            if #available(iOS 10.0, *) {
+                self = .iPhone7Plus
+            }
 
         case "iPhone10,1", "iPhone10,4":
-            self = .iPhone8
+            if #available(iOS 11.0, *) {
+                self = .iPhone8
+            }
 
         case "iPhone10,2", "iPhone10,5":
-            self = .iPhone8Plus
+            if #available(iOS 11.0, *) {
+                self = .iPhone8Plus
+            }
 
         case "iPhone10,3", "iPhone10,6":
-            self = .iPhoneX
+            if #available(iOS 11.0, *) {
+                self = .iPhoneX
+            }
 
         case "iPhone11,2":
-            self = .iPhoneXS
+            if #available(iOS 12.0, *) {
+                self = .iPhoneXS
+            }
 
         case "iPhone11,6":
-            self = .iPhoneXSMax
+            if #available(iOS 12.0, *) {
+                self = .iPhoneXSMax
+            }
 
         case "iPhone11,8":
-            self = .iPhoneXR
+            if #available(iOS 12.0, *) {
+                self = .iPhoneXR
+            }
 
         default: break
 

@@ -10,24 +10,29 @@
 
 import Foundation
 
-% from GYBUtilities import ( DeviceFamily, DataPath, canSupport, needsAvailabilityCheck, enumName )
+#if os(watchOS)
+
+% import sys
+% sys.path.insert(0, '../Common')
+% from GYBUtilities import ( OSFamily, canSupport, needsAvailabilityCheck, enumName )
 % import csv
 % def swiftString(x): return "\"" + x + "\""
-public enum iPhones {
+public enum Watches {
 
-% with open(DataPath(DeviceFamily.IPHONE)) as file:
+% with open('../Data/Watches.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
+size = row["Size"]
 released = row["Released"]
 deprecated = row["Deprecated"]
-enum_name = enumName(name)
+enum_name = enumName(name) + "_" + size
 }%
         % if name and released and deprecated:
-    @available (iOS, introduced: ${released}, deprecated: ${deprecated})
+    @available (watchOS, introduced: ${released}, deprecated: ${deprecated})
     case ${enum_name}
         % elif name and released:
-    @available (iOS, introduced: ${released})
+    @available (watchOS, introduced: ${released})
     case ${enum_name}
         % end
 
@@ -39,24 +44,25 @@ enum_name = enumName(name)
         self = .unknown
 
         switch model {
-% with open(DataPath(DeviceFamily.IPHONE)) as file:
+% with open('../Data/Watches.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
+size = row["Size"]
 released = row["Released"]
 codes = list(map(swiftString, row["Codes"].split(";")))
 deprecated = row["Deprecated"]
-enum_name = enumName(name)
+enum_name = enumName(name) + "_" + size
 }%
         % if name and released and deprecated:
-            % if not canSupport(deprecated):
+            % if not canSupport(deprecated, OSFamily.WATCHOS):
 //        case ${", ".join(codes)}:
 //            self = .${enum_name}
 //
             % else:
         case ${", ".join(codes)}:
-                % if needsAvailabilityCheck(released):
-            if #available(iOS ${released}, *) {
+                % if needsAvailabilityCheck(released, OSFamily.WATCHOS):
+            if #available(watchOS ${released}, *) {
                 self = .${enum_name}
             }
                 % else:
@@ -66,8 +72,8 @@ enum_name = enumName(name)
             %end
         %elif name and released:
         case ${", ".join(codes)}:
-            % if needsAvailabilityCheck(released):
-            if #available(iOS ${released}, *) {
+            % if needsAvailabilityCheck(released, OSFamily.WATCHOS):
+            if #available(watchOS ${released}, *) {
                 self = .${enum_name}
             }
             % else:
@@ -84,11 +90,12 @@ enum_name = enumName(name)
 
     public var marketingName: String? {
         switch self {
-% with open(DataPath(DeviceFamily.IPHONE)) as file:
+% with open('../Data/Watches.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
-enum_name = enumName(name)
+size = row["Size"]
+enum_name = enumName(name) + "_" + size
 }%
         case .${enum_name}: return "${name}"
     % end
@@ -98,3 +105,5 @@ enum_name = enumName(name)
         }
     }
 }
+
+#endif

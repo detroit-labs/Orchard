@@ -47,11 +47,13 @@ public enum iPods {
 //        case "iPod4,1":
 //            self = .iPodTouch4
 //
-//        case "iPod5,1":
-//            self = .iPodTouch5
-//
+        case "iPod5,1":
+            self = .iPodTouch5
+
         case "iPod7,1":
-            self = .iPodTouch6
+            if #available(iOS 8.4, *) {
+                self = .iPodTouch6
+            }
 
         default: break
 

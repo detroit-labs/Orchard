@@ -1,0 +1,11 @@
+#  OutputFiles-Swift.xcfilelist
+#  Orchard-Swift
+#
+#  Created by Jeff Kelley on 7/17/18.
+#  
+
+# Swift Source Files
+$(SRCROOT)/Orchard-Swift/iPhones.swift
+$(SRCROOT)/Orchard-Swift/iPads.swift
+$(SRCROOT)/Orchard-Swift/iPods.swift
+$(SRCROOT)/Orchard-Swift/Watches.swift

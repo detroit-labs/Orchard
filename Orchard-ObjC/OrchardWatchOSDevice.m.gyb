@@ -1,0 +1,84 @@
+//
+% warning = "This file was automatically generated and should not be edited."
+// ${warning}
+//
+//  OrchardWatchOSDevice.m
+//  Orchard
+//
+//  Created by Jeff Kelley on 7/17/18.
+//
+
+#import "OrchardWatchOSDevice.h"
+
+#if TARGET_OS_WATCH
+
+#import "NSString+OrchardUtilities.h"
+
+OrchardWatchOSDevice OrchardWatchOSDeviceFromNSString(NSString *string) {
+    if ([string orchard_isEqualToOneOfStrings:@[@"i386", @"x86_64"]]) {
+        return OrchardWatchOSDeviceSimulator;
+    }
+% import sys
+% sys.path.insert(0, '../Common')
+% from GYBUtilities import ( OSFamily, enumName, needsAvailabilityCheck )
+% import csv
+% def objcString(x): return "@\"" + x + "\""
+% with open('../Data/Watches.tsv') as file:
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+size = row["Size"]
+released = row["Released"]
+codes = list(map(objcString, row["Codes"].split(";")))
+deprecated = row["Deprecated"]
+enum_name = enumName(name) + "_" + size
+}%
+        % if name and len(codes) == 1:
+    else if ([string isEqualToString:${codes[0]}]) {
+        % elif name and len(codes) > 1:
+    else if ([string orchard_isEqualToOneOfStrings:@[${",\n\
+                                                     ".join(codes)}]]) {
+        % end
+        %if needsAvailabilityCheck(released, OSFamily.WATCHOS):
+        if (@available(watchOS ${released}, *)) {
+            return OrchardWatchOSDevice${enum_name};
+        }
+        % else:
+        return OrchardWatchOSDevice${enum_name};
+        % end
+    }
+    % end
+% end
+
+    return OrchardWatchOSDeviceUnknown;
+}
+
+NSString *OrchardMarketingNameForWatchOSDevice(OrchardWatchOSDevice device)
+{
+    switch (device) {
+
+        case OrchardWatchOSDeviceSimulator:
+            return nil;
+
+% with open('../Data/Watches.tsv') as file:
+    % for row in csv.DictReader(file, delimiter='\t'):
+%{
+name = row["Name"]
+size = row["Size"]
+enum_name = enumName(name) + "_" + size
+}%
+        case OrchardWatchOSDevice${enum_name}:
+            return @"${name} (${size})";
+
+    % end
+% end
+        default:
+            break;
+    }
+
+    return nil;
+
+#pragma clang diagnostic pop
+}
+
+#endif

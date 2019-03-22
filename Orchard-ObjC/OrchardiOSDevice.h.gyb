@@ -10,22 +10,26 @@
 
 #import <Foundation/Foundation.h>
 
+#if TARGET_OS_IOS
+
 NS_ASSUME_NONNULL_BEGIN
 
-% from GYBUtilities import ( DeviceFamily, DataPath, longestEnumNameLength, enumName )
+% import sys
+% sys.path.insert(0, '../Common')
+% from GYBUtilities import ( iOSDeviceFamily, DataPath, longestEnumNameLength, enumName )
 % import csv
-typedef NS_ENUM(NSUInteger, OrchardiOSDeviceFamily) {
-% for family in DeviceFamily:
-    % formattedFamilyName = '{:31s}'.format("OrchardiOSDeviceFamily" + family.value)
+typedef NS_ENUM(NSUInteger, OrchardiOSiOSDeviceFamily) {
+% for family in iOSDeviceFamily:
+    % formattedFamilyName = '{:31s}'.format("OrchardiOSiOSDeviceFamily" + family.value)
     ${formattedFamilyName} NS_SWIFT_NAME(${family.value}),
 % end
-    OrchardiOSDeviceFamilySimulator NS_SWIFT_NAME(simulator),
-    OrchardiOSDeviceFamilyUnknown   NS_SWIFT_NAME(unknown)
-} NS_SWIFT_NAME(iOSDeviceFamily);
+    OrchardiOSiOSDeviceFamilySimulator NS_SWIFT_NAME(simulator),
+    OrchardiOSiOSDeviceFamilyUnknown   NS_SWIFT_NAME(unknown)
+} NS_SWIFT_NAME(iOSiOSDeviceFamily);
 
 typedef NS_ENUM(NSUInteger, OrchardiOSDevice) {
 
-% for family in DeviceFamily:
+% for family in iOSDeviceFamily:
     % enumNameLength = longestEnumNameLength(family) + len("OrchardiOSDevice")
     % with open(DataPath(family)) as file:
     // ${family.value}s
@@ -49,10 +53,13 @@ elif name and released:
 %end
     OrchardiOSDeviceSimulator NS_SWIFT_NAME(simulator),
     OrchardiOSDeviceUnknown   NS_SWIFT_NAME(unknown)
+
 } NS_SWIFT_NAME(iOSDevice);
 
 OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString *string) NS_SWIFT_NAME(iOSDevice(from:));
-OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device) NS_SWIFT_NAME(iOSDeviceFamily(for:));
-NSString * _Nullable OrchardMarketingNameForDevice(OrchardiOSDevice device) NS_SWIFT_NAME(marketingName(for:));
+OrchardiOSiOSDeviceFamily OrchardiOSiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device) NS_SWIFT_NAME(iOSiOSDeviceFamily(for:));
+NSString * _Nullable OrchardMarketingNameForiOSDevice(OrchardiOSDevice device) NS_SWIFT_NAME(marketingName(for:));
 
 NS_ASSUME_NONNULL_END
+
+#endif

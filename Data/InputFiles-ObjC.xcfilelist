@@ -1,0 +1,20 @@
+#  InputFiles-ObjC.xcfilelist
+#  Orchard-ObjC
+#
+#  Created by Jeff Kelley on 7/17/18.
+#  
+
+# Device Data
+$(SRCROOT)/Data/iPhones.tsv
+$(SRCROOT)/Data/iPads.tsv
+$(SRCROOT)/Data/iPods.tsv
+$(SRCROOT)/Data/Watches.tsv
+
+# Objective-C Header/Source File Templatess
+$(SRCROOT)/Orchard-ObjC/OrchardiOSDevice.h.gyb
+$(SRCROOT)/Orchard-ObjC/OrchardiOSDevice.m.gyb
+$(SRCROOT)/Orchard-ObjC/OrchardWatchOSDevice.h.gyb
+$(SRCROOT)/Orchard-ObjC/OrchardWatchOSDevice.m.gyb
+
+# Template Helper
+$(SRCROOT)/Common/GYBUtilities.py

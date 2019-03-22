@@ -1,0 +1,20 @@
+#  InputFiles-Swift.xcfilelist
+#  Orchard-Swift
+#
+#  Created by Jeff Kelley on 7/17/18.
+#  
+
+# Device Data
+$(SRCROOT)/Data/iPhones.tsv
+$(SRCROOT)/Data/iPads.tsv
+$(SRCROOT)/Data/iPods.tsv
+$(SRCROOT)/Data/Watches.tsv
+
+# Swift Source File Templates
+$(SRCROOT)/Orchard-Swift/iPhones.swift.gyb
+$(SRCROOT)/Orchard-Swift/iPads.swift.gyb
+$(SRCROOT)/Orchard-Swift/iPods.swift.gyb
+$(SRCROOT)/Orchard-Swift/Watches.swift.gyb
+
+# Template Helper
+$(SRCROOT)/Common/GYBUtilities.py

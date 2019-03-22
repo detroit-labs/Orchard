@@ -74,18 +74,18 @@ public enum iPads {
 //        case "iPad1,1":
 //            self = .iPad
 //
-//        case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":
-//            self = .iPad2
-//
-//        case "iPad3,1", "iPad3,2", "iPad3,3":
-//            self = .iPad3
-//
-//        case "iPad3,4", "iPad3,5", "iPAd3,6":
-//            self = .iPad4
-//
-//        case "iPad2,5", "iPad2,6", "iPad2,7":
-//            self = .iPadMini
-//
+        case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":
+            self = .iPad2
+
+        case "iPad3,1", "iPad3,2", "iPad3,3":
+            self = .iPad3
+
+        case "iPad3,4", "iPad3,5", "iPAd3,6":
+            self = .iPad4
+
+        case "iPad2,5", "iPad2,6", "iPad2,7":
+            self = .iPadMini
+
         case "iPad4,1", "iPad4,2", "iPad4,3":
             self = .iPadAir
 
@@ -93,31 +93,49 @@ public enum iPads {
             self = .iPadMini2
 
         case "iPad5,3", "iPad5,4":
-            self = .iPadAir2
+            if #available(iOS 8.1, *) {
+                self = .iPadAir2
+            }
 
         case "iPad4,7", "iPad4,8", "iPad4,9":
-            self = .iPadMini3
+            if #available(iOS 8.1, *) {
+                self = .iPadMini3
+            }
 
         case "iPad5,1", "iPad5,2":
-            self = .iPadMini4
+            if #available(iOS 9.0, *) {
+                self = .iPadMini4
+            }
 
         case "iPad6,7", "iPad6,8":
-            self = .iPadPro12_9Inch
+            if #available(iOS 9.1, *) {
+                self = .iPadPro12_9Inch
+            }
 
         case "iPad6,3", "iPad6,4":
-            self = .iPadPro9_7Inch
+            if #available(iOS 9.3, *) {
+                self = .iPadPro9_7Inch
+            }
 
         case "iPad6,11", "iPad6,12":
-            self = .iPad5
+            if #available(iOS 10.3, *) {
+                self = .iPad5
+            }
 
         case "iPad7,1", "iPad7,2":
-            self = .iPadPro12_9Inch2
+            if #available(iOS 10.3, *) {
+                self = .iPadPro12_9Inch2
+            }
 
         case "iPad7,3", "iPad7,4":
-            self = .iPadPro10_5Inch
+            if #available(iOS 10.3, *) {
+                self = .iPadPro10_5Inch
+            }
 
         case "iPad7,5", "iPad7,6":
-            self = .iPad6
+            if #available(iOS 11.3, *) {
+                self = .iPad6
+            }
 
         case "iPad8,5", "iPad8,6", "iPad8,7", "iPad8,8":
             if #available(iOS 12.1, *) {

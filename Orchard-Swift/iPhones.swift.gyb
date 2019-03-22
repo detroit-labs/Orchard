@@ -2,20 +2,22 @@
 % warning = "This file was automatically generated and should not be edited."
 // ${warning}
 //
-//  iPods.swift
+//  iPhones.swift
 //  Orchard
 //
-//  Created by Jeff Kelley on 7/17/18.
+//  Created by Jeff Kelley on 7/16/18.
 //
 
 import Foundation
 
-% from GYBUtilities import ( DeviceFamily, DataPath, canSupport, needsAvailabilityCheck, enumName )
+% import sys
+% sys.path.insert(0, '../Common')
+% from GYBUtilities import ( iOSDeviceFamily, DataPath, canSupport, needsAvailabilityCheck, enumName )
 % import csv
 % def swiftString(x): return "\"" + x + "\""
-public enum iPods {
+public enum iPhones {
 
-% with open(DataPath(DeviceFamily.IPOD)) as file:
+% with open(DataPath(iOSDeviceFamily.IPHONE)) as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
@@ -39,7 +41,7 @@ enum_name = enumName(name)
         self = .unknown
 
         switch model {
-% with open(DataPath(DeviceFamily.IPOD)) as file:
+% with open(DataPath(iOSDeviceFamily.IPHONE)) as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
@@ -84,7 +86,7 @@ enum_name = enumName(name)
 
     public var marketingName: String? {
         switch self {
-% with open(DataPath(DeviceFamily.IPOD)) as file:
+% with open(DataPath(iOSDeviceFamily.IPHONE)) as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]

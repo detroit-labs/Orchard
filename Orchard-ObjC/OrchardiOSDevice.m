@@ -9,6 +9,8 @@
 
 #import "OrchardiOSDevice.h"
 
+#if TARGET_OS_IOS
+
 #import "NSString+OrchardUtilities.h"
 
 OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
@@ -212,13 +214,13 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
     return OrchardiOSDeviceUnknown;
 }
 
-OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device)
+OrchardiOSiOSDeviceFamily OrchardiOSiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device)
 {
     // Disable deprecation warnings for historical accuracy
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
     switch (device) {
-        case OrchardiOSDeviceSimulator: return OrchardiOSDeviceFamilySimulator;
+        case OrchardiOSDeviceSimulator: return OrchardiOSiOSDeviceFamilySimulator;
 
 #pragma mark - iPhones
 
@@ -243,7 +245,7 @@ OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice devic
         case OrchardiOSDeviceiPhoneXS:
         case OrchardiOSDeviceiPhoneXSMax:
         case OrchardiOSDeviceiPhoneXR:
-            return OrchardiOSDeviceFamilyiPhone;
+            return OrchardiOSiOSDeviceFamilyiPhone;
 
 #pragma mark - iPads
 
@@ -265,7 +267,7 @@ OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice devic
         case OrchardiOSDeviceiPad6:
         case OrchardiOSDeviceiPadPro12_9Inch3:
         case OrchardiOSDeviceiPadPro11Inch:
-            return OrchardiOSDeviceFamilyiPad;
+            return OrchardiOSiOSDeviceFamilyiPad;
 
 #pragma mark - iPods
 
@@ -275,18 +277,20 @@ OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice devic
         case OrchardiOSDeviceiPodTouch4:
         case OrchardiOSDeviceiPodTouch5:
         case OrchardiOSDeviceiPodTouch6:
-            return OrchardiOSDeviceFamilyiPod;
+            return OrchardiOSiOSDeviceFamilyiPod;
 
 #pragma mark -
 
         case OrchardiOSDeviceUnknown:
         default:
-            return OrchardiOSDeviceFamilyUnknown;
+            return OrchardiOSiOSDeviceFamilyUnknown;
     }
+
 #pragma clang diagnostic pop
+
 }
 
-NSString *OrchardMarketingNameForDevice(OrchardiOSDevice device)
+NSString *OrchardMarketingNameForiOSDevice(OrchardiOSDevice device)
 {
     // Disable deprecation warnings for historical accuracy
 #pragma clang diagnostic push
@@ -295,61 +299,149 @@ NSString *OrchardMarketingNameForDevice(OrchardiOSDevice device)
 
     switch (device) {
 
-        case OrchardiOSDeviceSimulator: return nil;
+        case OrchardiOSDeviceSimulator:
+            return nil;
 
 #pragma mark - iPhones
 
-        case OrchardiOSDeviceiPhone: return @"iPhone";
-        case OrchardiOSDeviceiPhone3G: return @"iPhone 3G";
-        case OrchardiOSDeviceiPhone3GS: return @"iPhone 3GS";
-        case OrchardiOSDeviceiPhone4: return @"iPhone 4";
-        case OrchardiOSDeviceiPhone4S: return @"iPhone 4S";
-        case OrchardiOSDeviceiPhone5: return @"iPhone 5";
-        case OrchardiOSDeviceiPhone5c: return @"iPhone 5c";
-        case OrchardiOSDeviceiPhone5s: return @"iPhone 5s";
-        case OrchardiOSDeviceiPhone6: return @"iPhone 6";
-        case OrchardiOSDeviceiPhone6Plus: return @"iPhone 6 Plus";
-        case OrchardiOSDeviceiPhone6s: return @"iPhone 6s";
-        case OrchardiOSDeviceiPhone6sPlus: return @"iPhone 6s Plus";
-        case OrchardiOSDeviceiPhoneSE: return @"iPhone SE";
-        case OrchardiOSDeviceiPhone7: return @"iPhone 7";
-        case OrchardiOSDeviceiPhone7Plus: return @"iPhone 7 Plus";
-        case OrchardiOSDeviceiPhone8: return @"iPhone 8";
-        case OrchardiOSDeviceiPhone8Plus: return @"iPhone 8 Plus";
-        case OrchardiOSDeviceiPhoneX: return @"iPhone X";
-        case OrchardiOSDeviceiPhoneXS: return @"iPhone XS";
-        case OrchardiOSDeviceiPhoneXSMax: return @"iPhone XS Max";
-        case OrchardiOSDeviceiPhoneXR: return @"iPhone XR";
+        case OrchardiOSDeviceiPhone:
+            return @"iPhone";
+
+        case OrchardiOSDeviceiPhone3G:
+            return @"iPhone 3G";
+
+        case OrchardiOSDeviceiPhone3GS:
+            return @"iPhone 3GS";
+
+        case OrchardiOSDeviceiPhone4:
+            return @"iPhone 4";
+
+        case OrchardiOSDeviceiPhone4S:
+            return @"iPhone 4S";
+
+        case OrchardiOSDeviceiPhone5:
+            return @"iPhone 5";
+
+        case OrchardiOSDeviceiPhone5c:
+            return @"iPhone 5c";
+
+        case OrchardiOSDeviceiPhone5s:
+            return @"iPhone 5s";
+
+        case OrchardiOSDeviceiPhone6:
+            return @"iPhone 6";
+
+        case OrchardiOSDeviceiPhone6Plus:
+            return @"iPhone 6 Plus";
+
+        case OrchardiOSDeviceiPhone6s:
+            return @"iPhone 6s";
+
+        case OrchardiOSDeviceiPhone6sPlus:
+            return @"iPhone 6s Plus";
+
+        case OrchardiOSDeviceiPhoneSE:
+            return @"iPhone SE";
+
+        case OrchardiOSDeviceiPhone7:
+            return @"iPhone 7";
+
+        case OrchardiOSDeviceiPhone7Plus:
+            return @"iPhone 7 Plus";
+
+        case OrchardiOSDeviceiPhone8:
+            return @"iPhone 8";
+
+        case OrchardiOSDeviceiPhone8Plus:
+            return @"iPhone 8 Plus";
+
+        case OrchardiOSDeviceiPhoneX:
+            return @"iPhone X";
+
+        case OrchardiOSDeviceiPhoneXS:
+            return @"iPhone XS";
+
+        case OrchardiOSDeviceiPhoneXSMax:
+            return @"iPhone XS Max";
+
+        case OrchardiOSDeviceiPhoneXR:
+            return @"iPhone XR";
 
 #pragma mark - iPads
 
-        case OrchardiOSDeviceiPad: return @"iPad";
-        case OrchardiOSDeviceiPad2: return @"iPad 2";
-        case OrchardiOSDeviceiPad3: return @"iPad (3rd Generation)";
-        case OrchardiOSDeviceiPad4: return @"iPad (4th Generation)";
-        case OrchardiOSDeviceiPadMini: return @"iPad mini";
-        case OrchardiOSDeviceiPadAir: return @"iPad Air";
-        case OrchardiOSDeviceiPadMini2: return @"iPad mini 2";
-        case OrchardiOSDeviceiPadAir2: return @"iPad Air 2";
-        case OrchardiOSDeviceiPadMini3: return @"iPad mini 3";
-        case OrchardiOSDeviceiPadMini4: return @"iPad mini 4";
-        case OrchardiOSDeviceiPadPro12_9Inch: return @"iPad Pro (12.9-inch)";
-        case OrchardiOSDeviceiPadPro9_7Inch: return @"iPad Pro (9.7-inch)";
-        case OrchardiOSDeviceiPad5: return @"iPad (5th Generation)";
-        case OrchardiOSDeviceiPadPro12_9Inch2: return @"iPad Pro (12.9-inch, 2nd Generation)";
-        case OrchardiOSDeviceiPadPro10_5Inch: return @"iPad Pro (10.5-inch)";
-        case OrchardiOSDeviceiPad6: return @"iPad (6th Generation)";
-        case OrchardiOSDeviceiPadPro12_9Inch3: return @"iPad Pro (12.9-inch, 3rd Generation)";
-        case OrchardiOSDeviceiPadPro11Inch: return @"iPad Pro (11-inch)";
+        case OrchardiOSDeviceiPad:
+            return @"iPad";
+
+        case OrchardiOSDeviceiPad2:
+            return @"iPad 2";
+
+        case OrchardiOSDeviceiPad3:
+            return @"iPad (3rd Generation)";
+
+        case OrchardiOSDeviceiPad4:
+            return @"iPad (4th Generation)";
+
+        case OrchardiOSDeviceiPadMini:
+            return @"iPad mini";
+
+        case OrchardiOSDeviceiPadAir:
+            return @"iPad Air";
+
+        case OrchardiOSDeviceiPadMini2:
+            return @"iPad mini 2";
+
+        case OrchardiOSDeviceiPadAir2:
+            return @"iPad Air 2";
+
+        case OrchardiOSDeviceiPadMini3:
+            return @"iPad mini 3";
+
+        case OrchardiOSDeviceiPadMini4:
+            return @"iPad mini 4";
+
+        case OrchardiOSDeviceiPadPro12_9Inch:
+            return @"iPad Pro (12.9-inch)";
+
+        case OrchardiOSDeviceiPadPro9_7Inch:
+            return @"iPad Pro (9.7-inch)";
+
+        case OrchardiOSDeviceiPad5:
+            return @"iPad (5th Generation)";
+
+        case OrchardiOSDeviceiPadPro12_9Inch2:
+            return @"iPad Pro (12.9-inch, 2nd Generation)";
+
+        case OrchardiOSDeviceiPadPro10_5Inch:
+            return @"iPad Pro (10.5-inch)";
+
+        case OrchardiOSDeviceiPad6:
+            return @"iPad (6th Generation)";
+
+        case OrchardiOSDeviceiPadPro12_9Inch3:
+            return @"iPad Pro (12.9-inch, 3rd Generation)";
+
+        case OrchardiOSDeviceiPadPro11Inch:
+            return @"iPad Pro (11-inch)";
 
 #pragma mark - iPods
 
-        case OrchardiOSDeviceiPodTouch: return @"iPod touch";
-        case OrchardiOSDeviceiPodTouch2: return @"iPod touch (2nd Generation)";
-        case OrchardiOSDeviceiPodTouch3: return @"iPod touch (3rd Generation)";
-        case OrchardiOSDeviceiPodTouch4: return @"iPod touch (4th Generation)";
-        case OrchardiOSDeviceiPodTouch5: return @"iPod touch (5th Generation)";
-        case OrchardiOSDeviceiPodTouch6: return @"iPod touch (6th Generation)";
+        case OrchardiOSDeviceiPodTouch:
+            return @"iPod touch";
+
+        case OrchardiOSDeviceiPodTouch2:
+            return @"iPod touch (2nd Generation)";
+
+        case OrchardiOSDeviceiPodTouch3:
+            return @"iPod touch (3rd Generation)";
+
+        case OrchardiOSDeviceiPodTouch4:
+            return @"iPod touch (4th Generation)";
+
+        case OrchardiOSDeviceiPodTouch5:
+            return @"iPod touch (5th Generation)";
+
+        case OrchardiOSDeviceiPodTouch6:
+            return @"iPod touch (6th Generation)";
 
 #pragma mark -
 
@@ -360,4 +452,7 @@ NSString *OrchardMarketingNameForDevice(OrchardiOSDevice device)
     return nil;
 
 #pragma clang diagnostic pop
+
 }
+
+#endif

@@ -5,17 +5,28 @@
 //  Created by Jeff Kelley on 7/17/18.
 //
 
+#if os(iOS)
 import UIKit
+#elseif os(watchOS)
+import WatchKit
+#endif
 
 public enum DeviceIdentity: Equatable {
+    
+    #if os(iOS)
     case iPhone(iPhones)
     case iPad(iPads)
     case iPod(iPods)
+    #elseif os(watchOS)
+    case watch(Watches)
+    #endif
+    
     case simulator
     case unknown
 
     public static func ==(lhs: DeviceIdentity, rhs: DeviceIdentity) -> Bool {
         switch (lhs, rhs) {
+            #if os(iOS)
         case let (.iPhone(a), .iPhone(b)):
             return a == b
 
@@ -24,6 +35,10 @@ public enum DeviceIdentity: Equatable {
 
         case let (.iPod(a), .iPod(b)):
             return a == b
+            #elseif os(watchOS)
+        case let (.watch(a), .watch(b)):
+            return a == b
+            #endif
 
         case (.unknown, .unknown):
             return true
@@ -38,6 +53,7 @@ public enum DeviceIdentity: Equatable {
 }
 
 internal func parseDeviceIdentity(from modelString: String) -> DeviceIdentity {
+    #if os(iOS)
     if modelString.hasPrefix("iPhone") {
         return .iPhone(iPhones(model: modelString))
     }
@@ -47,22 +63,38 @@ internal func parseDeviceIdentity(from modelString: String) -> DeviceIdentity {
     else if modelString.hasPrefix("iPod") {
         return .iPod(iPods(model: modelString))
     }
-    else if modelString == "i386" || modelString == "x86_64" {
+    #elseif os(watchOS)
+    if modelString.hasPrefix("Watch") {
+        return .watch(Watches(model: modelString))
+    }
+    #endif
+    
+    if modelString == "i386" || modelString == "x86_64" {
         return .simulator
     }
 
     return .unknown
 }
 
+#if os(iOS)
 extension UIDevice {
     public var deviceIdentity: DeviceIdentity {
-        guard let modelName = modelName() else { return .unknown }
+        guard let modelName = DeviceModelName() else { return .unknown }
 
         return parseDeviceIdentity(from: modelName)
     }
 }
+#elseif os(watchOS)
+extension WKInterfaceDevice {
+    public var deviceIdentity: DeviceIdentity {
+        guard let modelName = DeviceModelName() else { return .unknown }
+        
+        return parseDeviceIdentity(from: modelName)
+    }
+}
+#endif
 
-func modelName() -> String? {
+private func DeviceModelName() -> String? {
     if let simulatorModelIdentifier = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] {
         return simulatorModelIdentifier
     }
