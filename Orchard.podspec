@@ -29,6 +29,7 @@ make decisions based on that.
   spec.tvos.frameworks    = 'Foundation', 'UIKit'
 
   spec.subspec 'Swift' do |ss|
+    ss.swift_version = "4.2"
     ss.source_files = 'Orchard-Swift/*.swift'
   end
 
