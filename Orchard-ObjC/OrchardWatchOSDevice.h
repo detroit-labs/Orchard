@@ -28,6 +28,7 @@ typedef NS_ENUM(NSUInteger, OrchardWatchOSDevice) {
 
     OrchardWatchOSDeviceSimulator NS_SWIFT_NAME(simulator),
     OrchardWatchOSDeviceUnknown   NS_SWIFT_NAME(unknown)
+
 } NS_SWIFT_NAME(watchOSDevice);
 
 OrchardWatchOSDevice OrchardWatchOSDeviceFromNSString(NSString *string) NS_SWIFT_NAME(watchOSDevice(from:));

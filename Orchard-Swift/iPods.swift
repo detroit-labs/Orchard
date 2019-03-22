@@ -9,6 +9,8 @@
 
 import Foundation
 
+#if os(iOS)
+
 public enum iPods {
 
     @available (iOS, introduced: 1.0, deprecated: 3.2)
@@ -73,3 +75,5 @@ public enum iPods {
         }
     }
 }
+
+#endif

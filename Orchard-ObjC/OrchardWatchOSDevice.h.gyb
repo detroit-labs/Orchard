@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 % import sys
 % sys.path.insert(0, '../Common')
 % from GYBUtilities import ( watchOSDeviceFamily, enumName, longestEnumNameLength, versiontupleAdd, versiontupleToString )
-% from distutils.version import StrictVersion
 % import csv
 typedef NS_ENUM(NSUInteger, OrchardWatchOSDevice) {
 
@@ -50,6 +49,7 @@ elif name and released:
 
     OrchardWatchOSDeviceSimulator NS_SWIFT_NAME(simulator),
     OrchardWatchOSDeviceUnknown   NS_SWIFT_NAME(unknown)
+
 } NS_SWIFT_NAME(watchOSDevice);
 
 OrchardWatchOSDevice OrchardWatchOSDeviceFromNSString(NSString *string) NS_SWIFT_NAME(watchOSDevice(from:));

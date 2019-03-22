@@ -6,6 +6,7 @@ import os
 class OSFamily(Enum):
 	IOS = "iOS"
 	WATCHOS = "watchOS"
+	TVOS = "tvOS"
 
 class iOSDeviceFamily(Enum):
 	__order__ = 'IPHONE IPAD'
@@ -16,6 +17,9 @@ class iOSDeviceFamily(Enum):
 class watchOSDeviceFamily(Enum):
 	WATCH = "Watch"
 
+class tvOSDeviceFamily(Enum):
+	TV = "AppleTV"
+
 def DataPath(deviceFamily = Enum):
 	if deviceFamily is iOSDeviceFamily.IPHONE:
 		return '../Data/iPhones.tsv'
@@ -25,6 +29,8 @@ def DataPath(deviceFamily = Enum):
 		return '../Data/iPods.tsv'
 	elif deviceFamily is watchOSDeviceFamily.WATCH:
 		return '../Data/Watches.tsv'
+	elif deviceFamily is tvOSDeviceFamily.TV:
+		return '../Data/TVs.tsv'
 
 def longestEnumNameLength(deviceFamily = iOSDeviceFamily.IPHONE):
 	longest = 0
@@ -37,6 +43,7 @@ def longestEnumNameLength(deviceFamily = iOSDeviceFamily.IPHONE):
 
 iOSDeploymentTarget=os.getenv('IPHONEOS_DEPLOYMENT_TARGET', '8.0')
 watchOSDeploymentTarget=os.getenv('WATCHOS_DEPLOYMENT_TARGET', '2.0')
+tvOSDeploymentTarget=os.getenv('TVOS_DEPLOYMENT_TARGET', '9.0')
 
 def versiontuple(v):
 	return tuple(map(int, v.split('.')))
@@ -52,14 +59,8 @@ def canSupport(version, os = OSFamily.IOS):
 
 	if os == OSFamily.WATCHOS:
 		minimum = versiontuple(watchOSDeploymentTarget)
-
-	return versiontuple(version) > minimum
-
-def needsAvailabilityCheck(version, os = OSFamily.IOS):
-	minimum = versiontuple(iOSDeploymentTarget)
-
-	if os == OSFamily.WATCHOS:
-		minimum = versiontuple(watchOSDeploymentTarget)
+	elif os == OSFamily.TVOS:
+		minimum = versiontuple(tvOSDeploymentTarget)
 
 	return versiontuple(version) > minimum
 

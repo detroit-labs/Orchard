@@ -1,3 +1,4 @@
+
 //
 % warning = "This file was automatically generated and should not be edited."
 // ${warning}
@@ -10,16 +11,16 @@
 
 import Foundation
 
-#if os(iOS)
+#if os(tvOS)
 
 % import sys
 % sys.path.insert(0, '../Common')
-% from GYBUtilities import ( iOSDeviceFamily, DataPath, canSupport, enumName )
+% from GYBUtilities import ( OSFamily, canSupport, enumName )
 % import csv
 % def swiftString(x): return "\"" + x + "\""
-public enum iPhones {
+public enum TVs {
 
-% with open(DataPath(iOSDeviceFamily.IPHONE)) as file:
+% with open('../Data/TVs.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
@@ -28,10 +29,10 @@ deprecated = row["Deprecated"]
 enum_name = enumName(name)
 }%
         % if name and released and deprecated:
-    @available (iOS, introduced: ${released}, deprecated: ${deprecated})
+    @available (tvOS, introduced: ${released}, deprecated: ${deprecated})
     case ${enum_name}
         % elif name and released:
-    @available (iOS, introduced: ${released})
+    @available (tvOS, introduced: ${released})
     case ${enum_name}
         % end
 
@@ -43,7 +44,7 @@ enum_name = enumName(name)
         self = .unknown
 
         switch model {
-% with open(DataPath(iOSDeviceFamily.IPHONE)) as file:
+% with open('../Data/TVs.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
@@ -53,14 +54,14 @@ deprecated = row["Deprecated"]
 enum_name = enumName(name)
 }%
         % if name and released and deprecated:
-            % if not canSupport(deprecated):
+            % if not canSupport(deprecated, OSFamily.WATCHOS):
 //        case ${", ".join(codes)}:
 //            self = .${enum_name}
 //
             % else:
         case ${", ".join(codes)}:
-                % if canSupport(released):
-            if #available(iOS ${released}, *) {
+                % if canSupport(released, OSFamily.WATCHOS):
+            if #available(tvOS ${released}, *) {
                 self = .${enum_name}
             }
                 % else:
@@ -70,8 +71,8 @@ enum_name = enumName(name)
             %end
         %elif name and released:
         case ${", ".join(codes)}:
-            % if canSupport(released):
-            if #available(iOS ${released}, *) {
+            % if canSupport(released, OSFamily.TVOS):
+            if #available(tvOS ${released}, *) {
                 self = .${enum_name}
             }
             % else:
@@ -88,7 +89,7 @@ enum_name = enumName(name)
 
     public var marketingName: String? {
         switch self {
-% with open(DataPath(iOSDeviceFamily.IPHONE)) as file:
+% with open('../Data/TVs.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]

@@ -14,7 +14,7 @@ import Foundation
 
 % import sys
 % sys.path.insert(0, '../Common')
-% from GYBUtilities import ( OSFamily, canSupport, needsAvailabilityCheck, enumName )
+% from GYBUtilities import ( OSFamily, canSupport, enumName )
 % import csv
 % def swiftString(x): return "\"" + x + "\""
 public enum Watches {
@@ -61,7 +61,7 @@ enum_name = enumName(name) + "_" + size
 //
             % else:
         case ${", ".join(codes)}:
-                % if needsAvailabilityCheck(released, OSFamily.WATCHOS):
+                % if canSupport(released, OSFamily.WATCHOS):
             if #available(watchOS ${released}, *) {
                 self = .${enum_name}
             }
@@ -72,7 +72,7 @@ enum_name = enumName(name) + "_" + size
             %end
         %elif name and released:
         case ${", ".join(codes)}:
-            % if needsAvailabilityCheck(released, OSFamily.WATCHOS):
+            % if canSupport(released, OSFamily.WATCHOS):
             if #available(watchOS ${released}, *) {
                 self = .${enum_name}
             }

@@ -9,6 +9,8 @@
 
 import Foundation
 
+#if os(iOS)
+
 public enum iPads {
 
     @available (iOS, introduced: 3.2, deprecated: 6.0)
@@ -177,3 +179,5 @@ public enum iPads {
         }
     }
 }
+
+#endif

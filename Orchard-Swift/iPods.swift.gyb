@@ -10,9 +10,11 @@
 
 import Foundation
 
+#if os(iOS)
+
 % import sys
 % sys.path.insert(0, '../Common')
-% from GYBUtilities import ( iOSDeviceFamily, DataPath, canSupport, needsAvailabilityCheck, enumName )
+% from GYBUtilities import ( iOSDeviceFamily, DataPath, canSupport, enumName )
 % import csv
 % def swiftString(x): return "\"" + x + "\""
 public enum iPods {
@@ -57,7 +59,7 @@ enum_name = enumName(name)
 //
             % else:
         case ${", ".join(codes)}:
-                % if needsAvailabilityCheck(released):
+                % if canSupport(released):
             if #available(iOS ${released}, *) {
                 self = .${enum_name}
             }
@@ -68,7 +70,7 @@ enum_name = enumName(name)
             %end
         %elif name and released:
         case ${", ".join(codes)}:
-            % if needsAvailabilityCheck(released):
+            % if canSupport(released):
             if #available(iOS ${released}, *) {
                 self = .${enum_name}
             }
@@ -100,3 +102,5 @@ enum_name = enumName(name)
         }
     }
 }
+
+#endif

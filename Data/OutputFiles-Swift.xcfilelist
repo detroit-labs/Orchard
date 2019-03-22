@@ -9,3 +9,4 @@ $(SRCROOT)/Orchard-Swift/iPhones.swift
 $(SRCROOT)/Orchard-Swift/iPads.swift
 $(SRCROOT)/Orchard-Swift/iPods.swift
 $(SRCROOT)/Orchard-Swift/Watches.swift
+$(SRCROOT)/Orchard-Swift/TVs.swift

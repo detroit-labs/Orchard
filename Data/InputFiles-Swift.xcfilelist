@@ -9,12 +9,14 @@ $(SRCROOT)/Data/iPhones.tsv
 $(SRCROOT)/Data/iPads.tsv
 $(SRCROOT)/Data/iPods.tsv
 $(SRCROOT)/Data/Watches.tsv
+$(SRCROOT)/Data/TVs.tsv
 
 # Swift Source File Templates
 $(SRCROOT)/Orchard-Swift/iPhones.swift.gyb
 $(SRCROOT)/Orchard-Swift/iPads.swift.gyb
 $(SRCROOT)/Orchard-Swift/iPods.swift.gyb
 $(SRCROOT)/Orchard-Swift/Watches.swift.gyb
+$(SRCROOT)/Orchard-Swift/TVs.swift.gyb
 
 # Template Helper
 $(SRCROOT)/Common/GYBUtilities.py
