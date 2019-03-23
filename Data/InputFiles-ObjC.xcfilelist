@@ -21,3 +21,6 @@ $(SRCROOT)/Orchard-ObjC/tvOS/OrchardtvOSDevice.m.gyb
 
 # Template Helper
 $(SRCROOT)/Common/GYBUtilities.py
+
+# Shell Script
+$(SRCROOT)/Common/GYBPhase.sh

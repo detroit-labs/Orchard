@@ -20,3 +20,6 @@ $(SRCROOT)/Orchard-Swift/tvOS/TVs.swift.gyb
 
 # Template Helper
 $(SRCROOT)/Common/GYBUtilities.py
+
+# Shell Script
+$(SRCROOT)/Common/GYBPhase.sh
