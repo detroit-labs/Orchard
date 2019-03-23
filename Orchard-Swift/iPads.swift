@@ -65,7 +65,7 @@ public enum iPads {
     case iPadPro12_9Inch3
 
     @available (iOS, introduced: 12.1)
-    case iPadPro11_0Inch
+    case iPadPro11Inch
 
     case unknown
 
@@ -146,7 +146,7 @@ public enum iPads {
 
         case "iPad8,1", "iPad8,2", "iPad8,3", "iPad8,4":
             if #available(iOS 12.1, *) {
-                self = .iPadPro11_0Inch
+                self = .iPadPro11Inch
             }
 
         default: break
@@ -173,7 +173,7 @@ public enum iPads {
         case .iPadPro10_5Inch: return "iPad Pro (10.5-inch)"
         case .iPad6: return "iPad (6th Generation)"
         case .iPadPro12_9Inch3: return "iPad Pro (12.9-inch, 3rd Generation)"
-        case .iPadPro11_0Inch: return "iPad Pro (11.0-inch)"
+        case .iPadPro11Inch: return "iPad Pro (11-inch)"
 
         default: return nil
         }
