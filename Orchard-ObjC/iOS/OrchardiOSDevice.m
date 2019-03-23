@@ -94,7 +94,8 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
     else if ([string isEqualToString:@"iPhone11,2"]) {
         return OrchardiOSDeviceiPhoneXS;
     }
-    else if ([string isEqualToString:@"iPhone11,6"]) {
+    else if ([string orchard_isEqualToOneOfStrings:@[@"iPhone11,4",
+                                                     @"iPhone11,6"]]) {
         return OrchardiOSDeviceiPhoneXSMax;
     }
     else if ([string isEqualToString:@"iPhone11,8"]) {

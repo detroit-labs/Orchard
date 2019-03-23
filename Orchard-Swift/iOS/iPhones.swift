@@ -157,7 +157,7 @@ public enum iPhones {
                 self = .iPhoneXS
             }
 
-        case "iPhone11,6":
+        case "iPhone11,4", "iPhone11,6":
             if #available(iOS 12.0, *) {
                 self = .iPhoneXSMax
             }
