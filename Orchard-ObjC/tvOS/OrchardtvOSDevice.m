@@ -11,9 +11,8 @@
 
 #if TARGET_OS_TV
 
-#import <sys/utsname.h>
-
 #import "NSString+OrchardUtilities.h"
+#import "OrchardDeviceIdentification.h"
 
 OrchardtvOSDevice OrchardtvOSDeviceFromNSString(NSString *string) {
     if ([string orchard_isEqualToOneOfStrings:@[@"i386", @"x86_64"]]) {
@@ -50,20 +49,7 @@ NSString *OrchardMarketingNameFortvOSDevice(OrchardtvOSDevice device)
 
 - (OrchardtvOSDevice)orchardiOSDevice
 {
-    NSString *simulatorIdentifier =
-    NSProcessInfo.processInfo.environment[@"SIMULATOR_MODEL_IDENTIFIER"];
-
-    if (simulatorIdentifier != nil) {
-        return OrchardtvOSDeviceFromNSString(simulatorIdentifier);
-    }
-
-    struct utsname systemInfo;
-    uname(&systemInfo);
-
-    NSString *identifier = [NSString stringWithCString:systemInfo.machine
-                                              encoding:NSUTF8StringEncoding];
-
-    return OrchardtvOSDeviceFromNSString(identifier);
+    return OrchardtvOSDeviceFromNSString(OrchardDeviceIdentifier());
 }
 
 @end

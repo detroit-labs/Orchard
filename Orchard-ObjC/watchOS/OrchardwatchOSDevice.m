@@ -14,6 +14,7 @@
 #import <sys/utsname.h>
 
 #import "NSString+OrchardUtilities.h"
+#import "OrchardDeviceIdentification.h"
 
 OrchardwatchOSDevice OrchardwatchOSDeviceFromNSString(NSString *string) {
     if ([string orchard_isEqualToOneOfStrings:@[@"i386", @"x86_64"]]) {
@@ -123,20 +124,7 @@ NSString *OrchardMarketingNameForWatchOSDevice(OrchardwatchOSDevice device)
 
 - (OrchardwatchOSDevice)orchardwatchOSDevice
 {
-    NSString *simulatorIdentifier =
-    NSProcessInfo.processInfo.environment[@"SIMULATOR_MODEL_IDENTIFIER"];
-
-    if (simulatorIdentifier != nil) {
-        return OrchardwatchOSDeviceFromNSString(simulatorIdentifier);
-    }
-
-    struct utsname systemInfo;
-    uname(&systemInfo);
-
-    NSString *identifier = [NSString stringWithCString:systemInfo.machine
-                                              encoding:NSUTF8StringEncoding];
-
-    return OrchardwatchOSDeviceFromNSString(identifier);
+    return OrchardwatchOSDeviceFromNSString(OrchardDeviceIdentifier());
 }
 
 @end
