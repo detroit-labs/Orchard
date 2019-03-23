@@ -10,10 +10,7 @@ GYB_PATH="${SRCROOT}/Vendor/gyb/gyb"
 function gyb {
     file=$1
     if [ ${file: -4} == ".gyb" ]; then
-        echo "GYBing file:" $file
         "${GYB_PATH}" --line-directive '' -o "${file%.gyb}" "$file";
-    else
-        echo "Skipping file" $file "since it's not a .gyb file"
     fi
 }
 
