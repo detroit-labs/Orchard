@@ -11,6 +11,8 @@
 
 #if TARGET_OS_WATCH
 
+#import <WatchKit/WatchKit.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, OrchardWatchOSDevice) {
@@ -30,6 +32,12 @@ typedef NS_ENUM(NSUInteger, OrchardWatchOSDevice) {
     OrchardWatchOSDeviceUnknown   NS_SWIFT_NAME(unknown)
 
 } NS_SWIFT_NAME(watchOSDevice);
+
+@interface WKInterfaceDevice (Orchard)
+
+- (OrchardWatchOSDevice)orchardwatchOSDevice;
+
+@end
 
 OrchardWatchOSDevice OrchardWatchOSDeviceFromNSString(NSString *string) NS_SWIFT_NAME(watchOSDevice(from:));
 NSString * _Nullable OrchardMarketingNameForWatchOSDevice(OrchardWatchOSDevice device) NS_SWIFT_NAME(marketingName(for:));

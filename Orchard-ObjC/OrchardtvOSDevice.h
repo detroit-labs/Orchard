@@ -11,6 +11,8 @@
 
 #if TARGET_OS_TV
 
+#import <UIKit/UIKit.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, OrchardtvOSDevice) {
@@ -22,6 +24,12 @@ typedef NS_ENUM(NSUInteger, OrchardtvOSDevice) {
     OrchardtvOSDeviceUnknown   NS_SWIFT_NAME(unknown)
 
 } NS_SWIFT_NAME(tvOSDevice);
+
+@interface UIDevice (Orchard)
+
+- (OrchardtvOSDevice)orchardiOSDevice;
+
+@end
 
 OrchardtvOSDevice OrchardtvOSDeviceFromNSString(NSString *string) NS_SWIFT_NAME(tvOSDevice(from:));
 NSString * _Nullable OrchardMarketingNameFortvOSDevice(OrchardtvOSDevice device) NS_SWIFT_NAME(marketingName(for:));

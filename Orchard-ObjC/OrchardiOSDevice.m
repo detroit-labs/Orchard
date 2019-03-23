@@ -11,6 +11,8 @@
 
 #if TARGET_OS_IOS
 
+#import <sys/utsname.h>
+
 #import "NSString+OrchardUtilities.h"
 
 OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
@@ -454,5 +456,27 @@ NSString *OrchardMarketingNameForiOSDevice(OrchardiOSDevice device)
 #pragma clang diagnostic pop
 
 }
+
+@implementation UIDevice (Orchard)
+
+- (OrchardiOSDevice)orchardiOSDevice
+{
+    NSString *simulatorIdentifier =
+    NSProcessInfo.processInfo.environment[@"SIMULATOR_MODEL_IDENTIFIER"];
+
+    if (simulatorIdentifier != nil) {
+        return OrchardiOSDeviceFromNSString(simulatorIdentifier);
+    }
+
+    struct utsname systemInfo;
+    uname(&systemInfo);
+
+    NSString *identifier = [NSString stringWithCString:systemInfo.machine
+                                              encoding:NSUTF8StringEncoding];
+
+    return OrchardiOSDeviceFromNSString(identifier);
+}
+
+@end
 
 #endif

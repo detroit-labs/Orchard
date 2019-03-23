@@ -11,6 +11,8 @@
 
 #if TARGET_OS_WATCH
 
+#import <sys/utsname.h>
+
 #import "NSString+OrchardUtilities.h"
 
 OrchardWatchOSDevice OrchardWatchOSDeviceFromNSString(NSString *string) {
@@ -116,5 +118,27 @@ NSString *OrchardMarketingNameForWatchOSDevice(OrchardWatchOSDevice device)
 
 #pragma clang diagnostic pop
 }
+
+@implementation WKInterfaceDevice (Orchard)
+
+- (OrchardWatchOSDevice)orchardwatchOSDevice
+{
+    NSString *simulatorIdentifier =
+    NSProcessInfo.processInfo.environment[@"SIMULATOR_MODEL_IDENTIFIER"];
+
+    if (simulatorIdentifier != nil) {
+        return OrchardWatchOSDeviceFromNSString(simulatorIdentifier);
+    }
+
+    struct utsname systemInfo;
+    uname(&systemInfo);
+
+    NSString *identifier = [NSString stringWithCString:systemInfo.machine
+                                              encoding:NSUTF8StringEncoding];
+
+    return OrchardWatchOSDeviceFromNSString(identifier);
+}
+
+@end
 
 #endif

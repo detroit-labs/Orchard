@@ -11,6 +11,8 @@
 
 #if TARGET_OS_IOS
 
+#import <UIKit/UIKit.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, OrchardiOSiOSDeviceFamily) {
@@ -78,6 +80,12 @@ typedef NS_ENUM(NSUInteger, OrchardiOSDevice) {
     OrchardiOSDeviceUnknown   NS_SWIFT_NAME(unknown)
 
 } NS_SWIFT_NAME(iOSDevice);
+
+@interface UIDevice (Orchard)
+
+- (OrchardiOSDevice)orchardiOSDevice;
+
+@end
 
 OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString *string) NS_SWIFT_NAME(iOSDevice(from:));
 OrchardiOSiOSDeviceFamily OrchardiOSiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device) NS_SWIFT_NAME(iOSiOSDeviceFamily(for:));
