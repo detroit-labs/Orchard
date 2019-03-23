@@ -12,11 +12,11 @@ $(SRCROOT)/Data/Watches.tsv
 $(SRCROOT)/Data/TVs.tsv
 
 # Swift Source File Templates
-$(SRCROOT)/Orchard-Swift/iPhones.swift.gyb
-$(SRCROOT)/Orchard-Swift/iPads.swift.gyb
-$(SRCROOT)/Orchard-Swift/iPods.swift.gyb
-$(SRCROOT)/Orchard-Swift/Watches.swift.gyb
-$(SRCROOT)/Orchard-Swift/TVs.swift.gyb
+$(SRCROOT)/Orchard-Swift/iOS/iPhones.swift.gyb
+$(SRCROOT)/Orchard-Swift/iOS/iPads.swift.gyb
+$(SRCROOT)/Orchard-Swift/iOS/iPods.swift.gyb
+$(SRCROOT)/Orchard-Swift/watchOS/Watches.swift.gyb
+$(SRCROOT)/Orchard-Swift/tvOS/TVs.swift.gyb
 
 # Template Helper
 $(SRCROOT)/Common/GYBUtilities.py

@@ -32,6 +32,10 @@ make decisions based on that.
 
   spec.subspec 'Swift' do |ss|
     ss.source_files = 'Orchard-Swift/*.swift'
+    
+    ss.ios.source_files = 'Orchard-Swift/iOS/*.swift'
+    ss.watchos.source_files = 'Orchard-Swift/watchOS/*.swift'
+    ss.tvos.source_files = 'Orchard-Swift/tvOS/*.swift'
   end
 
   spec.subspec 'ObjC' do |ss|

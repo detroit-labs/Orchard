@@ -138,6 +138,37 @@
 			path = tvOS;
 			sourceTree = "<group>";
 		};
+		1F2A7ACE2246690700893A38 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1F9B8AA220FD85B10039D518 /* iPhones.swift */,
+				1F9B8AA420FD85C40039D518 /* iPhones.swift.gyb */,
+				1F521F8D20FD885700E99897 /* iPads.swift */,
+				1F521F8F20FD886700E99897 /* iPads.swift.gyb */,
+				1F19583620FEEF6F001DFA65 /* iPods.swift */,
+				1F19583820FEEF7A001DFA65 /* iPods.swift.gyb */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		1F2A7ACF2246691800893A38 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				1F78456321BAEEE700DF7644 /* Watches.swift */,
+				1F78456521BAEEFC00DF7644 /* Watches.swift.gyb */,
+			);
+			path = watchOS;
+			sourceTree = "<group>";
+		};
+		1F2A7AD02246691E00893A38 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				1F4A7D9B2244903300158723 /* TVs.swift */,
+				1F4A7D9A22448F9B00158723 /* TVs.swift.gyb */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
 		1F6D236D2244810B001E0B28 /* Orchard-ObjC */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,16 +227,9 @@
 			children = (
 				1F9B8A8E20FD85790039D518 /* Info.plist */,
 				1F19583F20FEF21D001DFA65 /* DeviceIdentification.swift */,
-				1F9B8AA220FD85B10039D518 /* iPhones.swift */,
-				1F9B8AA420FD85C40039D518 /* iPhones.swift.gyb */,
-				1F521F8D20FD885700E99897 /* iPads.swift */,
-				1F521F8F20FD886700E99897 /* iPads.swift.gyb */,
-				1F19583620FEEF6F001DFA65 /* iPods.swift */,
-				1F19583820FEEF7A001DFA65 /* iPods.swift.gyb */,
-				1F78456321BAEEE700DF7644 /* Watches.swift */,
-				1F78456521BAEEFC00DF7644 /* Watches.swift.gyb */,
-				1F4A7D9B2244903300158723 /* TVs.swift */,
-				1F4A7D9A22448F9B00158723 /* TVs.swift.gyb */,
+				1F2A7ACE2246690700893A38 /* iOS */,
+				1F2A7ACF2246691800893A38 /* watchOS */,
+				1F2A7AD02246691E00893A38 /* tvOS */,
 			);
 			path = "Orchard-Swift";
 			sourceTree = "<group>";
