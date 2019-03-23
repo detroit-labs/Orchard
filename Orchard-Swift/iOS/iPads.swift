@@ -25,7 +25,7 @@ public enum iPads {
     @available (iOS, introduced: 6.0, deprecated: 11.0)
     case iPad4
 
-    @available (iOS, introduced: 3.0, deprecated: 10.0)
+    @available (iOS, introduced: 6.0, deprecated: 10.0)
     case iPadMini
 
     @available (iOS, introduced: 7.0)
@@ -34,11 +34,11 @@ public enum iPads {
     @available (iOS, introduced: 7.0)
     case iPadMini2
 
-    @available (iOS, introduced: 8.1)
-    case iPadAir2
+    @available (iOS, introduced: 8.0)
+    case iPadMini3
 
     @available (iOS, introduced: 8.1)
-    case iPadMini3
+    case iPadAir2
 
     @available (iOS, introduced: 9.0)
     case iPadMini4
@@ -94,14 +94,12 @@ public enum iPads {
         case "iPad4,4", "iPad4,5", "iPad4,6":
             self = .iPadMini2
 
+        case "iPad4,7", "iPad4,8", "iPad4,9":
+            self = .iPadMini3
+
         case "iPad5,3", "iPad5,4":
             if #available(iOS 8.1, *) {
                 self = .iPadAir2
-            }
-
-        case "iPad4,7", "iPad4,8", "iPad4,9":
-            if #available(iOS 8.1, *) {
-                self = .iPadMini3
             }
 
         case "iPad5,1", "iPad5,2":
@@ -163,8 +161,8 @@ public enum iPads {
         case .iPadMini: return "iPad mini"
         case .iPadAir: return "iPad Air"
         case .iPadMini2: return "iPad mini 2"
-        case .iPadAir2: return "iPad Air 2"
         case .iPadMini3: return "iPad mini 3"
+        case .iPadAir2: return "iPad Air 2"
         case .iPadMini4: return "iPad mini 4"
         case .iPadPro12_9Inch: return "iPad Pro (12.9-inch)"
         case .iPadPro9_7Inch: return "iPad Pro (9.7-inch)"
