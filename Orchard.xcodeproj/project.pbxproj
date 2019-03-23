@@ -225,11 +225,11 @@
 		1F9B8A8C20FD85790039D518 /* Orchard-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				1F9B8A8E20FD85790039D518 /* Info.plist */,
-				1F19583F20FEF21D001DFA65 /* DeviceIdentification.swift */,
 				1F2A7ACE2246690700893A38 /* iOS */,
 				1F2A7ACF2246691800893A38 /* watchOS */,
 				1F2A7AD02246691E00893A38 /* tvOS */,
+				1F9B8A8E20FD85790039D518 /* Info.plist */,
+				1F19583F20FEF21D001DFA65 /* DeviceIdentification.swift */,
 			);
 			path = "Orchard-Swift";
 			sourceTree = "<group>";
