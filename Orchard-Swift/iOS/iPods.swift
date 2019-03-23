@@ -13,7 +13,7 @@ import Foundation
 
 public enum iPods {
 
-    @available (iOS, introduced: 1.0, deprecated: 3.2)
+    @available (iOS, introduced: 1.1, deprecated: 3.2)
     case iPodTouch
 
     @available (iOS, introduced: 2.1, deprecated: 4.3)
