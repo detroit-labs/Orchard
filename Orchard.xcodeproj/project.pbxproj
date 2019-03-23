@@ -11,6 +11,7 @@
 		1F19584020FEF21D001DFA65 /* DeviceIdentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19583F20FEF21D001DFA65 /* DeviceIdentification.swift */; };
 		1F2A7AD322466B4900893A38 /* OrchardDeviceIdentification.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F2A7AD122466B4900893A38 /* OrchardDeviceIdentification.h */; };
 		1F2A7AD422466B4900893A38 /* OrchardDeviceIdentification.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2A7AD222466B4900893A38 /* OrchardDeviceIdentification.m */; };
+		1F2A7AD6224677CC00893A38 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1F2A7AD5224677CB00893A38 /* LICENSE */; };
 		1F4A7D9722448C7000158723 /* OrchardtvOSDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F4A7D9622448C7000158723 /* OrchardtvOSDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F4A7D9922448E8A00158723 /* OrchardtvOSDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A7D9822448E8A00158723 /* OrchardtvOSDevice.m */; };
 		1F4A7D9C2244903400158723 /* TVs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4A7D9B2244903300158723 /* TVs.swift */; };
@@ -35,6 +36,7 @@
 		1F19583F20FEF21D001DFA65 /* DeviceIdentification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdentification.swift; sourceTree = "<group>"; };
 		1F2A7AD122466B4900893A38 /* OrchardDeviceIdentification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrchardDeviceIdentification.h; sourceTree = "<group>"; };
 		1F2A7AD222466B4900893A38 /* OrchardDeviceIdentification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrchardDeviceIdentification.m; sourceTree = "<group>"; };
+		1F2A7AD5224677CB00893A38 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1F4A7D9622448C7000158723 /* OrchardtvOSDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrchardtvOSDevice.h; sourceTree = "<group>"; };
 		1F4A7D9822448E8A00158723 /* OrchardtvOSDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrchardtvOSDevice.m; sourceTree = "<group>"; };
 		1F4A7D9A22448F9B00158723 /* TVs.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = TVs.swift.gyb; sourceTree = "<group>"; };
@@ -62,8 +64,6 @@
 		1F9B8A8E20FD85790039D518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F9B8AA220FD85B10039D518 /* iPhones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhones.swift; sourceTree = "<group>"; };
 		1F9B8AA420FD85C40039D518 /* iPhones.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPhones.swift.gyb; sourceTree = "<group>"; };
-		1F9B8AA820FD860B0039D518 /* gyb.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = gyb.py; sourceTree = "<group>"; };
-		1F9B8AA920FD860B0039D518 /* gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = gyb; sourceTree = "<group>"; };
 		1FD67D7120FE2F43008E8C8A /* iPads.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPads.tsv; sourceTree = "<group>"; usesTabs = 1; };
 		1FD67D7220FE3421008E8C8A /* OrchardiOSDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrchardiOSDevice.h; sourceTree = "<group>"; };
 		1FD67D7320FE3421008E8C8A /* OrchardiOSDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrchardiOSDevice.m; sourceTree = "<group>"; };
@@ -209,12 +209,12 @@
 		1F9B8A4820FD80600039D518 = {
 			isa = PBXGroup;
 			children = (
+				1F2A7AD5224677CB00893A38 /* LICENSE */,
 				1FFA2ADD224528170098CE4A /* Orchard.podspec */,
 				1F6D237422448145001E0B28 /* Common */,
 				1F19583A20FEF02F001DFA65 /* Data */,
 				1F6D236D2244810B001E0B28 /* Orchard-ObjC */,
 				1F9B8A8C20FD85790039D518 /* Orchard-Swift */,
-				1F9B8AA620FD860B0039D518 /* Vendor */,
 				1F9B8A8B20FD85790039D518 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -238,23 +238,6 @@
 				1F19583F20FEF21D001DFA65 /* DeviceIdentification.swift */,
 			);
 			path = "Orchard-Swift";
-			sourceTree = "<group>";
-		};
-		1F9B8AA620FD860B0039D518 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				1F9B8AA720FD860B0039D518 /* gyb */,
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
-		1F9B8AA720FD860B0039D518 /* gyb */ = {
-			isa = PBXGroup;
-			children = (
-				1F9B8AA820FD860B0039D518 /* gyb.py */,
-				1F9B8AA920FD860B0039D518 /* gyb */,
-			);
-			path = gyb;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F2A7AD6224677CC00893A38 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

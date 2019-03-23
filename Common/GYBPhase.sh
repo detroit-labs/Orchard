@@ -5,12 +5,10 @@
 #
 #  Created by Jeff Kelley on 3/21/19.
 #  
-GYB_PATH="${SRCROOT}/Vendor/gyb/gyb"
-
 function gyb {
     file=$1
     if [ ${file: -4} == ".gyb" ]; then
-        "${GYB_PATH}" --line-directive '' -o "${file%.gyb}" "$file";
+        gyb --line-directive '' -o "${file%.gyb}" "$file";
     fi
 }
 
