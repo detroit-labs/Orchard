@@ -68,7 +68,7 @@
 		1FD67D7820FE55DF008E8C8A /* NSString+OrchardUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+OrchardUtilities.h"; sourceTree = "<group>"; };
 		1FD67D7920FE55DF008E8C8A /* NSString+OrchardUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+OrchardUtilities.m"; sourceTree = "<group>"; };
 		1FD67D7C20FE66F0008E8C8A /* GYBUtilities.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = GYBUtilities.py; sourceTree = "<group>"; usesTabs = 1; };
-		1FFA2ADD224528170098CE4A /* Orchard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; indentWidth = 2; path = Orchard.podspec; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
+		1FFA2ADD224528170098CE4A /* Orchard.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; indentWidth = 2; path = Orchard.podspec; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
