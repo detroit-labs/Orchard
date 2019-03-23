@@ -15,7 +15,10 @@ fi
 function gyb {
     file=$1
     if [ ${file: -4} == ".gyb" ]; then
+        echo "gyb: ${file} -> ${file%.gyb}"
         "${GYB_PATH}"  --line-directive '' -o "${file%.gyb}" "$file";
+    else
+        echo "Not gybbing non-gyb file ${file}"
     fi
 }
 
