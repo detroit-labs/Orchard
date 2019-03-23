@@ -22,15 +22,15 @@ class tvOSDeviceFamily(Enum):
 
 def DataPath(deviceFamily = Enum):
 	if deviceFamily is iOSDeviceFamily.IPHONE:
-		return '../Data/iPhones.tsv'
+		return '../../Data/iPhones.tsv'
 	elif deviceFamily is iOSDeviceFamily.IPAD:
-		return '../Data/iPads.tsv'
+		return '../../Data/iPads.tsv'
 	elif deviceFamily is iOSDeviceFamily.IPOD:
-		return '../Data/iPods.tsv'
+		return '../../Data/iPods.tsv'
 	elif deviceFamily is watchOSDeviceFamily.WATCH:
-		return '../Data/Watches.tsv'
+		return '../../Data/Watches.tsv'
 	elif deviceFamily is tvOSDeviceFamily.TV:
-		return '../Data/TVs.tsv'
+		return '../../Data/TVs.tsv'
 
 def longestEnumNameLength(deviceFamily = iOSDeviceFamily.IPHONE):
 	longest = 0

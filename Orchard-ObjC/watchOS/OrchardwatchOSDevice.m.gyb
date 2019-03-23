@@ -21,11 +21,11 @@ OrchardwatchOSDevice OrchardwatchOSDeviceFromNSString(NSString *string) {
         return OrchardwatchOSDeviceSimulator;
     }
 % import sys
-% sys.path.insert(0, '../Common')
+% sys.path.insert(0, '../../Common')
 % from GYBUtilities import ( OSFamily, enumName, needsAvailabilityCheck )
 % import csv
 % def objcString(x): return "@\"" + x + "\""
-% with open('../Data/Watches.tsv') as file:
+% with open('../../Data/Watches.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
@@ -62,7 +62,7 @@ NSString *OrchardMarketingNameForWatchOSDevice(OrchardwatchOSDevice device)
         case OrchardwatchOSDeviceSimulator:
             return nil;
 
-% with open('../Data/Watches.tsv') as file:
+% with open('../../Data/Watches.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]

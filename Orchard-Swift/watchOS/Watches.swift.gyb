@@ -13,13 +13,13 @@ import Foundation
 #if os(watchOS)
 
 % import sys
-% sys.path.insert(0, '../Common')
+% sys.path.insert(0, '../../Common')
 % from GYBUtilities import ( OSFamily, canSupport, needsAvailabilityCheck, enumName )
 % import csv
 % def swiftString(x): return "\"" + x + "\""
 public enum Watches {
 
-% with open('../Data/Watches.tsv') as file:
+% with open('../../Data/Watches.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
@@ -44,7 +44,7 @@ enum_name = enumName(name) + "_" + size
         self = .unknown
 
         switch model {
-% with open('../Data/Watches.tsv') as file:
+% with open('../../Data/Watches.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
@@ -90,7 +90,7 @@ enum_name = enumName(name) + "_" + size
 
     public var marketingName: String? {
         switch self {
-% with open('../Data/Watches.tsv') as file:
+% with open('../../Data/Watches.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]

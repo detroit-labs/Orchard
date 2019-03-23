@@ -28,7 +28,7 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
     }
 
 % import sys
-% sys.path.insert(0, '../Common')
+% sys.path.insert(0, '../../Common')
 % from GYBUtilities import ( iOSDeviceFamily, DataPath, enumName )
 % import csv
 % def objcString(x): return "@\"" + x + "\""

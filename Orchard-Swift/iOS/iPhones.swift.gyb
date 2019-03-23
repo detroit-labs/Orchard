@@ -13,7 +13,7 @@ import Foundation
 #if os(iOS)
 
 % import sys
-% sys.path.insert(0, '../Common')
+% sys.path.insert(0, '../../Common')
 % from GYBUtilities import ( iOSDeviceFamily, DataPath, canSupport, needsAvailabilityCheck, enumName )
 % import csv
 % def swiftString(x): return "\"" + x + "\""

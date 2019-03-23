@@ -17,7 +17,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 % import sys
-% sys.path.insert(0, '../Common')
+% sys.path.insert(0, '../../Common')
 % from GYBUtilities import ( iOSDeviceFamily, DataPath, longestEnumNameLength, enumName )
 % import csv
 typedef NS_ENUM(NSUInteger, OrchardiOSiOSDeviceFamily) {

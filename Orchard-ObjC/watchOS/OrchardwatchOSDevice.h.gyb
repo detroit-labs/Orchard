@@ -17,13 +17,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 % import sys
-% sys.path.insert(0, '../Common')
+% sys.path.insert(0, '../../Common')
 % from GYBUtilities import ( watchOSDeviceFamily, enumName, longestEnumNameLength, versiontupleAdd, versiontupleToString )
 % import csv
 typedef NS_ENUM(NSUInteger, OrchardwatchOSDevice) {
 
 % enumNameLength = longestEnumNameLength(watchOSDeviceFamily.WATCH) + len("OrchardwatchOSDevice")
-% with open('../Data/Watches.tsv') as file:
+% with open('../../Data/Watches.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]

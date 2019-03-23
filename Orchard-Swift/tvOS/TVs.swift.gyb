@@ -14,13 +14,13 @@ import Foundation
 #if os(tvOS)
 
 % import sys
-% sys.path.insert(0, '../Common')
+% sys.path.insert(0, '../../Common')
 % from GYBUtilities import ( OSFamily, canSupport, needsAvailabilityCheck, enumName )
 % import csv
 % def swiftString(x): return "\"" + x + "\""
 public enum TVs {
 
-% with open('../Data/TVs.tsv') as file:
+% with open('../../Data/TVs.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
@@ -44,7 +44,7 @@ enum_name = enumName(name)
         self = .unknown
 
         switch model {
-% with open('../Data/TVs.tsv') as file:
+% with open('../../Data/TVs.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
@@ -89,7 +89,7 @@ enum_name = enumName(name)
 
     public var marketingName: String? {
         switch self {
-% with open('../Data/TVs.tsv') as file:
+% with open('../../Data/TVs.tsv') as file:
     % for row in csv.DictReader(file, delimiter='\t'):
 %{
 name = row["Name"]
