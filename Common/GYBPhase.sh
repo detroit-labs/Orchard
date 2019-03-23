@@ -4,11 +4,18 @@
 #  Orchard
 #
 #  Created by Jeff Kelley on 3/21/19.
-#  
+#
+GYB_PATH="/usr/local/bin/gyb"
+
+if [ ! -f "${GYB_PATH}" ]; then
+    echo "gyb not installed at /usr/local/bin. Use Homebrew to install gyb."
+    exit 1
+fi
+
 function gyb {
     file=$1
     if [ ${file: -4} == ".gyb" ]; then
-        gyb --line-directive '' -o "${file%.gyb}" "$file";
+        "${GYB_PATH}"  --line-directive '' -o "${file%.gyb}" "$file";
     fi
 }
 
