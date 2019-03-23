@@ -16,7 +16,7 @@ if [ $SCRIPT_INPUT_FILE_COUNT -ne 0 ]; then
     for i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_COUNT - 1)); do
         inputFileVar="SCRIPT_INPUT_FILE_${i}"
         inputFile="${!inputFileVar}"
-        gyb $inputFile
+        gyb "$inputFile"
     done
 fi
 
@@ -25,7 +25,7 @@ if [ $SCRIPT_INPUT_FILE_LIST_COUNT -ne 0 ]; then
         inputFileListVar="SCRIPT_INPUT_FILE_LIST_${i}"
         inputFileList="${!inputFileListVar}"
         cat "${inputFileList}" | while read inputFile; do
-            gyb $inputFile
+            gyb "$inputFile"
         done
     done
 fi
