@@ -14,5 +14,5 @@ FOUNDATION_EXPORT double OrchardVersionNumber;
 FOUNDATION_EXPORT const unsigned char OrchardVersionString[];
 
 #import <Orchard/OrchardiOSDevice.h>
-#import <Orchard/OrchardWatchOSDevice.h>
+#import <Orchard/OrchardwatchOSDevice.h>
 #import <Orchard/OrchardtvOSDevice.h>

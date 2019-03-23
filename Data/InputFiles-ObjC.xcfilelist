@@ -14,8 +14,8 @@ $(SRCROOT)/Data/TVs.tsv
 # Objective-C Header/Source File Templatess
 $(SRCROOT)/Orchard-ObjC/OrchardiOSDevice.h.gyb
 $(SRCROOT)/Orchard-ObjC/OrchardiOSDevice.m.gyb
-$(SRCROOT)/Orchard-ObjC/OrchardWatchOSDevice.h.gyb
-$(SRCROOT)/Orchard-ObjC/OrchardWatchOSDevice.m.gyb
+$(SRCROOT)/Orchard-ObjC/OrchardwatchOSDevice.h.gyb
+$(SRCROOT)/Orchard-ObjC/OrchardwatchOSDevice.m.gyb
 $(SRCROOT)/Orchard-ObjC/OrchardtvOSDevice.h.gyb
 $(SRCROOT)/Orchard-ObjC/OrchardtvOSDevice.m.gyb
 

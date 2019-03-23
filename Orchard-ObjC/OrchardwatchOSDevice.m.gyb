@@ -2,13 +2,13 @@
 % warning = "This file was automatically generated and should not be edited."
 // ${warning}
 //
-//  OrchardWatchOSDevice.m
+//  OrchardwatchOSDevice.m
 //  Orchard
 //
 //  Created by Jeff Kelley on 7/17/18.
 //
 
-#import "OrchardWatchOSDevice.h"
+#import "OrchardwatchOSDevice.h"
 
 #if TARGET_OS_WATCH
 
@@ -16,9 +16,9 @@
 
 #import "NSString+OrchardUtilities.h"
 
-OrchardWatchOSDevice OrchardWatchOSDeviceFromNSString(NSString *string) {
+OrchardwatchOSDevice OrchardwatchOSDeviceFromNSString(NSString *string) {
     if ([string orchard_isEqualToOneOfStrings:@[@"i386", @"x86_64"]]) {
-        return OrchardWatchOSDeviceSimulator;
+        return OrchardwatchOSDeviceSimulator;
     }
 % import sys
 % sys.path.insert(0, '../Common')
@@ -43,23 +43,23 @@ enum_name = enumName(name) + "_" + size
         % end
         %if needsAvailabilityCheck(released, OSFamily.WATCHOS):
         if (@available(watchOS ${released}, *)) {
-            return OrchardWatchOSDevice${enum_name};
+            return OrchardwatchOSDevice${enum_name};
         }
         % else:
-        return OrchardWatchOSDevice${enum_name};
+        return OrchardwatchOSDevice${enum_name};
         % end
     }
     % end
 % end
 
-    return OrchardWatchOSDeviceUnknown;
+    return OrchardwatchOSDeviceUnknown;
 }
 
-NSString *OrchardMarketingNameForWatchOSDevice(OrchardWatchOSDevice device)
+NSString *OrchardMarketingNameForWatchOSDevice(OrchardwatchOSDevice device)
 {
     switch (device) {
 
-        case OrchardWatchOSDeviceSimulator:
+        case OrchardwatchOSDeviceSimulator:
             return nil;
 
 % with open('../Data/Watches.tsv') as file:
@@ -69,7 +69,7 @@ name = row["Name"]
 size = row["Size"]
 enum_name = enumName(name) + "_" + size
 }%
-        case OrchardWatchOSDevice${enum_name}:
+        case OrchardwatchOSDevice${enum_name}:
             return @"${name} (${size})";
 
     % end
@@ -85,13 +85,13 @@ enum_name = enumName(name) + "_" + size
 
 @implementation WKInterfaceDevice (Orchard)
 
-- (OrchardWatchOSDevice)orchardwatchOSDevice
+- (OrchardwatchOSDevice)orchardwatchOSDevice
 {
     NSString *simulatorIdentifier =
     NSProcessInfo.processInfo.environment[@"SIMULATOR_MODEL_IDENTIFIER"];
 
     if (simulatorIdentifier != nil) {
-        return OrchardWatchOSDeviceFromNSString(simulatorIdentifier);
+        return OrchardwatchOSDeviceFromNSString(simulatorIdentifier);
     }
 
     struct utsname systemInfo;
@@ -100,7 +100,7 @@ enum_name = enumName(name) + "_" + size
     NSString *identifier = [NSString stringWithCString:systemInfo.machine
                                               encoding:NSUTF8StringEncoding];
 
-    return OrchardWatchOSDeviceFromNSString(identifier);
+    return OrchardwatchOSDeviceFromNSString(identifier);
 }
 
 @end

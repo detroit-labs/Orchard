@@ -15,10 +15,10 @@
 		1F521F8E20FD885700E99897 /* iPads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F521F8D20FD885700E99897 /* iPads.swift */; };
 		1F6D23702244810B001E0B28 /* Orchard.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F6D236E2244810B001E0B28 /* Orchard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F6D237522448164001E0B28 /* OrchardiOSDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD67D7320FE3421008E8C8A /* OrchardiOSDevice.m */; };
-		1F6D237622448164001E0B28 /* OrchardWatchOSDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78456121BAEED000DF7644 /* OrchardWatchOSDevice.m */; };
+		1F6D237622448164001E0B28 /* OrchardwatchOSDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78456121BAEED000DF7644 /* OrchardwatchOSDevice.m */; };
 		1F6D237722448164001E0B28 /* NSString+OrchardUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD67D7920FE55DF008E8C8A /* NSString+OrchardUtilities.m */; };
 		1F6D237822448188001E0B28 /* OrchardiOSDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FD67D7220FE3421008E8C8A /* OrchardiOSDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1F6D237922448188001E0B28 /* OrchardWatchOSDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F78455F21BAEECB00DF7644 /* OrchardWatchOSDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F6D237922448188001E0B28 /* OrchardwatchOSDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F78455F21BAEECB00DF7644 /* OrchardwatchOSDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F6D237A2244818C001E0B28 /* NSString+OrchardUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FD67D7820FE55DF008E8C8A /* NSString+OrchardUtilities.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1F78456421BAEEE700DF7644 /* Watches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78456321BAEEE700DF7644 /* Watches.swift */; };
 		1F9B8AA320FD85B10039D518 /* iPhones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B8AA220FD85B10039D518 /* iPhones.swift */; };
@@ -44,10 +44,10 @@
 		1F6D237F22448401001E0B28 /* OutputFiles-ObjC.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = "OutputFiles-ObjC.xcfilelist"; sourceTree = "<group>"; };
 		1F6D238022448401001E0B28 /* InputFiles-ObjC.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = "InputFiles-ObjC.xcfilelist"; sourceTree = "<group>"; };
 		1F78455921BADB7000DF7644 /* Watches.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Watches.tsv; sourceTree = "<group>"; usesTabs = 1; };
-		1F78455B21BADDA000DF7644 /* OrchardWatchOSDevice.m.gyb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OrchardWatchOSDevice.m.gyb; sourceTree = "<group>"; };
-		1F78455C21BADDA000DF7644 /* OrchardWatchOSDevice.h.gyb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OrchardWatchOSDevice.h.gyb; sourceTree = "<group>"; };
-		1F78455F21BAEECB00DF7644 /* OrchardWatchOSDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrchardWatchOSDevice.h; sourceTree = "<group>"; };
-		1F78456121BAEED000DF7644 /* OrchardWatchOSDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrchardWatchOSDevice.m; sourceTree = "<group>"; };
+		1F78455B21BADDA000DF7644 /* OrchardwatchOSDevice.m.gyb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OrchardwatchOSDevice.m.gyb; sourceTree = "<group>"; };
+		1F78455C21BADDA000DF7644 /* OrchardwatchOSDevice.h.gyb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OrchardwatchOSDevice.h.gyb; sourceTree = "<group>"; };
+		1F78455F21BAEECB00DF7644 /* OrchardwatchOSDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrchardwatchOSDevice.h; sourceTree = "<group>"; };
+		1F78456121BAEED000DF7644 /* OrchardwatchOSDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrchardwatchOSDevice.m; sourceTree = "<group>"; };
 		1F78456321BAEEE700DF7644 /* Watches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watches.swift; sourceTree = "<group>"; };
 		1F78456521BAEEFC00DF7644 /* Watches.swift.gyb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Watches.swift.gyb; sourceTree = "<group>"; };
 		1F936284224487E700DA6FBD /* GYBPhase.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = GYBPhase.sh; sourceTree = "<group>"; };
@@ -115,10 +115,10 @@
 				1FD67D7620FE3436008E8C8A /* OrchardiOSDevice.h.gyb */,
 				1FD67D7320FE3421008E8C8A /* OrchardiOSDevice.m */,
 				1FD67D7720FE3A0D008E8C8A /* OrchardiOSDevice.m.gyb */,
-				1F78455F21BAEECB00DF7644 /* OrchardWatchOSDevice.h */,
-				1F78455C21BADDA000DF7644 /* OrchardWatchOSDevice.h.gyb */,
-				1F78456121BAEED000DF7644 /* OrchardWatchOSDevice.m */,
-				1F78455B21BADDA000DF7644 /* OrchardWatchOSDevice.m.gyb */,
+				1F78455F21BAEECB00DF7644 /* OrchardwatchOSDevice.h */,
+				1F78455C21BADDA000DF7644 /* OrchardwatchOSDevice.h.gyb */,
+				1F78456121BAEED000DF7644 /* OrchardwatchOSDevice.m */,
+				1F78455B21BADDA000DF7644 /* OrchardwatchOSDevice.m.gyb */,
 				1F4A7D9622448C7000158723 /* OrchardtvOSDevice.h */,
 				1F93628822448BB100DA6FBD /* OrchardtvOSDevice.h.gyb */,
 				1F4A7D9822448E8A00158723 /* OrchardtvOSDevice.m */,
@@ -211,7 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F6D237822448188001E0B28 /* OrchardiOSDevice.h in Headers */,
-				1F6D237922448188001E0B28 /* OrchardWatchOSDevice.h in Headers */,
+				1F6D237922448188001E0B28 /* OrchardwatchOSDevice.h in Headers */,
 				1F6D23702244810B001E0B28 /* Orchard.h in Headers */,
 				1F6D237A2244818C001E0B28 /* NSString+OrchardUtilities.h in Headers */,
 				1F4A7D9722448C7000158723 /* OrchardtvOSDevice.h in Headers */,
@@ -372,7 +372,7 @@
 				1F6D237722448164001E0B28 /* NSString+OrchardUtilities.m in Sources */,
 				1F4A7D9922448E8A00158723 /* OrchardtvOSDevice.m in Sources */,
 				1F6D237522448164001E0B28 /* OrchardiOSDevice.m in Sources */,
-				1F6D237622448164001E0B28 /* OrchardWatchOSDevice.m in Sources */,
+				1F6D237622448164001E0B28 /* OrchardwatchOSDevice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
