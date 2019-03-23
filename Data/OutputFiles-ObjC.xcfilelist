@@ -5,9 +5,9 @@
 #  
 
 # Objective-C Header/Source Files
-$(SRCROOT)/Orchard-ObjC/OrchardiOSDevice.h
-$(SRCROOT)/Orchard-ObjC/OrchardiOSDevice.m
-$(SRCROOT)/Orchard-ObjC/OrchardwatchOSDevice.h
-$(SRCROOT)/Orchard-ObjC/OrchardwatchOSDevice.m
-$(SRCROOT)/Orchard-ObjC/OrchardtvOSDevice.h
-$(SRCROOT)/Orchard-ObjC/OrchardtvOSDevice.m
+$(SRCROOT)/Orchard-ObjC/iOS/OrchardiOSDevice.h
+$(SRCROOT)/Orchard-ObjC/iOS/OrchardiOSDevice.m
+$(SRCROOT)/Orchard-ObjC/watchOS/OrchardwatchOSDevice.h
+$(SRCROOT)/Orchard-ObjC/watchOS/OrchardwatchOSDevice.m
+$(SRCROOT)/Orchard-ObjC/tvOS/OrchardtvOSDevice.h
+$(SRCROOT)/Orchard-ObjC/tvOS/OrchardtvOSDevice.m

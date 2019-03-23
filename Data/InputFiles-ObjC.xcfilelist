@@ -12,12 +12,12 @@ $(SRCROOT)/Data/Watches.tsv
 $(SRCROOT)/Data/TVs.tsv
 
 # Objective-C Header/Source File Templatess
-$(SRCROOT)/Orchard-ObjC/OrchardiOSDevice.h.gyb
-$(SRCROOT)/Orchard-ObjC/OrchardiOSDevice.m.gyb
-$(SRCROOT)/Orchard-ObjC/OrchardwatchOSDevice.h.gyb
-$(SRCROOT)/Orchard-ObjC/OrchardwatchOSDevice.m.gyb
-$(SRCROOT)/Orchard-ObjC/OrchardtvOSDevice.h.gyb
-$(SRCROOT)/Orchard-ObjC/OrchardtvOSDevice.m.gyb
+$(SRCROOT)/Orchard-ObjC/iOS/OrchardiOSDevice.h.gyb
+$(SRCROOT)/Orchard-ObjC/iOS/OrchardiOSDevice.m.gyb
+$(SRCROOT)/Orchard-ObjC/watchOS/OrchardwatchOSDevice.h.gyb
+$(SRCROOT)/Orchard-ObjC/watchOS/OrchardwatchOSDevice.m.gyb
+$(SRCROOT)/Orchard-ObjC/tvOS/OrchardtvOSDevice.h.gyb
+$(SRCROOT)/Orchard-ObjC/tvOS/OrchardtvOSDevice.m.gyb
 
 # Template Helper
 $(SRCROOT)/Common/GYBUtilities.py

@@ -35,8 +35,17 @@ make decisions based on that.
   end
 
   spec.subspec 'ObjC' do |ss|
-    ss.source_files = 'Orchard-ObjC/**/*.{h,m}'
+    ss.source_files = 'Orchard-ObjC/*.{h,m}', 'Orchard-ObjC/Private/*.{h,m}'
     ss.public_header_files = 'Orchard-ObjC/*.h'
+    
+    ss.ios.source_files = 'Orchard-ObjC/iOS/*.{h,m}'
+    ss.ios.public_header_files = 'Orchard-ObjC/iOS/*.h'
+    
+    ss.watchos.source_files = 'Orchard-ObjC/watchOS/*.{h,m}'
+    ss.watchos.public_header_files = 'Orchard-ObjC/watchOS/*.h'
+    
+    ss.tvos.source_files = 'Orchard-ObjC/tvOS/*.{h,m}'
+    ss.tvos.public_header_files = 'Orchard-ObjC/tvOS/*.h'
   end
 
   spec.default_subspec = 'Swift'
