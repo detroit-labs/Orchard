@@ -21,7 +21,6 @@
 		1F6D237922448188001E0B28 /* OrchardWatchOSDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F78455F21BAEECB00DF7644 /* OrchardWatchOSDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F6D237A2244818C001E0B28 /* NSString+OrchardUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FD67D7820FE55DF008E8C8A /* NSString+OrchardUtilities.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1F78456421BAEEE700DF7644 /* Watches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78456321BAEEE700DF7644 /* Watches.swift */; };
-		1F9B8A9B20FD85790039D518 /* Orchard.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9B8A8D20FD85790039D518 /* Orchard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F9B8AA320FD85B10039D518 /* iPhones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B8AA220FD85B10039D518 /* iPhones.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +55,6 @@
 		1F93628822448BB100DA6FBD /* OrchardtvOSDevice.h.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = OrchardtvOSDevice.h.gyb; sourceTree = "<group>"; };
 		1F93628922448BC200DA6FBD /* OrchardtvOSDevice.m.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = OrchardtvOSDevice.m.gyb; sourceTree = "<group>"; };
 		1F9B8A8A20FD85790039D518 /* Orchard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Orchard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F9B8A8D20FD85790039D518 /* Orchard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Orchard.h; sourceTree = "<group>"; };
 		1F9B8A8E20FD85790039D518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F9B8AA220FD85B10039D518 /* iPhones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhones.swift; sourceTree = "<group>"; };
 		1F9B8AA420FD85C40039D518 /* iPhones.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPhones.swift.gyb; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 		1F9B8A8C20FD85790039D518 /* Orchard-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				1F9B8A8D20FD85790039D518 /* Orchard.h */,
 				1F9B8A8E20FD85790039D518 /* Info.plist */,
 				1F19583F20FEF21D001DFA65 /* DeviceIdentification.swift */,
 				1F9B8AA220FD85B10039D518 /* iPhones.swift */,
@@ -225,7 +222,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F9B8A9B20FD85790039D518 /* Orchard.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +439,7 @@
 				PRODUCT_NAME = Orchard;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -491,7 +487,7 @@
 				PRODUCT_NAME = Orchard;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -645,7 +641,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -719,7 +715,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,4";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
