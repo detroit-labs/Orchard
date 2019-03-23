@@ -61,7 +61,6 @@
 		1F93628822448BB100DA6FBD /* OrchardtvOSDevice.h.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = OrchardtvOSDevice.h.gyb; sourceTree = "<group>"; };
 		1F93628922448BC200DA6FBD /* OrchardtvOSDevice.m.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = OrchardtvOSDevice.m.gyb; sourceTree = "<group>"; };
 		1F9B8A8A20FD85790039D518 /* Orchard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Orchard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F9B8A8E20FD85790039D518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F9B8AA220FD85B10039D518 /* iPhones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhones.swift; sourceTree = "<group>"; };
 		1F9B8AA420FD85C40039D518 /* iPhones.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPhones.swift.gyb; sourceTree = "<group>"; };
 		1FD67D7120FE2F43008E8C8A /* iPads.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPads.tsv; sourceTree = "<group>"; usesTabs = 1; };
@@ -181,7 +180,6 @@
 				1F2A7ACD224666C000893A38 /* tvOS */,
 				1F6D237B22448196001E0B28 /* Private */,
 				1F6D236E2244810B001E0B28 /* Orchard.h */,
-				1F6D236F2244810B001E0B28 /* Info.plist */,
 			);
 			path = "Orchard-ObjC";
 			sourceTree = "<group>";
@@ -189,6 +187,7 @@
 		1F6D237422448145001E0B28 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1F6D236F2244810B001E0B28 /* Info.plist */,
 				1F936284224487E700DA6FBD /* GYBPhase.sh */,
 				1FD67D7C20FE66F0008E8C8A /* GYBUtilities.py */,
 			);
@@ -234,7 +233,6 @@
 				1F2A7ACE2246690700893A38 /* iOS */,
 				1F2A7ACF2246691800893A38 /* watchOS */,
 				1F2A7AD02246691E00893A38 /* tvOS */,
-				1F9B8A8E20FD85790039D518 /* Info.plist */,
 				1F19583F20FEF21D001DFA65 /* DeviceIdentification.swift */,
 			);
 			path = "Orchard-Swift";
@@ -468,7 +466,7 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Orchard-ObjC/Info.plist";
+				INFOPLIST_FILE = Common/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -517,7 +515,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Orchard-ObjC/Info.plist";
+				INFOPLIST_FILE = Common/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -671,7 +669,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Orchard-Swift/Info.plist";
+				INFOPLIST_FILE = Common/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -747,7 +745,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Orchard-Swift/Info.plist";
+				INFOPLIST_FILE = Common/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
