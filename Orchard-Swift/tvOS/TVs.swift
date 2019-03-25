@@ -15,7 +15,7 @@ import Foundation
 public enum TVs {
 
     @available (tvOS, introduced: 9.0)
-    case AppleTV
+    case AppleTVHD
 
     @available (tvOS, introduced: 11.0)
     case AppleTV4K
@@ -27,7 +27,7 @@ public enum TVs {
 
         switch model {
         case "AppleTV5,3":
-            self = .AppleTV
+            self = .AppleTVHD
 
         case "AppleTV6,2":
             if #available(tvOS 11.0, *) {
@@ -41,7 +41,7 @@ public enum TVs {
 
     public var marketingName: String? {
         switch self {
-        case .AppleTV: return "Apple TV"
+        case .AppleTVHD: return "Apple TV HD"
         case .AppleTV4K: return "Apple TV 4K"
 
         default: return nil
