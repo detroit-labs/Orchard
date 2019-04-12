@@ -13,10 +13,10 @@ import Foundation
 
 public enum Watches {
 
-    @available (watchOS, introduced: 1.0, deprecated: 4.0)
+    @available (watchOS, introduced: 1.0, deprecated: 5.0)
     case AppleWatch_38mm
 
-    @available (watchOS, introduced: 1.0, deprecated: 4.0)
+    @available (watchOS, introduced: 1.0, deprecated: 5.0)
     case AppleWatch_42mm
 
     @available (watchOS, introduced: 3.0)

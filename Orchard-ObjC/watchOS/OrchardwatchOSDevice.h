@@ -17,8 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, OrchardwatchOSDevice) {
 
-    OrchardwatchOSDeviceAppleWatch_38mm        NS_ENUM_DEPRECATED_IOS(8.0, 11.0) NS_SWIFT_NAME(AppleWatch_38mm),
-    OrchardwatchOSDeviceAppleWatch_42mm        NS_ENUM_DEPRECATED_IOS(8.0, 11.0) NS_SWIFT_NAME(AppleWatch_42mm),
+    OrchardwatchOSDeviceAppleWatch_38mm        NS_ENUM_DEPRECATED_IOS(8.0, 12.0) NS_SWIFT_NAME(AppleWatch_38mm),
+    OrchardwatchOSDeviceAppleWatch_42mm        NS_ENUM_DEPRECATED_IOS(8.0, 12.0) NS_SWIFT_NAME(AppleWatch_42mm),
     OrchardwatchOSDeviceAppleWatchSeries1_38mm NS_ENUM_AVAILABLE_IOS(10.0)       NS_SWIFT_NAME(AppleWatchSeries1_38mm),
     OrchardwatchOSDeviceAppleWatchSeries1_42mm NS_ENUM_AVAILABLE_IOS(10.0)       NS_SWIFT_NAME(AppleWatchSeries1_42mm),
     OrchardwatchOSDeviceAppleWatchSeries2_38mm NS_ENUM_AVAILABLE_IOS(10.0)       NS_SWIFT_NAME(AppleWatchSeries2_38mm),
