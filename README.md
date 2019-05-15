@@ -79,4 +79,19 @@ simply update the TSV file(s) with new device info and rebuild both targets; the
 source code will be regenerated. Do not modify any file for which there is a
 corresponding `.gyb`, as the builds will overwrite your changes.
 
+Orchard assumes you’ve installed gyb with Homebrew as outlined in the NSHipster
+article; to install it, simply run:
+
+```Shell
+brew install nshipster/formulae/gyb
+```
+
+Orchard also uses the `enum` type in Python. To use this with the system Python (2.7
+as of macOS 10.14.5), simply [run this command][3] to install it:
+
+```Shell
+pip install --upgrade pip enum34
+```
+
 [2]: https://nshipster.com/swift-gyb/
+[3]: https://stackoverflow.com/questions/26828206/importerror-no-module-named-enum
