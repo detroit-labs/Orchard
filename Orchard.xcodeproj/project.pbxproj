@@ -44,6 +44,7 @@
 		1F4FE72520FD95B700A6BC4F /* iPhones.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPhones.tsv; sourceTree = "<group>"; usesTabs = 1; };
 		1F521F8D20FD885700E99897 /* iPads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPads.swift; sourceTree = "<group>"; };
 		1F521F8F20FD886700E99897 /* iPads.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPads.swift.gyb; sourceTree = "<group>"; };
+		1F5A0B422295BB0300231919 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		1F6D236C2244810B001E0B28 /* Orchard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Orchard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6D236E2244810B001E0B28 /* Orchard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Orchard.h; sourceTree = "<group>"; };
 		1F6D236F2244810B001E0B28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -209,6 +210,7 @@
 		1F9B8A4820FD80600039D518 = {
 			isa = PBXGroup;
 			children = (
+				1F5A0B422295BB0300231919 /* CHANGELOG.md */,
 				1FFE6F292277D67500CA2985 /* README.md */,
 				1F2A7AD5224677CB00893A38 /* LICENSE */,
 				1FFA2ADD224528170098CE4A /* Orchard.podspec */,
