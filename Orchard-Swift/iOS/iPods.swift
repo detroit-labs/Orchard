@@ -31,6 +31,9 @@ public enum iPods {
     @available (iOS, introduced: 8.4)
     case iPodTouch6
 
+    @available (iOS, introduced: 12.3)
+    case iPodTouch7
+
     case unknown
 
     internal init(model: String) {
@@ -57,6 +60,11 @@ public enum iPods {
                 self = .iPodTouch6
             }
 
+        case "iPod9,1":
+            if #available(iOS 12.3, *) {
+                self = .iPodTouch7
+            }
+
         default: break
 
         }
@@ -70,6 +78,7 @@ public enum iPods {
         case .iPodTouch4: return "iPod touch (4th Generation)"
         case .iPodTouch5: return "iPod touch (5th Generation)"
         case .iPodTouch6: return "iPod touch (6th Generation)"
+        case .iPodTouch7: return "iPod touch (7th Generation)"
 
         default: return nil
         }

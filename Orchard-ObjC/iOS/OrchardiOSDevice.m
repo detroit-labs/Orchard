@@ -216,6 +216,9 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
     else if ([string isEqualToString:@"iPod7,1"]) {
         return OrchardiOSDeviceiPodTouch6;
     }
+    else if ([string isEqualToString:@"iPod9,1"]) {
+        return OrchardiOSDeviceiPodTouch7;
+    }
 
 #pragma mark -
 
@@ -289,6 +292,7 @@ OrchardiOSiOSDeviceFamily OrchardiOSiOSDeviceFamilyForiOSDevice(OrchardiOSDevice
         case OrchardiOSDeviceiPodTouch4:
         case OrchardiOSDeviceiPodTouch5:
         case OrchardiOSDeviceiPodTouch6:
+        case OrchardiOSDeviceiPodTouch7:
             return OrchardiOSiOSDeviceFamilyiPod;
 
 #pragma mark -
@@ -460,6 +464,9 @@ NSString *OrchardMarketingNameForiOSDevice(OrchardiOSDevice device)
 
         case OrchardiOSDeviceiPodTouch6:
             return @"iPod touch (6th Generation)";
+
+        case OrchardiOSDeviceiPodTouch7:
+            return @"iPod touch (7th Generation)";
 
 #pragma mark -
 
