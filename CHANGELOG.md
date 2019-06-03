@@ -1,5 +1,11 @@
 # Orchard Change Log
 
+## [1.1.1](https://github.com/SlaunchaMan/Orchard/releases/tag/1.1.1)
+**Released:** 2019-06-03
+ 
+### Updated
+ - Added deprecation information for iOS and iPadOS 13.
+
 ## [1.1.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.1.0)
 **Released:** 2019-05-29
 

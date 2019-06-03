@@ -28,13 +28,13 @@ public enum iPads {
     @available (iOS, introduced: 6.0, deprecated: 10.0)
     case iPadMini
 
-    @available (iOS, introduced: 7.0)
+    @available (iOS, introduced: 7.0, deprecated: 13.0)
     case iPadAir
 
-    @available (iOS, introduced: 7.0)
+    @available (iOS, introduced: 7.0, deprecated: 13.0)
     case iPadMini2
 
-    @available (iOS, introduced: 8.0)
+    @available (iOS, introduced: 8.0, deprecated: 13.0)
     case iPadMini3
 
     @available (iOS, introduced: 8.1)

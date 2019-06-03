@@ -34,13 +34,13 @@ public enum iPhones {
     @available (iOS, introduced: 7.0, deprecated: 11.0)
     case iPhone5c
 
-    @available (iOS, introduced: 7.0)
+    @available (iOS, introduced: 7.0, deprecated: 13.0)
     case iPhone5s
 
-    @available (iOS, introduced: 8.0)
+    @available (iOS, introduced: 8.0, deprecated: 13.0)
     case iPhone6
 
-    @available (iOS, introduced: 8.0)
+    @available (iOS, introduced: 8.0, deprecated: 13.0)
     case iPhone6Plus
 
     @available (iOS, introduced: 9.0)

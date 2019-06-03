@@ -28,7 +28,7 @@ public enum iPods {
     @available (iOS, introduced: 6.0, deprecated: 10.0)
     case iPodTouch5
 
-    @available (iOS, introduced: 8.4)
+    @available (iOS, introduced: 8.4, deprecated: 13.0)
     case iPodTouch6
 
     @available (iOS, introduced: 12.3)
