@@ -1,5 +1,11 @@
 # Orchard Change Log
 
+## [1.1.2](https://github.com/SlaunchaMan/Orchard/releases/tag/1.1.2)
+**Released:** 2019-06-16
+
+### Fixed
+- Fixed typo in iPad 4 identifier.
+
 ## [1.1.1](https://github.com/SlaunchaMan/Orchard/releases/tag/1.1.1)
 **Released:** 2019-06-03
  

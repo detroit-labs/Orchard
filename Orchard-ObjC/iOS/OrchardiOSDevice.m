@@ -120,7 +120,7 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
     }
     else if ([string orchard_isEqualToOneOfStrings:@[@"iPad3,4",
                                                      @"iPad3,5",
-                                                     @"iPAd3,6"]]) {
+                                                     @"iPad3,6"]]) {
         return OrchardiOSDeviceiPad4;
     }
     else if ([string orchard_isEqualToOneOfStrings:@[@"iPad2,5",

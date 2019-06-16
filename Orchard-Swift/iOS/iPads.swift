@@ -88,7 +88,7 @@ public enum iPads {
         case "iPad3,1", "iPad3,2", "iPad3,3":
             self = .iPad3
 
-        case "iPad3,4", "iPad3,5", "iPAd3,6":
+        case "iPad3,4", "iPad3,5", "iPad3,6":
             self = .iPad4
 
         case "iPad2,5", "iPad2,6", "iPad2,7":
