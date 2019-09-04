@@ -20,13 +20,13 @@ NS_ASSUME_NONNULL_BEGIN
 % sys.path.insert(0, '../../Common')
 % from GYBUtilities import ( iOSDeviceFamily, DataPath, longestEnumNameLength, enumName )
 % import csv
-typedef NS_ENUM(NSUInteger, OrchardiOSiOSDeviceFamily) {
+typedef NS_ENUM(NSUInteger, OrchardiOSDeviceFamily) {
 % for family in iOSDeviceFamily:
-    % formattedFamilyName = '{:31s}'.format("OrchardiOSiOSDeviceFamily" + family.value)
+    % formattedFamilyName = '{:31s}'.format("OrchardiOSDeviceFamily" + family.value)
     ${formattedFamilyName} NS_SWIFT_NAME(${family.value}),
 % end
-    OrchardiOSiOSDeviceFamilySimulator NS_SWIFT_NAME(simulator),
-    OrchardiOSiOSDeviceFamilyUnknown   NS_SWIFT_NAME(unknown)
+    OrchardiOSDeviceFamilySimulator NS_SWIFT_NAME(simulator),
+    OrchardiOSDeviceFamilyUnknown   NS_SWIFT_NAME(unknown)
 } NS_SWIFT_NAME(iOSiOSDeviceFamily);
 
 typedef NS_ENUM(NSUInteger, OrchardiOSDevice) {
@@ -65,7 +65,7 @@ elif name and released:
 @end
 
 OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString *string) NS_SWIFT_NAME(iOSDevice(from:));
-OrchardiOSiOSDeviceFamily OrchardiOSiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device) NS_SWIFT_NAME(iOSiOSDeviceFamily(for:));
+OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device) NS_SWIFT_NAME(iOSDeviceFamily(for:));
 NSString * _Nullable OrchardMarketingNameForiOSDevice(OrchardiOSDevice device) NS_SWIFT_NAME(marketingName(for:));
 
 NS_ASSUME_NONNULL_END

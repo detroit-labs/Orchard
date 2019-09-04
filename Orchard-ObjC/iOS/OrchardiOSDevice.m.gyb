@@ -64,13 +64,13 @@ enum_name = enumName(name)
     return OrchardiOSDeviceUnknown;
 }
 
-OrchardiOSiOSDeviceFamily OrchardiOSiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device)
+OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device)
 {
     // Disable deprecation warnings for historical accuracy
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
     switch (device) {
-        case OrchardiOSDeviceSimulator: return OrchardiOSiOSDeviceFamilySimulator;
+        case OrchardiOSDeviceSimulator: return OrchardiOSDeviceFamilySimulator;
 
 % for family in iOSDeviceFamily:
     % with open(DataPath(family)) as file:
@@ -87,14 +87,14 @@ enum_name = enumName(name)
         case OrchardiOSDevice${enum_name}:
         % end
     % end
-            return OrchardiOSiOSDeviceFamily${family.value};
+            return OrchardiOSDeviceFamily${family.value};
 
 %end
 #pragma mark -
 
         case OrchardiOSDeviceUnknown:
         default:
-            return OrchardiOSiOSDeviceFamilyUnknown;
+            return OrchardiOSDeviceFamilyUnknown;
     }
 
 #pragma clang diagnostic pop

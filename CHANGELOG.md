@@ -1,5 +1,11 @@
 # Orchard Change Log
 
+## [1.1.3](https://github.com/SlaunchaMan/Orchard/releases/tag/1.1.3)
+**Released:** 2019-09-04
+
+### Fixed
+- Fixed typo in Objective-C enum name.
+
 ## [1.1.2](https://github.com/SlaunchaMan/Orchard/releases/tag/1.1.2)
 **Released:** 2019-06-16
 

@@ -227,13 +227,13 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
     return OrchardiOSDeviceUnknown;
 }
 
-OrchardiOSiOSDeviceFamily OrchardiOSiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device)
+OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice device)
 {
     // Disable deprecation warnings for historical accuracy
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
     switch (device) {
-        case OrchardiOSDeviceSimulator: return OrchardiOSiOSDeviceFamilySimulator;
+        case OrchardiOSDeviceSimulator: return OrchardiOSDeviceFamilySimulator;
 
 #pragma mark - iPhones
 
@@ -258,7 +258,7 @@ OrchardiOSiOSDeviceFamily OrchardiOSiOSDeviceFamilyForiOSDevice(OrchardiOSDevice
         case OrchardiOSDeviceiPhoneXS:
         case OrchardiOSDeviceiPhoneXSMax:
         case OrchardiOSDeviceiPhoneXR:
-            return OrchardiOSiOSDeviceFamilyiPhone;
+            return OrchardiOSDeviceFamilyiPhone;
 
 #pragma mark - iPads
 
@@ -282,7 +282,7 @@ OrchardiOSiOSDeviceFamily OrchardiOSiOSDeviceFamilyForiOSDevice(OrchardiOSDevice
         case OrchardiOSDeviceiPadPro11Inch:
         case OrchardiOSDeviceiPadMini5:
         case OrchardiOSDeviceiPadAir3:
-            return OrchardiOSiOSDeviceFamilyiPad;
+            return OrchardiOSDeviceFamilyiPad;
 
 #pragma mark - iPods
 
@@ -293,13 +293,13 @@ OrchardiOSiOSDeviceFamily OrchardiOSiOSDeviceFamilyForiOSDevice(OrchardiOSDevice
         case OrchardiOSDeviceiPodTouch5:
         case OrchardiOSDeviceiPodTouch6:
         case OrchardiOSDeviceiPodTouch7:
-            return OrchardiOSiOSDeviceFamilyiPod;
+            return OrchardiOSDeviceFamilyiPod;
 
 #pragma mark -
 
         case OrchardiOSDeviceUnknown:
         default:
-            return OrchardiOSiOSDeviceFamilyUnknown;
+            return OrchardiOSDeviceFamilyUnknown;
     }
 
 #pragma clang diagnostic pop
