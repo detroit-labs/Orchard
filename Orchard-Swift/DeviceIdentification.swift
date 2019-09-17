@@ -104,7 +104,8 @@ extension WKInterfaceDevice {
 #endif
 
 private func DeviceModelName() -> String? {
-    if let simulatorModelIdentifier = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] {
+    if let simulatorModelIdentifier = ProcessInfo()
+        .environment["SIMULATOR_MODEL_IDENTIFIER"] {
         return simulatorModelIdentifier
     }
 
