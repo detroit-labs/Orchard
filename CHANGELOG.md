@@ -1,5 +1,11 @@
 # Orchard Change Log
 
+## [1.2.1](https://github.com/SlaunchaMan/Orchard/releases/tag/1.2.1)
+**Released:** 2019-09-22
+
+### Added
+- Support for Swift 5.1 in the Podspec for CocoaPods
+
 ## [1.2.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.2.0)
 **Released:** 2019-09-16
 
