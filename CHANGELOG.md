@@ -1,16 +1,22 @@
 # Orchard Change Log
 
+## [1.3.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.3.0)
+**Released:** 2019-09-24
+
+### Added
+- Support for iPad (7th Generation).
+
 ## [1.2.1](https://github.com/SlaunchaMan/Orchard/releases/tag/1.2.1)
 **Released:** 2019-09-22
 
 ### Added
-- Support for Swift 5.1 in the Podspec for CocoaPods
+- Support for Swift 5.1 in the Podspec for CocoaPods.
 
 ## [1.2.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.2.0)
 **Released:** 2019-09-16
 
 ### Added
-- Support for iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, and Apple Watch Series 5
+- Support for iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, and Apple Watch Series 5.
 
 ## [1.1.3](https://github.com/SlaunchaMan/Orchard/releases/tag/1.1.3)
 **Released:** 2019-09-04
@@ -41,5 +47,5 @@
 
 ### Updated
   - Podspec syntax updated to CocoaPods 1.7 syntax
-  - Supported Swift versions set to 4.0 - 5.0
-  - Added CHANGELOG.md
+  - Supported Swift versions set to 4.0 - 5.0.
+  - Added `CHANGELOG.md`.

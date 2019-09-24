@@ -27,7 +27,7 @@ typedef NS_ENUM(NSUInteger, OrchardiOSDeviceFamily) {
 % end
     OrchardiOSDeviceFamilySimulator NS_SWIFT_NAME(simulator),
     OrchardiOSDeviceFamilyUnknown   NS_SWIFT_NAME(unknown)
-} NS_SWIFT_NAME(iOSiOSDeviceFamily);
+} NS_SWIFT_NAME(iOSDeviceFamily);
 
 typedef NS_ENUM(NSUInteger, OrchardiOSDevice) {
 
