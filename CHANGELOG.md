@@ -1,5 +1,11 @@
 # Orchard Change Log
 
+## [1.4.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.4.0)
+**Released:** 2020-02-25
+
+### Added
+- Support for Swift Package Manager.
+
 ## [1.3.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.3.0)
 **Released:** 2019-09-24
 

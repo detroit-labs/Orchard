@@ -5,6 +5,9 @@
 //  Created by Jeff Kelley on 7/17/18.
 //
 
+import Darwin
+import Foundation
+
 #if os(iOS) || os(tvOS)
 import UIKit
 #elseif os(watchOS)
