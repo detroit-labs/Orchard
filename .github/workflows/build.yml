@@ -14,5 +14,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: Install GYB
+      run: brew install nshipster/formulae/gyb
     - name: xcodebuild
       run: xcodebuild -project Orchard.xcodeproj -target ${{ matrix.target }} -configuration Debug -sdk ${{ matrix.sdk }}
