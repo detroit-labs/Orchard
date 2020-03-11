@@ -1,4 +1,5 @@
 xcuserdata/
+build
 .build
 .swiftpm
 *.pyc

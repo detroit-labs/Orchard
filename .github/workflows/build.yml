@@ -1,14 +1,11 @@
-name: build
-
 on:
   push:
     branches: [ master ]
   pull_request:
 
 jobs:
-
-  build:
-    name: {{matrix.target}} {{matrix.sdk}} Build
+  xcodebuild:
+    name: ${{ matrix.target }} ${{ matrix.sdk }} Build
     runs-on: macos-latest
     strategy:
       matrix:
@@ -18,4 +15,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: xcodebuild
-      run: xcodebuild -project Orchard.xcodeproj -target {{matrix.target}} -configuration Debug -sdk {{matrix.sdk}}
+      run: xcodebuild -project Orchard.xcodeproj -target ${{ matrix.target }} -configuration Debug -sdk ${{ matrix.sdk }}
