@@ -1,0 +1,21 @@
+name: build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+
+jobs:
+
+  build:
+    name: {{matrix.target}} {{matrix.sdk}} Build
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        sdk: [iphonesimulator, appletvsimulator, watchsimulator]
+        target: [Orchard-ObjC, Orchard-Swift]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: xcodebuild
+      run: xcodebuild -project Orchard.xcodeproj -target {{matrix.target}} -configuration Debug -sdk {{matrix.sdk}}
