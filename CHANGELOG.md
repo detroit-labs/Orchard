@@ -1,5 +1,14 @@
 # Orchard Change Log
 
+## [1.4.1](https://github.com/SlaunchaMan/Orchard/releases/tag/1.4.1)
+**Released:** 2020-03-10
+
+### Added
+- PR build GitHub Action
+
+### Modified
+- Extract simulator identifier into category.
+
 ## [1.4.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.4.0)
 **Released:** 2020-02-25
 
