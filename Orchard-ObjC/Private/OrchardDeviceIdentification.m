@@ -10,9 +10,11 @@
 
 #import <sys/utsname.h>
 
+#import "NSProcessInfo+OrchardUtilities.h"
+
 NSString *OrchardDeviceIdentifier() {
-    NSString *simulatorIdentifier =
-    NSProcessInfo.processInfo.environment[@"SIMULATOR_MODEL_IDENTIFIER"];
+    NSString *simulatorIdentifier = 
+    NSProcessInfo.processInfo.simulatorIdentifier;
     
     if (simulatorIdentifier != nil) {
         return simulatorIdentifier;
