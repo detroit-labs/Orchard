@@ -62,10 +62,10 @@ public enum iPads {
     case iPad6
 
     @available (iOS, introduced: 12.1)
-    case iPadPro12_9Inch3
+    case iPadPro11Inch
 
     @available (iOS, introduced: 12.1)
-    case iPadPro11Inch
+    case iPadPro12_9Inch3
 
     @available (iOS, introduced: 12.2)
     case iPadMini5
@@ -75,6 +75,12 @@ public enum iPads {
 
     @available (iOS, introduced: 13.1)
     case iPad7
+
+    @available (iOS, introduced: 13.4)
+    case iPadPro11Inch2
+
+    @available (iOS, introduced: 13.4)
+    case iPadPro12_9Inch4
 
     case unknown
 
@@ -146,14 +152,14 @@ public enum iPads {
                 self = .iPad6
             }
 
-        case "iPad8,5", "iPad8,6", "iPad8,7", "iPad8,8":
-            if #available(iOS 12.1, *) {
-                self = .iPadPro12_9Inch3
-            }
-
         case "iPad8,1", "iPad8,2", "iPad8,3", "iPad8,4":
             if #available(iOS 12.1, *) {
                 self = .iPadPro11Inch
+            }
+
+        case "iPad8,5", "iPad8,6", "iPad8,7", "iPad8,8":
+            if #available(iOS 12.1, *) {
+                self = .iPadPro12_9Inch3
             }
 
         case "iPad11,1", "iPad11,2":
@@ -169,6 +175,16 @@ public enum iPads {
         case "iPad7,11", "iPad7,12":
             if #available(iOS 13.1, *) {
                 self = .iPad7
+            }
+
+        case "iPad8,9", "iPad8,10":
+            if #available(iOS 13.4, *) {
+                self = .iPadPro11Inch2
+            }
+
+        case "iPad8,11", "iPad8,12":
+            if #available(iOS 13.4, *) {
+                self = .iPadPro12_9Inch4
             }
 
         default: break
@@ -191,14 +207,16 @@ public enum iPads {
         case .iPadPro12_9Inch: return "iPad Pro (12.9-inch)"
         case .iPadPro9_7Inch: return "iPad Pro (9.7-inch)"
         case .iPad5: return "iPad (5th Generation)"
-        case .iPadPro12_9Inch2: return "iPad Pro (12.9-inch, 2nd Generation)"
+        case .iPadPro12_9Inch2: return "iPad Pro (12.9-inch) (2nd Generation)"
         case .iPadPro10_5Inch: return "iPad Pro (10.5-inch)"
         case .iPad6: return "iPad (6th Generation)"
-        case .iPadPro12_9Inch3: return "iPad Pro (12.9-inch, 3rd Generation)"
         case .iPadPro11Inch: return "iPad Pro (11-inch)"
+        case .iPadPro12_9Inch3: return "iPad Pro (12.9-inch) (3rd Generation)"
         case .iPadMini5: return "iPad mini (5th Generation)"
         case .iPadAir3: return "iPad Air (3rd Generation)"
         case .iPad7: return "iPad (7th Generation)"
+        case .iPadPro11Inch2: return "iPad Pro (11-inch) (2nd Generation)"
+        case .iPadPro12_9Inch4: return "iPad Pro (12.9-inch) (4th Generation)"
 
         default: return nil
         }

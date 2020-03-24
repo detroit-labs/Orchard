@@ -1,10 +1,19 @@
 # Orchard Change Log
 
+## [1.5.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.5.0)
+**Released:** 2020-03-24
+
+### Added
+- Support for iPad Pro (11-inch) (2nd Generation) and iPad Pro (12.9-inch) (4th Generation).
+
+### Updated
+- iPad Pro marketing names updated to more closely match Apple terminology.
+
 ## [1.4.1](https://github.com/SlaunchaMan/Orchard/releases/tag/1.4.1)
 **Released:** 2020-03-10
 
 ### Added
-- PR build GitHub Action
+- PR build GitHub Action.
 
 ### Modified
 - Extract simulator identifier into category.
