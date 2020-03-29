@@ -4,3 +4,4 @@ build
 .swiftpm
 *.pyc
 .DS_Store
+Brewfile.lock.json

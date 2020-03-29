@@ -1,10 +1,25 @@
 # Orchard Change Log
 
+## [1.5.1](https://github.com/SlaunchaMan/Orchard/releases/tag/1.5.1)
+**Released:** 2020-03-39
+
+### Added
+- Support for homebrew-bundle.
+
+### Updated
+- README instructions now include homebrew-bundle.
+
+### Fixed
+- README instructions now work on a fresh macOS install.
+- All Markdown files wrap at 80 characters for more pleasant viewing in the
+  default macOS Terminal.
+
 ## [1.5.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.5.0)
 **Released:** 2020-03-24
 
 ### Added
-- Support for iPad Pro (11-inch) (2nd Generation) and iPad Pro (12.9-inch) (4th Generation).
+- Support for iPad Pro (11-inch) (2nd Generation) and iPad Pro (12.9-inch)
+(4th Generation).
 
 ### Updated
 - iPad Pro marketing names updated to more closely match Apple terminology.
@@ -40,7 +55,8 @@
 **Released:** 2019-09-16
 
 ### Added
-- Support for iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, and Apple Watch Series 5.
+- Support for iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, and Apple Watch
+Series 5.
 
 ## [1.1.3](https://github.com/SlaunchaMan/Orchard/releases/tag/1.1.3)
 **Released:** 2019-09-04
