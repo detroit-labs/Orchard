@@ -110,6 +110,9 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
     else if ([string isEqualToString:@"iPhone12,5"]) {
         return OrchardiOSDeviceiPhone11ProMax;
     }
+    else if ([string isEqualToString:@"iPhone12,8"]) {
+        return OrchardiOSDeviceiPhoneSE2;
+    }
 
 #pragma mark - iPads
 
@@ -282,6 +285,7 @@ OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice devic
         case OrchardiOSDeviceiPhone11:
         case OrchardiOSDeviceiPhone11Pro:
         case OrchardiOSDeviceiPhone11ProMax:
+        case OrchardiOSDeviceiPhoneSE2:
             return OrchardiOSDeviceFamilyiPhone;
 
 #pragma mark - iPads
@@ -418,6 +422,9 @@ NSString *OrchardMarketingNameForiOSDevice(OrchardiOSDevice device)
 
         case OrchardiOSDeviceiPhone11ProMax:
             return @"iPhone 11 Pro Max";
+
+        case OrchardiOSDeviceiPhoneSE2:
+            return @"iPhone SE (2nd Generation)";
 
 #pragma mark - iPads
 

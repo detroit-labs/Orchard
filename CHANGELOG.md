@@ -1,5 +1,11 @@
 # Orchard Change Log
 
+## [1.6.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.6.0)
+**Released:** 2020-04-15
+
+### Added
+- Support for iPhone SE (2nd Generation).
+
 ## [1.5.1](https://github.com/SlaunchaMan/Orchard/releases/tag/1.5.1)
 **Released:** 2020-03-39
 
