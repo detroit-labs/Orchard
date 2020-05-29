@@ -31,7 +31,7 @@ jobs:
         fi
     - name: Check for Carthage
       id: carthage-check
-      runs: ls "Cartfile.resolved"
+      run: ls "Cartfile.resolved"
     - name: Update Carthage
       if: steps.carthage-check.outcome == success
       run: carthage update --no-build
