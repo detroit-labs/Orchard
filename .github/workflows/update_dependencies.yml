@@ -1,0 +1,43 @@
+# This is a workflow to check to see if there are any updates to your dependencies and send a PR if there are.
+
+name: Update Dependencies
+
+on:
+  schedule:
+    - cron: '0 0 * * 1-5'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  dependencies:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Check for Gemfile
+      id: gemfile-check
+      run: ls "Gemfile.lock"
+    - name: Update Gems
+      if: steps.gemfile-check.outcome == success
+      run:  bundle update
+    - name: Check for Podfile
+      id: podfile-check
+      run: ls "Podfile.lock"
+    - name: Update Pods
+      if: steps.podfile-check.outcome == success
+      run: |
+        if [ -f "Gemfile.lock" ]; then
+          bundle exec pod update
+        else
+          pod update
+        fi
+    - name: Check for Carthage
+      id: carthage-check
+      run: ls "Cartfile.resolved"
+    - name: Update Carthage
+      if: steps.carthage-check.outcome == success
+      run: carthage update --no-build
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Update Dependencies"
+        title: "Update Dependencies"
