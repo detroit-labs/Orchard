@@ -19,16 +19,16 @@ public enum Watches {
     @available (watchOS, introduced: 1.0, deprecated: 5.0)
     case AppleWatch_42mm
 
-    @available (watchOS, introduced: 3.0)
+    @available (watchOS, introduced: 3.0, deprecated: 7.0)
     case AppleWatchSeries1_38mm
 
-    @available (watchOS, introduced: 3.0)
+    @available (watchOS, introduced: 3.0, deprecated: 7.0)
     case AppleWatchSeries1_42mm
 
-    @available (watchOS, introduced: 3.0)
+    @available (watchOS, introduced: 3.0, deprecated: 7.0)
     case AppleWatchSeries2_38mm
 
-    @available (watchOS, introduced: 3.0)
+    @available (watchOS, introduced: 3.0, deprecated: 7.0)
     case AppleWatchSeries2_42mm
 
     @available (watchOS, introduced: 4.0)

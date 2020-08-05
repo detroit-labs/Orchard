@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Orchard"
-  spec.version      = "1.6.0"
+  spec.version      = "1.6.1"
   spec.summary      = "Device identification for iOS, watchOS, and tvOS."
 
   spec.description  = <<-DESC
@@ -28,7 +28,7 @@ make decisions based on that.
   spec.watchos.frameworks = 'Foundation', 'WatchKit'
   spec.tvos.frameworks    = 'Foundation', 'UIKit'
 
-  spec.swift_versions = ['4.0', '4.1', '4.2', '5.0', '5.1']
+  spec.swift_versions = ['4.0', '4.1', '4.2', '5.0', '5.1', '5.2', '5.3']
 
   spec.subspec 'Swift' do |ss|
     ss.source_files = 'Orchard-Swift/*.swift'

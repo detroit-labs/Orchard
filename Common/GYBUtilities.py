@@ -75,4 +75,4 @@ def needsAvailabilityCheck(version, os = OSFamily.IOS):
 	return versiontuple(version) > minimum
 
 def enumName(x):
-	return x.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6").replace("7th", "7").replace("touch", "Touch")
+	return x.replace(" ", "").replace("(", "").replace(")","").replace(".", "_").replace("-", "").replace(",", "").replace("mini", "Mini").replace("Generation", "").replace("inch", "Inch").replace("1st", "").replace("2nd", "2").replace("3rd", "3").replace("4th", "4").replace("5th", "5").replace("6th", "6").replace("7th", "7").replace("touch", "Touch")

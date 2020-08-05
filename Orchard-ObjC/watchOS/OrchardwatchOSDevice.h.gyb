@@ -41,9 +41,9 @@ enum_name = enumName(name) + "_" + size
 formatted_enum_name = '{:{width}s}'.format("OrchardwatchOSDevice" + enum_name, width=enumNameLength + 5)
 
 if name and released and deprecated:
-    formatted_availability = '{:33s}'.format("NS_ENUM_DEPRECATED_IOS(" + released + ", " + deprecated + ")")
+    formatted_availability = '{:34s}'.format("NS_ENUM_DEPRECATED_IOS(" + released + ", " + deprecated + ")")
 elif name and released:
-    formatted_availability = '{:33s}'.format("NS_ENUM_AVAILABLE_IOS(" + released + ")")
+    formatted_availability = '{:34s}'.format("NS_ENUM_AVAILABLE_IOS(" + released + ")")
 }%
     ${formatted_enum_name} ${formatted_availability} NS_SWIFT_NAME(${enum_name}),
     % end
