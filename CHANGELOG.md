@@ -1,5 +1,11 @@
 # Orchard Change Log
 
+## [1.6.1](https://github.com/SlaunchaMan/Orchard/releases/tag/1.6.1)
+**Released:** 2020-08-05
+
+### Added
+- Deprecation versions for devices deprecated by watchOS 7.
+
 ## [1.6.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.6.0)
 **Released:** 2020-04-15
 
