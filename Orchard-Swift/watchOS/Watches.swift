@@ -49,6 +49,18 @@ public enum Watches {
     @available (watchOS, introduced: 6.0)
     case AppleWatchSeries5_44mm
 
+    @available (watchOS, introduced: 7.0)
+    case AppleWatchSE_40mm
+
+    @available (watchOS, introduced: 7.0)
+    case AppleWatchSE_44mm
+
+    @available (watchOS, introduced: 7.0)
+    case AppleWatchSeries6_40mm
+
+    @available (watchOS, introduced: 7.0)
+    case AppleWatchSeries6_44mm
+
     case unknown
 
     internal init(model: String) {
@@ -111,6 +123,26 @@ public enum Watches {
                 self = .AppleWatchSeries5_44mm
             }
 
+        case "Watch5,9", "Watch5,11":
+            if #available(watchOS 7.0, *) {
+                self = .AppleWatchSE_40mm
+            }
+
+        case "Watch5,10", "Watch5,12":
+            if #available(watchOS 7.0, *) {
+                self = .AppleWatchSE_44mm
+            }
+
+        case "Watch6,1", "Watch6,3":
+            if #available(watchOS 7.0, *) {
+                self = .AppleWatchSeries6_40mm
+            }
+
+        case "Watch6,2", "Watch6,4":
+            if #available(watchOS 7.0, *) {
+                self = .AppleWatchSeries6_44mm
+            }
+
         default: break
 
         }
@@ -130,6 +162,10 @@ public enum Watches {
         case .AppleWatchSeries4_44mm: return "Apple Watch Series 4"
         case .AppleWatchSeries5_40mm: return "Apple Watch Series 5"
         case .AppleWatchSeries5_44mm: return "Apple Watch Series 5"
+        case .AppleWatchSE_40mm: return "Apple Watch SE"
+        case .AppleWatchSE_44mm: return "Apple Watch SE"
+        case .AppleWatchSeries6_40mm: return "Apple Watch Series 6"
+        case .AppleWatchSeries6_44mm: return "Apple Watch Series 6"
 
         default: return nil
         }
