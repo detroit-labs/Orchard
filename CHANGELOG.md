@@ -1,5 +1,12 @@
 # Orchard Change Log
 
+## [1.7.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.7.0)
+**Released:** 2020-09-17
+
+### Added
+- Support for Apple Watch SE and Apple Watch Series 6.
+- Support for iPad (8th Generation) and iPad Air (4th Generation).
+
 ## [1.6.1](https://github.com/SlaunchaMan/Orchard/releases/tag/1.6.1)
 **Released:** 2020-08-05
 

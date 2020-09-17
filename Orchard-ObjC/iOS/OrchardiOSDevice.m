@@ -219,6 +219,13 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
                                                      @"iPad8,12"]]) {
         return OrchardiOSDeviceiPadPro12_9Inch4;
     }
+    else if ([string orchard_isEqualToOneOfStrings:@[@"iPad11,6",
+                                                     @"iPad11,7"]]) {
+        return OrchardiOSDeviceiPad8;
+    }
+    else if ([string isEqualToString:@"iPad13,1"]) {
+        return OrchardiOSDeviceiPadAir4;
+    }
 
 #pragma mark - iPods
 
@@ -313,6 +320,8 @@ OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice devic
         case OrchardiOSDeviceiPad7:
         case OrchardiOSDeviceiPadPro11Inch2:
         case OrchardiOSDeviceiPadPro12_9Inch4:
+        case OrchardiOSDeviceiPad8:
+        case OrchardiOSDeviceiPadAir4:
             return OrchardiOSDeviceFamilyiPad;
 
 #pragma mark - iPods
@@ -496,6 +505,12 @@ NSString *OrchardMarketingNameForiOSDevice(OrchardiOSDevice device)
 
         case OrchardiOSDeviceiPadPro12_9Inch4:
             return @"iPad Pro (12.9-inch) (4th Generation)";
+
+        case OrchardiOSDeviceiPad8:
+            return @"iPad (8th Generation)";
+
+        case OrchardiOSDeviceiPadAir4:
+            return @"iPad Air (4th Generation)";
 
 #pragma mark - iPods
 
