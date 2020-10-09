@@ -1,5 +1,11 @@
 # Orchard Change Log
 
+## [1.7.1](https://github.com/SlaunchaMan/Orchard/releases/tag/1.7.1)
+**Released:** 2020-10-09
+
+### Updated
+- Additional identifier for iPad Air (4th Generation).
+
 ## [1.7.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.7.0)
 **Released:** 2020-09-17
 

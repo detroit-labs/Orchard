@@ -223,7 +223,8 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
                                                      @"iPad11,7"]]) {
         return OrchardiOSDeviceiPad8;
     }
-    else if ([string isEqualToString:@"iPad13,1"]) {
+    else if ([string orchard_isEqualToOneOfStrings:@[@"iPad13,1",
+                                                     @"iPad13,2"]]) {
         return OrchardiOSDeviceiPadAir4;
     }
 

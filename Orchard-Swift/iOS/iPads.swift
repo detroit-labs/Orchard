@@ -198,7 +198,7 @@ public enum iPads {
                 self = .iPad8
             }
 
-        case "iPad13,1":
+        case "iPad13,1", "iPad13,2":
             if #available(iOS 14.0, *) {
                 self = .iPadAir4
             }
