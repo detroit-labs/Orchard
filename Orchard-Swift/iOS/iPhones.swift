@@ -88,6 +88,18 @@ public enum iPhones {
     @available (iOS, introduced: 13.4)
     case iPhoneSE2
 
+    @available (iOS, introduced: 14.1)
+    case iPhone12
+
+    @available (iOS, introduced: 14.1)
+    case iPhone12Mini
+
+    @available (iOS, introduced: 14.1)
+    case iPhone12Pro
+
+    @available (iOS, introduced: 14.1)
+    case iPhone12ProMax
+
     case unknown
 
     internal init(model: String) {
@@ -125,14 +137,10 @@ public enum iPhones {
             self = .iPhone6Plus
 
         case "iPhone8,1":
-            if #available(iOS 9.0, *) {
-                self = .iPhone6s
-            }
+            self = .iPhone6s
 
         case "iPhone8,2":
-            if #available(iOS 9.0, *) {
-                self = .iPhone6sPlus
-            }
+            self = .iPhone6sPlus
 
         case "iPhone8,4":
             if #available(iOS 9.3, *) {
@@ -199,6 +207,26 @@ public enum iPhones {
                 self = .iPhoneSE2
             }
 
+        case "iPhone13,2":
+            if #available(iOS 14.1, *) {
+                self = .iPhone12
+            }
+
+        case "iPhone13,1":
+            if #available(iOS 14.1, *) {
+                self = .iPhone12Mini
+            }
+
+        case "iPhone13,3":
+            if #available(iOS 14.1, *) {
+                self = .iPhone12Pro
+            }
+
+        case "iPhone13,4":
+            if #available(iOS 14.1, *) {
+                self = .iPhone12ProMax
+            }
+
         default: break
 
         }
@@ -231,6 +259,10 @@ public enum iPhones {
         case .iPhone11Pro: return "iPhone 11 Pro"
         case .iPhone11ProMax: return "iPhone 11 Pro Max"
         case .iPhoneSE2: return "iPhone SE (2nd Generation)"
+        case .iPhone12: return "iPhone 12"
+        case .iPhone12Mini: return "iPhone 12 mini"
+        case .iPhone12Pro: return "iPhone 12 Pro"
+        case .iPhone12ProMax: return "iPhone 12 Pro Max"
 
         default: return nil
         }

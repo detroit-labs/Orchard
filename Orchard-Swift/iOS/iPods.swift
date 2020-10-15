@@ -56,9 +56,7 @@ public enum iPods {
             self = .iPodTouch5
 
         case "iPod7,1":
-            if #available(iOS 8.4, *) {
-                self = .iPodTouch6
-            }
+            self = .iPodTouch6
 
         case "iPod9,1":
             if #available(iOS 12.3, *) {
