@@ -8,6 +8,7 @@
 
 ### Updated
 - iOS deployment target set to 9.0 to match Xcode 12’s support.
+- Reordered iPad models to group by device type.
 
 ## [1.7.1](https://github.com/SlaunchaMan/Orchard/releases/tag/1.7.1)
 **Released:** 2020-10-09
