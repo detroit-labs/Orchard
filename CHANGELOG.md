@@ -6,6 +6,12 @@
 ### Added
 - Support for iPhone 12, iPhone 12 mini, iPhone 12 Pro, and iPhone 12 Pro Max.
 
+## [1.7.1](https://github.com/SlaunchaMan/Orchard/releases/tag/1.7.1)
+**Released:** 2020-10-09
+
+### Updated
+- Additional identifier for iPad Air (4th Generation).
+
 ## [1.7.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.7.0)
 **Released:** 2020-09-17
 
