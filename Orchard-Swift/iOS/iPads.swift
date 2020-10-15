@@ -119,14 +119,10 @@ public enum iPads {
             self = .iPadMini3
 
         case "iPad5,3", "iPad5,4":
-            if #available(iOS 8.1, *) {
-                self = .iPadAir2
-            }
+            self = .iPadAir2
 
         case "iPad5,1", "iPad5,2":
-            if #available(iOS 9.0, *) {
-                self = .iPadMini4
-            }
+            self = .iPadMini4
 
         case "iPad6,7", "iPad6,8":
             if #available(iOS 9.1, *) {

@@ -6,6 +6,9 @@
 ### Added
 - Support for iPhone 12, iPhone 12 mini, iPhone 12 Pro, and iPhone 12 Pro Max.
 
+### Updated
+- iOS deployment target set to 9.0 to match Xcode 12’s support.
+
 ## [1.7.1](https://github.com/SlaunchaMan/Orchard/releases/tag/1.7.1)
 **Released:** 2020-10-09
 

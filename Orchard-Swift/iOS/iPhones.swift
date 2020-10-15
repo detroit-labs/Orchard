@@ -137,14 +137,10 @@ public enum iPhones {
             self = .iPhone6Plus
 
         case "iPhone8,1":
-            if #available(iOS 9.0, *) {
-                self = .iPhone6s
-            }
+            self = .iPhone6s
 
         case "iPhone8,2":
-            if #available(iOS 9.0, *) {
-                self = .iPhone6sPlus
-            }
+            self = .iPhone6sPlus
 
         case "iPhone8,4":
             if #available(iOS 9.3, *) {
