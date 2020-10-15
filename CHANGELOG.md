@@ -1,5 +1,11 @@
 # Orchard Change Log
 
+## [1.8.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.8.0)
+**Released:** 2020-10-15
+
+### Added
+- Support for iPhone 12, iPhone 12 mini, iPhone 12 Pro, and iPhone 12 Pro Max.
+
 ## [1.7.0](https://github.com/SlaunchaMan/Orchard/releases/tag/1.7.0)
 **Released:** 2020-09-17
 
