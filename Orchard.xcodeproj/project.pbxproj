@@ -45,7 +45,7 @@
 		1F4A7D9822448E8A00158723 /* OrchardtvOSDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrchardtvOSDevice.m; sourceTree = "<group>"; };
 		1F4A7D9A22448F9B00158723 /* TVs.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = TVs.swift.gyb; sourceTree = "<group>"; };
 		1F4A7D9B2244903300158723 /* TVs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVs.swift; sourceTree = "<group>"; };
-		1F4FE72520FD95B700A6BC4F /* iPhones.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPhones.tsv; sourceTree = "<group>"; usesTabs = 1; };
+		1F4FE72520FD95B700A6BC4F /* iPhones.tsv */ = {isa = PBXFileReference; lastKnownFileType = text; lineEnding = 0; path = iPhones.tsv; sourceTree = "<group>"; usesTabs = 1; };
 		1F521F8D20FD885700E99897 /* iPads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPads.swift; sourceTree = "<group>"; };
 		1F521F8F20FD886700E99897 /* iPads.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = iPads.swift.gyb; sourceTree = "<group>"; };
 		1F5A0B422295BB0300231919 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -321,7 +321,7 @@
 			attributes = {
 				CLASSPREFIX = Orchard;
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Jeff Kelley";
 				TargetAttributes = {
 					1F6D236B2244810B001E0B28 = {
