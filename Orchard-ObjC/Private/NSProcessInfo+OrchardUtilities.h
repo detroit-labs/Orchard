@@ -3,7 +3,6 @@
 //  Orchard-ObjC
 //
 //  Created by Jeff Kelley on 3/10/20.
-//  Copyright © 2020 Jeff Kelley. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

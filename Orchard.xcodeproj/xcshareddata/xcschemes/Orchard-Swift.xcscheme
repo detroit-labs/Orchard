@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1F6D236B2244810B001E0B28"
+               BlueprintIdentifier = "1F9B8A8920FD85790039D518"
                BuildableName = "Orchard.framework"
-               BlueprintName = "Orchard-ObjC"
+               BlueprintName = "Orchard-Swift"
                ReferencedContainer = "container:Orchard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,15 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1F6D236B2244810B001E0B28"
-            BuildableName = "Orchard.framework"
-            BlueprintName = "Orchard-ObjC"
-            ReferencedContainer = "container:Orchard.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -59,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1F6D236B2244810B001E0B28"
+            BlueprintIdentifier = "1F9B8A8920FD85790039D518"
             BuildableName = "Orchard.framework"
-            BlueprintName = "Orchard-ObjC"
+            BlueprintName = "Orchard-Swift"
             ReferencedContainer = "container:Orchard.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

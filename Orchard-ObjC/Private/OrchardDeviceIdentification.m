@@ -3,7 +3,7 @@
 //  Orchard-ObjC
 //
 //  Created by Jeff Kelley on 3/23/19.
-//  Copyright © 2020 Jeff Kelley. All rights reserved.
+//  Copyright © 2021 Detroit Labs, LLC. All rights reserved.
 //
 
 #import "OrchardDeviceIdentification.h"

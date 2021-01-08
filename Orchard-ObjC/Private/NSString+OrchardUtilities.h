@@ -1,6 +1,6 @@
 //
 //  NSString+OrchardUtilities.h
-//  Orchard
+//  Orchard-ObjC
 //
 //  Created by Jeff Kelley on 7/17/18.
 //
