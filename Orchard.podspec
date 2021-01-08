@@ -10,18 +10,18 @@ watchOS, and tvOS, you use Orchard to identify the exact model of device and
 make decisions based on that.
                    DESC
 
-  spec.homepage     = "http://github.com/SlaunchaMan/Orchard"
+  spec.homepage     = "http://github.com/Detroit-Labs/Orchard"
 
   spec.license      = "MIT"
 
   spec.author             = { "Jeff Kelley" => "SlaunchaMan@gmail.com" }
-  spec.social_media_url   = "https://twitter.com/SlaunchaMan"
+  spec.social_media_url   = "https://twitter.com/DetroitLabs"
 
   spec.ios.deployment_target     = "9.0"
   spec.watchos.deployment_target = "2.0"
   spec.tvos.deployment_target    = "9.0"
 
-  spec.source = { :git => "https://github.com/SlaunchaMan/Orchard.git",
+  spec.source = { :git => "https://github.com/Detroit-Labs/Orchard.git",
                   :tag => "#{spec.version}" }
 
   spec.ios.frameworks     = 'Foundation', 'UIKit'

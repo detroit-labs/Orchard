@@ -3,6 +3,7 @@
 //  Orchard-ObjC
 //
 //  Created by Jeff Kelley on 3/21/19.
+//  Copyright © 2021 Detroit Labs, LLC. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
