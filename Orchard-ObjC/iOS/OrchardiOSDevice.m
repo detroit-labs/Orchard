@@ -21,7 +21,7 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #pragma clang diagnostic ignored "-Wunguarded-availability"
 
-    if ([string orchard_isEqualToOneOfStrings:@[@"i386", @"x86_64"]]) {
+    if ([string orchard_isEqualToOneOfStrings:@[@"arm64", @"i386", @"x86_64"]]) {
         return OrchardiOSDeviceSimulator;
     }
 

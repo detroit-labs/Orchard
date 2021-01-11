@@ -15,7 +15,7 @@
 #import "OrchardDeviceIdentification.h"
 
 OrchardtvOSDevice OrchardtvOSDeviceFromNSString(NSString *string) {
-    if ([string orchard_isEqualToOneOfStrings:@[@"i386", @"x86_64"]]) {
+    if ([string orchard_isEqualToOneOfStrings:@[@"arm64", @"i386", @"x86_64"]]) {
         return OrchardtvOSDeviceSimulator;
     }
     else if ([string isEqualToString:@"AppleTV5,3"]) {

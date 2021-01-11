@@ -17,7 +17,7 @@
 #import "OrchardDeviceIdentification.h"
 
 OrchardwatchOSDevice OrchardwatchOSDeviceFromNSString(NSString *string) {
-    if ([string orchard_isEqualToOneOfStrings:@[@"i386", @"x86_64"]]) {
+    if ([string orchard_isEqualToOneOfStrings:@[@"arm64", @"i386", @"x86_64"]]) {
         return OrchardwatchOSDeviceSimulator;
     }
     else if ([string isEqualToString:@"Watch1,1"]) {
