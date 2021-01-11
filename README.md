@@ -82,6 +82,7 @@ Orchard can be installed using CocoaPods. There are two subspecs, `Swift` and
 `ObjC`, so use either of these lines in your `Podfile`:
 
 `pod "Orchard/ObjC"`
+
 `pod "Orchard/Swift"`
 
 #### Swift Package Manager
