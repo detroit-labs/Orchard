@@ -23,7 +23,7 @@ endif
 	git push origin "$(VERSION_STRING)"
 
 pod-publish:
-	pod trunk push Orchard.podspec --allow-warnings
+	pod trunk push Orchard.podspec
 
 publish: pod-publish
 
