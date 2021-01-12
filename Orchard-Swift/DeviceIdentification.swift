@@ -81,7 +81,7 @@ internal func parseDeviceIdentity(from modelString: String) -> DeviceIdentity {
     }
     #endif
     
-    if modelString == "i386" || modelString == "x86_64" {
+    if ["arm64", "i386", "x86_64"].contains(modelString) {
         return .simulator
     }
 
