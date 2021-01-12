@@ -1,5 +1,11 @@
 # Orchard Change Log
 
+## [1.10.0](https://github.com/Detroit-Labs/Orchard/releases/tag/1.10.0)
+**Released:** 2021-01-12
+
+### Added
+- Support for Apple Silicon
+
 ## [1.9.0](https://github.com/Detroit-Labs/Orchard/releases/tag/1.9.0)
 **Released:** 2021-01-08
 
