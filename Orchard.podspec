@@ -15,7 +15,6 @@ make decisions based on that.
   spec.license      = "MIT"
 
   spec.author             = { "Jeff Kelley" => "SlaunchaMan@gmail.com" }
-  spec.social_media_url   = "https://twitter.com/DetroitLabs"
 
   spec.ios.deployment_target     = "9.0"
   spec.watchos.deployment_target = "2.0"
