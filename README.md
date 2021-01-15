@@ -1,4 +1,9 @@
 #  Orchard
+
+[![Version](https://img.shields.io/cocoapods/v/Orchard.svg?style=flat)](https://cocoapods.org/pods/Orchard)
+[![License](https://img.shields.io/cocoapods/l/Orchard.svg?style=flat)](https://github.com/detroit-labs/Orchard/blob/master/LICENSE)
+[![Platform](https://img.shields.io/cocoapods/p/Orchard.svg?style=flat)](https://github.com/detroit-labs/Orchard)
+
 ## Device identification for iOS, watchOS, and tvOS.
 
 Orchard is a library for iOS, watchOS, and tvOS to identify the device running
