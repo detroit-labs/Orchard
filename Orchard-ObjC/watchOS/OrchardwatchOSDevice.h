@@ -33,6 +33,8 @@ typedef NS_ENUM(NSUInteger, OrchardwatchOSDevice) {
     OrchardwatchOSDeviceAppleWatchSE_44mm      NS_ENUM_AVAILABLE_IOS(14.0)        NS_SWIFT_NAME(AppleWatchSE_44mm),
     OrchardwatchOSDeviceAppleWatchSeries6_40mm NS_ENUM_AVAILABLE_IOS(14.0)        NS_SWIFT_NAME(AppleWatchSeries6_40mm),
     OrchardwatchOSDeviceAppleWatchSeries6_44mm NS_ENUM_AVAILABLE_IOS(14.0)        NS_SWIFT_NAME(AppleWatchSeries6_44mm),
+    OrchardwatchOSDeviceAppleWatchSeries7_41mm NS_ENUM_AVAILABLE_IOS(15.0)        NS_SWIFT_NAME(AppleWatchSeries7_41mm),
+    OrchardwatchOSDeviceAppleWatchSeries7_45mm NS_ENUM_AVAILABLE_IOS(15.0)        NS_SWIFT_NAME(AppleWatchSeries7_45mm),
 
     OrchardwatchOSDeviceSimulator NS_SWIFT_NAME(simulator),
     OrchardwatchOSDeviceUnknown   NS_SWIFT_NAME(unknown)

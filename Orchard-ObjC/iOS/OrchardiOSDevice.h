@@ -55,6 +55,10 @@ typedef NS_ENUM(NSUInteger, OrchardiOSDevice) {
     OrchardiOSDeviceiPhone12Mini   NS_ENUM_AVAILABLE_IOS(14.1)       NS_SWIFT_NAME(iPhone12Mini),
     OrchardiOSDeviceiPhone12Pro    NS_ENUM_AVAILABLE_IOS(14.1)       NS_SWIFT_NAME(iPhone12Pro),
     OrchardiOSDeviceiPhone12ProMax NS_ENUM_AVAILABLE_IOS(14.1)       NS_SWIFT_NAME(iPhone12ProMax),
+    OrchardiOSDeviceiPhone13       NS_ENUM_AVAILABLE_IOS(15.0)       NS_SWIFT_NAME(iPhone13),
+    OrchardiOSDeviceiPhone13Mini   NS_ENUM_AVAILABLE_IOS(15.0)       NS_SWIFT_NAME(iPhone13Mini),
+    OrchardiOSDeviceiPhone13Pro    NS_ENUM_AVAILABLE_IOS(15.0)       NS_SWIFT_NAME(iPhone13Pro),
+    OrchardiOSDeviceiPhone13ProMax NS_ENUM_AVAILABLE_IOS(15.0)       NS_SWIFT_NAME(iPhone13ProMax),
 
     // iPads
     OrchardiOSDeviceiPad             NS_ENUM_DEPRECATED_IOS(3.2, 6.0)  NS_SWIFT_NAME(iPad),
@@ -65,11 +69,13 @@ typedef NS_ENUM(NSUInteger, OrchardiOSDevice) {
     OrchardiOSDeviceiPad6            NS_ENUM_AVAILABLE_IOS(11.3)       NS_SWIFT_NAME(iPad6),
     OrchardiOSDeviceiPad7            NS_ENUM_AVAILABLE_IOS(13.1)       NS_SWIFT_NAME(iPad7),
     OrchardiOSDeviceiPad8            NS_ENUM_AVAILABLE_IOS(14.0)       NS_SWIFT_NAME(iPad8),
+    OrchardiOSDeviceiPad9th          NS_ENUM_AVAILABLE_IOS(15.0)       NS_SWIFT_NAME(iPad9th),
     OrchardiOSDeviceiPadMini         NS_ENUM_DEPRECATED_IOS(6.0, 10.0) NS_SWIFT_NAME(iPadMini),
     OrchardiOSDeviceiPadMini2        NS_ENUM_DEPRECATED_IOS(7.0, 13.0) NS_SWIFT_NAME(iPadMini2),
     OrchardiOSDeviceiPadMini3        NS_ENUM_DEPRECATED_IOS(8.0, 13.0) NS_SWIFT_NAME(iPadMini3),
     OrchardiOSDeviceiPadMini4        NS_ENUM_AVAILABLE_IOS(9.0)        NS_SWIFT_NAME(iPadMini4),
     OrchardiOSDeviceiPadMini5        NS_ENUM_AVAILABLE_IOS(12.2)       NS_SWIFT_NAME(iPadMini5),
+    OrchardiOSDeviceiPadMini6        NS_ENUM_AVAILABLE_IOS(15.0)       NS_SWIFT_NAME(iPadMini6),
     OrchardiOSDeviceiPadAir          NS_ENUM_DEPRECATED_IOS(7.0, 13.0) NS_SWIFT_NAME(iPadAir),
     OrchardiOSDeviceiPadAir2         NS_ENUM_AVAILABLE_IOS(8.1)        NS_SWIFT_NAME(iPadAir2),
     OrchardiOSDeviceiPadAir3         NS_ENUM_AVAILABLE_IOS(12.2)       NS_SWIFT_NAME(iPadAir3),
@@ -82,6 +88,8 @@ typedef NS_ENUM(NSUInteger, OrchardiOSDevice) {
     OrchardiOSDeviceiPadPro11Inch    NS_ENUM_AVAILABLE_IOS(12.1)       NS_SWIFT_NAME(iPadPro11Inch),
     OrchardiOSDeviceiPadPro12_9Inch4 NS_ENUM_AVAILABLE_IOS(13.4)       NS_SWIFT_NAME(iPadPro12_9Inch4),
     OrchardiOSDeviceiPadPro11Inch2   NS_ENUM_AVAILABLE_IOS(13.4)       NS_SWIFT_NAME(iPadPro11Inch2),
+    OrchardiOSDeviceiPadPro12_9Inch5 NS_ENUM_AVAILABLE_IOS(14.5)       NS_SWIFT_NAME(iPadPro12_9Inch5),
+    OrchardiOSDeviceiPadPro11Inch3   NS_ENUM_AVAILABLE_IOS(14.5)       NS_SWIFT_NAME(iPadPro11Inch3),
 
     // iPods
     OrchardiOSDeviceiPodTouch  NS_ENUM_DEPRECATED_IOS(1.1, 3.2)  NS_SWIFT_NAME(iPodTouch),
