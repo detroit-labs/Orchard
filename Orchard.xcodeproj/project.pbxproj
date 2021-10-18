@@ -321,7 +321,7 @@
 			attributes = {
 				CLASSPREFIX = Orchard;
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "Detroit Labs";
 				TargetAttributes = {
 					1F6D236B2244810B001E0B28 = {
