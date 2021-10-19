@@ -1,5 +1,15 @@
 # Orchard Change Log
 
+## [1.11.0](https://github.com/Detroit-Labs/Orchard/releases/tag/1.11.0)
+**Released:** 2021-10-18
+
+### Added
+- Support for iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 13 Pro Max.
+- Support for Apple Watch Series 7
+- Support for iPad (9th Generation)
+- Support for iPad mini (6th Generation)
+- Support for iPad Pro (12.9-inch), iPad Pro (11-inch)
+
 ## [1.10.0](https://github.com/Detroit-Labs/Orchard/releases/tag/1.10.0)
 **Released:** 2021-01-12
 

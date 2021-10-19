@@ -125,6 +125,18 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
     else if ([string isEqualToString:@"iPhone13,4"]) {
         return OrchardiOSDeviceiPhone12ProMax;
     }
+    else if ([string isEqualToString:@"iPhone14,5"]) {
+        return OrchardiOSDeviceiPhone13;
+    }
+    else if ([string isEqualToString:@"iPhone14,4"]) {
+        return OrchardiOSDeviceiPhone13Mini;
+    }
+    else if ([string isEqualToString:@"iPhone14,2"]) {
+        return OrchardiOSDeviceiPhone13Pro;
+    }
+    else if ([string isEqualToString:@"iPhone14,3"]) {
+        return OrchardiOSDeviceiPhone13ProMax;
+    }
 
 #pragma mark - iPads
 
@@ -163,6 +175,10 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
                                                      @"iPad11,7"]]) {
         return OrchardiOSDeviceiPad8;
     }
+    else if ([string orchard_isEqualToOneOfStrings:@[@"iPad12,1",
+                                                     @"iPad12,2"]]) {
+        return OrchardiOSDeviceiPad9;
+    }
     else if ([string orchard_isEqualToOneOfStrings:@[@"iPad2,5",
                                                      @"iPad2,6",
                                                      @"iPad2,7"]]) {
@@ -185,6 +201,10 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
     else if ([string orchard_isEqualToOneOfStrings:@[@"iPad11,1",
                                                      @"iPad11,2"]]) {
         return OrchardiOSDeviceiPadMini5;
+    }
+    else if ([string orchard_isEqualToOneOfStrings:@[@"iPad14,1",
+                                                     @"iPad14,2"]]) {
+        return OrchardiOSDeviceiPadMini6;
     }
     else if ([string orchard_isEqualToOneOfStrings:@[@"iPad4,1",
                                                      @"iPad4,2",
@@ -238,6 +258,18 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
     else if ([string orchard_isEqualToOneOfStrings:@[@"iPad8,9",
                                                      @"iPad8,10"]]) {
         return OrchardiOSDeviceiPadPro11Inch2;
+    }
+    else if ([string orchard_isEqualToOneOfStrings:@[@"iPad13,8",
+                                                     @"iPad13,9",
+                                                     @"iPad13,10",
+                                                     @"iPad13,11"]]) {
+        return OrchardiOSDeviceiPadPro12_9Inch5;
+    }
+    else if ([string orchard_isEqualToOneOfStrings:@[@"iPad13,4",
+                                                     @"iPad13,5",
+                                                     @"iPad13,6",
+                                                     @"iPad13,7"]]) {
+        return OrchardiOSDeviceiPadPro11Inch3;
     }
 
 #pragma mark - iPods
@@ -310,6 +342,10 @@ OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice devic
         case OrchardiOSDeviceiPhone12Mini:
         case OrchardiOSDeviceiPhone12Pro:
         case OrchardiOSDeviceiPhone12ProMax:
+        case OrchardiOSDeviceiPhone13:
+        case OrchardiOSDeviceiPhone13Mini:
+        case OrchardiOSDeviceiPhone13Pro:
+        case OrchardiOSDeviceiPhone13ProMax:
             return OrchardiOSDeviceFamilyiPhone;
 
 #pragma mark - iPads
@@ -322,11 +358,13 @@ OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice devic
         case OrchardiOSDeviceiPad6:
         case OrchardiOSDeviceiPad7:
         case OrchardiOSDeviceiPad8:
+        case OrchardiOSDeviceiPad9:
         case OrchardiOSDeviceiPadMini:
         case OrchardiOSDeviceiPadMini2:
         case OrchardiOSDeviceiPadMini3:
         case OrchardiOSDeviceiPadMini4:
         case OrchardiOSDeviceiPadMini5:
+        case OrchardiOSDeviceiPadMini6:
         case OrchardiOSDeviceiPadAir:
         case OrchardiOSDeviceiPadAir2:
         case OrchardiOSDeviceiPadAir3:
@@ -339,6 +377,8 @@ OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice devic
         case OrchardiOSDeviceiPadPro11Inch:
         case OrchardiOSDeviceiPadPro12_9Inch4:
         case OrchardiOSDeviceiPadPro11Inch2:
+        case OrchardiOSDeviceiPadPro12_9Inch5:
+        case OrchardiOSDeviceiPadPro11Inch3:
             return OrchardiOSDeviceFamilyiPad;
 
 #pragma mark - iPods
@@ -464,6 +504,18 @@ NSString *OrchardMarketingNameForiOSDevice(OrchardiOSDevice device)
         case OrchardiOSDeviceiPhone12ProMax:
             return @"iPhone 12 Pro Max";
 
+        case OrchardiOSDeviceiPhone13:
+            return @"iPhone 13";
+
+        case OrchardiOSDeviceiPhone13Mini:
+            return @"iPhone 13 mini";
+
+        case OrchardiOSDeviceiPhone13Pro:
+            return @"iPhone 13 Pro";
+
+        case OrchardiOSDeviceiPhone13ProMax:
+            return @"iPhone 13 Pro Max";
+
 #pragma mark - iPads
 
         case OrchardiOSDeviceiPad:
@@ -490,6 +542,9 @@ NSString *OrchardMarketingNameForiOSDevice(OrchardiOSDevice device)
         case OrchardiOSDeviceiPad8:
             return @"iPad (8th Generation)";
 
+        case OrchardiOSDeviceiPad9:
+            return @"iPad (9th Generation)";
+
         case OrchardiOSDeviceiPadMini:
             return @"iPad mini";
 
@@ -504,6 +559,9 @@ NSString *OrchardMarketingNameForiOSDevice(OrchardiOSDevice device)
 
         case OrchardiOSDeviceiPadMini5:
             return @"iPad mini (5th Generation)";
+
+        case OrchardiOSDeviceiPadMini6:
+            return @"iPad mini (6th Generation)";
 
         case OrchardiOSDeviceiPadAir:
             return @"iPad Air";
@@ -540,6 +598,12 @@ NSString *OrchardMarketingNameForiOSDevice(OrchardiOSDevice device)
 
         case OrchardiOSDeviceiPadPro11Inch2:
             return @"iPad Pro (11-inch) (2nd Generation)";
+
+        case OrchardiOSDeviceiPadPro12_9Inch5:
+            return @"iPad Pro (12.9-inch) (5th Generation)";
+
+        case OrchardiOSDeviceiPadPro11Inch3:
+            return @"iPad Pro (11-inch) (3rd Generation)";
 
 #pragma mark - iPods
 

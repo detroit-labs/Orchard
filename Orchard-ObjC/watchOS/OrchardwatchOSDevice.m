@@ -106,6 +106,18 @@ OrchardwatchOSDevice OrchardwatchOSDeviceFromNSString(NSString *string) {
             return OrchardwatchOSDeviceAppleWatchSeries6_44mm;
         }
     }
+    else if ([string orchard_isEqualToOneOfStrings:@[@"Watch6,6",
+                                                     @"Watch6,8"]]) {
+        if (@available(watchOS 8.0, *)) {
+            return OrchardwatchOSDeviceAppleWatchSeries7_41mm;
+        }
+    }
+    else if ([string orchard_isEqualToOneOfStrings:@[@"Watch6,7",
+                                                     @"Watch6,9"]]) {
+        if (@available(watchOS 8.0, *)) {
+            return OrchardwatchOSDeviceAppleWatchSeries7_45mm;
+        }
+    }
 
     return OrchardwatchOSDeviceUnknown;
 }
@@ -164,6 +176,12 @@ NSString *OrchardMarketingNameForWatchOSDevice(OrchardwatchOSDevice device)
 
         case OrchardwatchOSDeviceAppleWatchSeries6_44mm:
             return @"Apple Watch Series 6 (44mm)";
+
+        case OrchardwatchOSDeviceAppleWatchSeries7_41mm:
+            return @"Apple Watch Series 7 (41mm)";
+
+        case OrchardwatchOSDeviceAppleWatchSeries7_45mm:
+            return @"Apple Watch Series 7 (45mm)";
 
         default:
             break;
