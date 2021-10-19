@@ -38,7 +38,7 @@ public enum iPads {
     case iPad8
 
     @available (iOS, introduced: 15.0)
-    case iPad9th
+    case iPad9
 
     @available (iOS, introduced: 6.0, deprecated: 10.0)
     case iPadMini
@@ -140,7 +140,7 @@ public enum iPads {
 
         case "iPad12,1", "iPad12,2":
             if #available(iOS 15.0, *) {
-                self = .iPad9th
+                self = .iPad9
             }
 
         case "iPad2,5", "iPad2,6", "iPad2,7":
@@ -246,7 +246,7 @@ public enum iPads {
         case .iPad6: return "iPad (6th Generation)"
         case .iPad7: return "iPad (7th Generation)"
         case .iPad8: return "iPad (8th Generation)"
-        case .iPad9th: return "iPad (9th Generation)"
+        case .iPad9: return "iPad (9th Generation)"
         case .iPadMini: return "iPad mini"
         case .iPadMini2: return "iPad mini 2"
         case .iPadMini3: return "iPad mini 3"

@@ -177,7 +177,7 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
     }
     else if ([string orchard_isEqualToOneOfStrings:@[@"iPad12,1",
                                                      @"iPad12,2"]]) {
-        return OrchardiOSDeviceiPad9th;
+        return OrchardiOSDeviceiPad9;
     }
     else if ([string orchard_isEqualToOneOfStrings:@[@"iPad2,5",
                                                      @"iPad2,6",
@@ -358,7 +358,7 @@ OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice devic
         case OrchardiOSDeviceiPad6:
         case OrchardiOSDeviceiPad7:
         case OrchardiOSDeviceiPad8:
-        case OrchardiOSDeviceiPad9th:
+        case OrchardiOSDeviceiPad9:
         case OrchardiOSDeviceiPadMini:
         case OrchardiOSDeviceiPadMini2:
         case OrchardiOSDeviceiPadMini3:
@@ -542,7 +542,7 @@ NSString *OrchardMarketingNameForiOSDevice(OrchardiOSDevice device)
         case OrchardiOSDeviceiPad8:
             return @"iPad (8th Generation)";
 
-        case OrchardiOSDeviceiPad9th:
+        case OrchardiOSDeviceiPad9:
             return @"iPad (9th Generation)";
 
         case OrchardiOSDeviceiPadMini:

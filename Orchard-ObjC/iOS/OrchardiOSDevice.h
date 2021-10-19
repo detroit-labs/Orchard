@@ -69,7 +69,7 @@ typedef NS_ENUM(NSUInteger, OrchardiOSDevice) {
     OrchardiOSDeviceiPad6            NS_ENUM_AVAILABLE_IOS(11.3)       NS_SWIFT_NAME(iPad6),
     OrchardiOSDeviceiPad7            NS_ENUM_AVAILABLE_IOS(13.1)       NS_SWIFT_NAME(iPad7),
     OrchardiOSDeviceiPad8            NS_ENUM_AVAILABLE_IOS(14.0)       NS_SWIFT_NAME(iPad8),
-    OrchardiOSDeviceiPad9th          NS_ENUM_AVAILABLE_IOS(15.0)       NS_SWIFT_NAME(iPad9th),
+    OrchardiOSDeviceiPad9            NS_ENUM_AVAILABLE_IOS(15.0)       NS_SWIFT_NAME(iPad9),
     OrchardiOSDeviceiPadMini         NS_ENUM_DEPRECATED_IOS(6.0, 10.0) NS_SWIFT_NAME(iPadMini),
     OrchardiOSDeviceiPadMini2        NS_ENUM_DEPRECATED_IOS(7.0, 13.0) NS_SWIFT_NAME(iPadMini2),
     OrchardiOSDeviceiPadMini3        NS_ENUM_DEPRECATED_IOS(8.0, 13.0) NS_SWIFT_NAME(iPadMini3),
