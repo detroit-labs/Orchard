@@ -54,9 +54,7 @@ enum_name = enumName(name)
 }%
         % if name and released and deprecated:
             % if not canSupport(deprecated):
-//        case ${", ".join(codes)}:
-//            self = .${enum_name}
-//
+                %
             % else:
         case ${", ".join(codes)}:
                 % if needsAvailabilityCheck(released):

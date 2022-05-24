@@ -121,18 +121,6 @@ public enum iPhones {
         self = .unknown
 
         switch model {
-//        case "iPhone1,1":
-//            self = .iPhone
-//
-//        case "iPhone1,2":
-//            self = .iPhone3G
-//
-//        case "iPhone2,1":
-//            self = .iPhone3GS
-//
-//        case "iPhone3,1", "iPhone3,2", "iPhone3,3":
-//            self = .iPhone4
-//
         case "iPhone4,1":
             self = .iPhone4S
 

@@ -109,9 +109,6 @@ public enum iPads {
         self = .unknown
 
         switch model {
-//        case "iPad1,1":
-//            self = .iPad
-//
         case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":
             self = .iPad2
 
