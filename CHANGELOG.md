@@ -1,5 +1,13 @@
 # Orchard Change Log
 
+## [1.12.0](https://github.com/Detroit-Labs/Orchard/releases/tag/1.12.0)
+**Released:** 2022-05-23
+
+### Added
+- Support for iPhone SE (3rd Generation)
+- Support for iPad Air (5th Generation)
+- Support for Apple TV 4K (2nd Generation)
+
 ## [1.11.0](https://github.com/Detroit-Labs/Orchard/releases/tag/1.11.0)
 **Released:** 2021-10-18
 

@@ -137,6 +137,9 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
     else if ([string isEqualToString:@"iPhone14,3"]) {
         return OrchardiOSDeviceiPhone13ProMax;
     }
+    else if ([string isEqualToString:@"iPhone14,6"]) {
+        return OrchardiOSDeviceiPhoneSE3;
+    }
 
 #pragma mark - iPads
 
@@ -222,6 +225,10 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
     else if ([string orchard_isEqualToOneOfStrings:@[@"iPad13,1",
                                                      @"iPad13,2"]]) {
         return OrchardiOSDeviceiPadAir4;
+    }
+    else if ([string orchard_isEqualToOneOfStrings:@[@"iPad13,16",
+                                                     @"iPad13,17"]]) {
+        return OrchardiOSDeviceiPadAir5;
     }
     else if ([string orchard_isEqualToOneOfStrings:@[@"iPad6,7",
                                                      @"iPad6,8"]]) {
@@ -346,6 +353,7 @@ OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice devic
         case OrchardiOSDeviceiPhone13Mini:
         case OrchardiOSDeviceiPhone13Pro:
         case OrchardiOSDeviceiPhone13ProMax:
+        case OrchardiOSDeviceiPhoneSE3:
             return OrchardiOSDeviceFamilyiPhone;
 
 #pragma mark - iPads
@@ -369,6 +377,7 @@ OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice devic
         case OrchardiOSDeviceiPadAir2:
         case OrchardiOSDeviceiPadAir3:
         case OrchardiOSDeviceiPadAir4:
+        case OrchardiOSDeviceiPadAir5:
         case OrchardiOSDeviceiPadPro12_9Inch:
         case OrchardiOSDeviceiPadPro9_7Inch:
         case OrchardiOSDeviceiPadPro12_9Inch2:
@@ -516,6 +525,9 @@ NSString *OrchardMarketingNameForiOSDevice(OrchardiOSDevice device)
         case OrchardiOSDeviceiPhone13ProMax:
             return @"iPhone 13 Pro Max";
 
+        case OrchardiOSDeviceiPhoneSE3:
+            return @"iPhone SE (3rd Generation)";
+
 #pragma mark - iPads
 
         case OrchardiOSDeviceiPad:
@@ -574,6 +586,9 @@ NSString *OrchardMarketingNameForiOSDevice(OrchardiOSDevice device)
 
         case OrchardiOSDeviceiPadAir4:
             return @"iPad Air (4th Generation)";
+
+        case OrchardiOSDeviceiPadAir5:
+            return @"iPad Air (5th Generation)";
 
         case OrchardiOSDeviceiPadPro12_9Inch:
             return @"iPad Pro (12.9-inch)";

@@ -1,7 +1,15 @@
 VERSION_FILE=.version
 VERSION_STRING=$(shell cat "$(VERSION_FILE)")
 
-.PHONY: get-version set-version git-tag lint publish
+.PHONY: generate-objc generate-swift generate get-version set-version git-tag lint publish
+
+generate-objc:
+	sh Common/GYBPhase.sh Orchard-ObjC
+
+generate-swift:
+	sh Common/GYBPhase.sh Orchard-Swift
+
+generate: generate-objc generate-swift
 
 get-version:
 	@echo $(VERSION_STRING)

@@ -17,8 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, OrchardtvOSDevice) {
 
-    OrchardtvOSDeviceAppleTVHD NS_ENUM_AVAILABLE_IOS(9.0)  NS_SWIFT_NAME(AppleTVHD),
-    OrchardtvOSDeviceAppleTV4K NS_ENUM_AVAILABLE_IOS(11.0) NS_SWIFT_NAME(AppleTV4K),
+    OrchardtvOSDeviceAppleTVHD  NS_ENUM_AVAILABLE_IOS(9.0)  NS_SWIFT_NAME(AppleTVHD),
+    OrchardtvOSDeviceAppleTV4K  NS_ENUM_AVAILABLE_IOS(11.0) NS_SWIFT_NAME(AppleTV4K),
+    OrchardtvOSDeviceAppleTV4K2 NS_ENUM_AVAILABLE_IOS(11.0) NS_SWIFT_NAME(AppleTV4K2),
 
     OrchardtvOSDeviceSimulator NS_SWIFT_NAME(simulator),
     OrchardtvOSDeviceUnknown   NS_SWIFT_NAME(unknown)

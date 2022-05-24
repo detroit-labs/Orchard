@@ -1,6 +1,5 @@
 import csv
 from enum import Enum
-from itertools import izip
 import os
 
 class OSFamily(Enum):
@@ -9,7 +8,6 @@ class OSFamily(Enum):
 	TVOS = "tvOS"
 
 class iOSDeviceFamily(Enum):
-	__order__ = 'IPHONE IPAD'
 	IPHONE = "iPhone"
 	IPAD = "iPad"
 	IPOD = "iPod"
@@ -49,7 +47,7 @@ def versiontuple(v):
 	return tuple(map(int, v.split('.')))
 
 def versiontupleAdd(u, v):
-	return tuple(x + y for x, y in izip(versiontuple(u), versiontuple(v)))
+	return tuple(x + y for x, y in zip(versiontuple(u), versiontuple(v)))
 
 def versiontupleToString(v):
 	return ".".join(map(str, v))

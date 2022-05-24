@@ -26,6 +26,11 @@ OrchardtvOSDevice OrchardtvOSDeviceFromNSString(NSString *string) {
             return OrchardtvOSDeviceAppleTV4K;
         }
     }
+    else if ([string isEqualToString:@"AppleTV11,1"]) {
+        if (@available(tvOS 11.0, *)) {
+            return OrchardtvOSDeviceAppleTV4K2;
+        }
+    }
 
     return OrchardtvOSDeviceUnknown;
 }
@@ -36,6 +41,7 @@ NSString *OrchardMarketingNameFortvOSDevice(OrchardtvOSDevice device)
         case OrchardtvOSDeviceSimulator: return nil;
         case OrchardtvOSDeviceAppleTVHD: return @"Apple TV HD";
         case OrchardtvOSDeviceAppleTV4K: return @"Apple TV 4K";
+        case OrchardtvOSDeviceAppleTV4K2: return @"Apple TV 4K (2nd Generation)";
         default: break;
     }
 

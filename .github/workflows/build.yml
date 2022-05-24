@@ -14,11 +14,5 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Update Homebrew
-      run: brew update
-    - name: Install Homebrew Dependencies
-      run: brew bundle
-    - name: Install enum
-      run: pip install --upgrade pip enum34
     - name: xcodebuild
       run: xcodebuild -project Orchard.xcodeproj -target ${{ matrix.target }} -configuration Debug -sdk ${{ matrix.sdk }}

@@ -99,32 +99,14 @@ The Swift portion of Orchard can be installed using the
 
 ### Development
 
-Orchard uses [Swift gyb][4] to generate both Objective-C and Swift source files.
+Orchard uses [Swift gyb] to generate both Objective-C and Swift source files.
 The actual device data is in the `Data` folder, in TSV format. To add new
 devices, simply update the TSV file(s) with new device info and rebuild both
 targets; the source code will be regenerated. Do not modify any file for which
 there is a corresponding `.gyb` file, as the builds will overwrite your changes.
 
-Orchard assumes you’ve installed gyb with Homebrew as outlined in the NSHipster
-article; to install it, simply run:
+To update the generated source files, run the following command:
 
 ```Shell
-brew install nshipster/formulae/gyb
+make generate
 ```
-
-Orchard also ships with a `Brewfile`; simply run this command to install gyb:
-
-```Shell
-brew bundle
-```
-
-Orchard uses the `enum` type in Python. To use this with the system Python (2.7
-as of macOS 10.15.4), simply [run this command][5] to install it:
-
-```Shell
-sudo easy_install pip
-pip install --upgrade pip enum34
-```
-
-[4]: https://nshipster.com/swift-gyb/
-[5]: https://stackoverflow.com/questions/26828206/importerror-no-module-named-enum

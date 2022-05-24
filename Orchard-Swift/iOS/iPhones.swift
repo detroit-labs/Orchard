@@ -112,24 +112,15 @@ public enum iPhones {
     @available (iOS, introduced: 15.0)
     case iPhone13ProMax
 
+    @available (iOS, introduced: 15.0)
+    case iPhoneSE3
+
     case unknown
 
     internal init(model: String) {
         self = .unknown
 
         switch model {
-//        case "iPhone1,1":
-//            self = .iPhone
-//
-//        case "iPhone1,2":
-//            self = .iPhone3G
-//
-//        case "iPhone2,1":
-//            self = .iPhone3GS
-//
-//        case "iPhone3,1", "iPhone3,2", "iPhone3,3":
-//            self = .iPhone4
-//
         case "iPhone4,1":
             self = .iPhone4S
 
@@ -259,6 +250,11 @@ public enum iPhones {
                 self = .iPhone13ProMax
             }
 
+        case "iPhone14,6":
+            if #available(iOS 15.0, *) {
+                self = .iPhoneSE3
+            }
+
         default: break
 
         }
@@ -299,6 +295,7 @@ public enum iPhones {
         case .iPhone13Mini: return "iPhone 13 mini"
         case .iPhone13Pro: return "iPhone 13 Pro"
         case .iPhone13ProMax: return "iPhone 13 Pro Max"
+        case .iPhoneSE3: return "iPhone SE (3rd Generation)"
 
         default: return nil
         }
