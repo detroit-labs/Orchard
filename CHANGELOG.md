@@ -1,5 +1,13 @@
 # Orchard Change Log
 
+## [1.13.0](https://github.com/Detroit-Labs/Orchard/releases/tag/1.13.0)
+**Released:** 2022-10-05
+
+- Support for iPhone 14, iPhone Plus, iPhone 14 Pro, iPhone 14 Pro Max
+- Support for Apple Watch SE (2nd Generation)
+- Support for Apple Watch Series 8
+- Support for Apple Watch Ultra
+
 ## [1.12.0](https://github.com/Detroit-Labs/Orchard/releases/tag/1.12.0)
 **Released:** 2022-05-23
 
