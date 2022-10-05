@@ -140,6 +140,18 @@ OrchardiOSDevice OrchardiOSDeviceFromNSString(NSString * _Nonnull string) {
     else if ([string isEqualToString:@"iPhone14,6"]) {
         return OrchardiOSDeviceiPhoneSE3;
     }
+    else if ([string isEqualToString:@"iPhone14,7"]) {
+        return OrchardiOSDeviceiPhone14;
+    }
+    else if ([string isEqualToString:@"iPhone14,8"]) {
+        return OrchardiOSDeviceiPhone14Plus;
+    }
+    else if ([string isEqualToString:@"iPhone15,2"]) {
+        return OrchardiOSDeviceiPhone14Pro;
+    }
+    else if ([string isEqualToString:@"iPhone15,3"]) {
+        return OrchardiOSDeviceiPhone14ProMax;
+    }
 
 #pragma mark - iPads
 
@@ -354,6 +366,10 @@ OrchardiOSDeviceFamily OrchardiOSDeviceFamilyForiOSDevice(OrchardiOSDevice devic
         case OrchardiOSDeviceiPhone13Pro:
         case OrchardiOSDeviceiPhone13ProMax:
         case OrchardiOSDeviceiPhoneSE3:
+        case OrchardiOSDeviceiPhone14:
+        case OrchardiOSDeviceiPhone14Plus:
+        case OrchardiOSDeviceiPhone14Pro:
+        case OrchardiOSDeviceiPhone14ProMax:
             return OrchardiOSDeviceFamilyiPhone;
 
 #pragma mark - iPads
@@ -527,6 +543,18 @@ NSString *OrchardMarketingNameForiOSDevice(OrchardiOSDevice device)
 
         case OrchardiOSDeviceiPhoneSE3:
             return @"iPhone SE (3rd Generation)";
+
+        case OrchardiOSDeviceiPhone14:
+            return @"iPhone 14";
+
+        case OrchardiOSDeviceiPhone14Plus:
+            return @"iPhone 14 Plus";
+
+        case OrchardiOSDeviceiPhone14Pro:
+            return @"iPhone 14 Pro";
+
+        case OrchardiOSDeviceiPhone14ProMax:
+            return @"iPhone 14 Pro Max";
 
 #pragma mark - iPads
 

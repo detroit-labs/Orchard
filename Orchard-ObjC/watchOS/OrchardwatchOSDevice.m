@@ -118,6 +118,35 @@ OrchardwatchOSDevice OrchardwatchOSDeviceFromNSString(NSString *string) {
             return OrchardwatchOSDeviceAppleWatchSeries7_45mm;
         }
     }
+    else if ([string orchard_isEqualToOneOfStrings:@[@"Watch6,10",
+                                                     @"Watch6,12"]]) {
+        if (@available(watchOS 9.0, *)) {
+            return OrchardwatchOSDeviceAppleWatchSE2_41mm;
+        }
+    }
+    else if ([string orchard_isEqualToOneOfStrings:@[@"Watch6,11",
+                                                     @"Watch6,13"]]) {
+        if (@available(watchOS 9.0, *)) {
+            return OrchardwatchOSDeviceAppleWatchSE2_45mm;
+        }
+    }
+    else if ([string orchard_isEqualToOneOfStrings:@[@"Watch6,14",
+                                                     @"Watch6,16"]]) {
+        if (@available(watchOS 9.0, *)) {
+            return OrchardwatchOSDeviceAppleWatchSeries8_41mm;
+        }
+    }
+    else if ([string orchard_isEqualToOneOfStrings:@[@"Watch6,15",
+                                                     @"Watch6,17"]]) {
+        if (@available(watchOS 9.0, *)) {
+            return OrchardwatchOSDeviceAppleWatchSeries8_45mm;
+        }
+    }
+    else if ([string isEqualToString:@"Watch6,18"]) {
+        if (@available(watchOS 9.0, *)) {
+            return OrchardwatchOSDeviceAppleWatchUltra_49mm;
+        }
+    }
 
     return OrchardwatchOSDeviceUnknown;
 }
@@ -182,6 +211,21 @@ NSString *OrchardMarketingNameForWatchOSDevice(OrchardwatchOSDevice device)
 
         case OrchardwatchOSDeviceAppleWatchSeries7_45mm:
             return @"Apple Watch Series 7 (45mm)";
+
+        case OrchardwatchOSDeviceAppleWatchSE2_41mm:
+            return @"Apple Watch SE (2nd Generation) (41mm)";
+
+        case OrchardwatchOSDeviceAppleWatchSE2_45mm:
+            return @"Apple Watch SE (2nd Generation) (45mm)";
+
+        case OrchardwatchOSDeviceAppleWatchSeries8_41mm:
+            return @"Apple Watch Series 8 (41mm)";
+
+        case OrchardwatchOSDeviceAppleWatchSeries8_45mm:
+            return @"Apple Watch Series 8 (45mm)";
+
+        case OrchardwatchOSDeviceAppleWatchUltra_49mm:
+            return @"Apple Watch Ultra (49mm)";
 
         default:
             break;

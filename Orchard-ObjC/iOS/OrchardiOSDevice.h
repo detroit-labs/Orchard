@@ -60,6 +60,10 @@ typedef NS_ENUM(NSUInteger, OrchardiOSDevice) {
     OrchardiOSDeviceiPhone13Pro    NS_ENUM_AVAILABLE_IOS(15.0)       NS_SWIFT_NAME(iPhone13Pro),
     OrchardiOSDeviceiPhone13ProMax NS_ENUM_AVAILABLE_IOS(15.0)       NS_SWIFT_NAME(iPhone13ProMax),
     OrchardiOSDeviceiPhoneSE3      NS_ENUM_AVAILABLE_IOS(15.0)       NS_SWIFT_NAME(iPhoneSE3),
+    OrchardiOSDeviceiPhone14       NS_ENUM_AVAILABLE_IOS(16.0)       NS_SWIFT_NAME(iPhone14),
+    OrchardiOSDeviceiPhone14Plus   NS_ENUM_AVAILABLE_IOS(16.0)       NS_SWIFT_NAME(iPhone14Plus),
+    OrchardiOSDeviceiPhone14Pro    NS_ENUM_AVAILABLE_IOS(16.0)       NS_SWIFT_NAME(iPhone14Pro),
+    OrchardiOSDeviceiPhone14ProMax NS_ENUM_AVAILABLE_IOS(16.0)       NS_SWIFT_NAME(iPhone14ProMax),
 
     // iPads
     OrchardiOSDeviceiPad             NS_ENUM_DEPRECATED_IOS(3.2, 6.0)  NS_SWIFT_NAME(iPad),
