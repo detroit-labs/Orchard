@@ -67,6 +67,21 @@ public enum Watches {
     @available (watchOS, introduced: 8.0)
     case AppleWatchSeries7_45mm
 
+    @available (watchOS, introduced: 9.0)
+    case AppleWatchSE2_41mm
+
+    @available (watchOS, introduced: 9.0)
+    case AppleWatchSE2_45mm
+
+    @available (watchOS, introduced: 9.0)
+    case AppleWatchSeries8_41mm
+
+    @available (watchOS, introduced: 9.0)
+    case AppleWatchSeries8_45mm
+
+    @available (watchOS, introduced: 9.0)
+    case AppleWatchUltra_49mm
+
     case unknown
 
     internal init(model: String) {
@@ -159,6 +174,31 @@ public enum Watches {
                 self = .AppleWatchSeries7_45mm
             }
 
+        case "Watch6,10", "Watch6,12":
+            if #available(watchOS 9.0, *) {
+                self = .AppleWatchSE2_41mm
+            }
+
+        case "Watch6,11", "Watch6,13":
+            if #available(watchOS 9.0, *) {
+                self = .AppleWatchSE2_45mm
+            }
+
+        case "Watch6,14", "Watch6,16":
+            if #available(watchOS 9.0, *) {
+                self = .AppleWatchSeries8_41mm
+            }
+
+        case "Watch6,15", "Watch6,17":
+            if #available(watchOS 9.0, *) {
+                self = .AppleWatchSeries8_45mm
+            }
+
+        case "Watch6,18":
+            if #available(watchOS 9.0, *) {
+                self = .AppleWatchUltra_49mm
+            }
+
         default: break
 
         }
@@ -184,6 +224,11 @@ public enum Watches {
         case .AppleWatchSeries6_44mm: return "Apple Watch Series 6"
         case .AppleWatchSeries7_41mm: return "Apple Watch Series 7"
         case .AppleWatchSeries7_45mm: return "Apple Watch Series 7"
+        case .AppleWatchSE2_41mm: return "Apple Watch SE (2nd Generation)"
+        case .AppleWatchSE2_45mm: return "Apple Watch SE (2nd Generation)"
+        case .AppleWatchSeries8_41mm: return "Apple Watch Series 8"
+        case .AppleWatchSeries8_45mm: return "Apple Watch Series 8"
+        case .AppleWatchUltra_49mm: return "Apple Watch Ultra"
 
         default: return nil
         }
