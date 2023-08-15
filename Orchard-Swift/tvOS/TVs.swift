@@ -22,6 +22,9 @@ public enum TVs {
     @available (tvOS, introduced: 11.0)
     case AppleTV4K2
 
+    @available (tvOS, introduced: 16.1)
+    case AppleTV4K3
+
     case unknown
 
     internal init(model: String) {
@@ -41,6 +44,11 @@ public enum TVs {
                 self = .AppleTV4K2
             }
 
+        case "AppleTV14,1":
+            if #available(tvOS 16.1, *) {
+                self = .AppleTV4K3
+            }
+
         default: break
 
         }
@@ -51,6 +59,7 @@ public enum TVs {
         case .AppleTVHD: return "Apple TV HD"
         case .AppleTV4K: return "Apple TV 4K"
         case .AppleTV4K2: return "Apple TV 4K (2nd Generation)"
+        case .AppleTV4K3: return "Apple TV 4K (3rd Generation)"
 
         default: return nil
         }
