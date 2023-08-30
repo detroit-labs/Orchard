@@ -19,7 +19,7 @@ public enum TVs {
     @available (tvOS, introduced: 11.0)
     case AppleTV4K
 
-    @available (tvOS, introduced: 11.0)
+    @available (tvOS, introduced: 14.5)
     case AppleTV4K2
 
     @available (tvOS, introduced: 16.1)
@@ -40,7 +40,7 @@ public enum TVs {
             }
 
         case "AppleTV11,1":
-            if #available(tvOS 11.0, *) {
+            if #available(tvOS 14.5, *) {
                 self = .AppleTV4K2
             }
 
