@@ -133,15 +133,6 @@ public enum iPhones {
         self = .unknown
 
         switch model {
-        case "iPhone4,1":
-            self = .iPhone4S
-
-        case "iPhone5,1", "iPhone5,2":
-            self = .iPhone5
-
-        case "iPhone5,3", "iPhone5,4":
-            self = .iPhone5c
-
         case "iPhone6,1", "iPhone6,2":
             self = .iPhone5s
 
@@ -158,49 +149,31 @@ public enum iPhones {
             self = .iPhone6sPlus
 
         case "iPhone8,4":
-            if #available(iOS 9.3, *) {
-                self = .iPhoneSE
-            }
+            self = .iPhoneSE
 
         case "iPhone9,1", "iPhone9,3":
-            if #available(iOS 10.0, *) {
-                self = .iPhone7
-            }
+            self = .iPhone7
 
         case "iPhone9,2", "iPhone9,4":
-            if #available(iOS 10.0, *) {
-                self = .iPhone7Plus
-            }
+            self = .iPhone7Plus
 
         case "iPhone10,1", "iPhone10,4":
-            if #available(iOS 11.0, *) {
-                self = .iPhone8
-            }
+            self = .iPhone8
 
         case "iPhone10,2", "iPhone10,5":
-            if #available(iOS 11.0, *) {
-                self = .iPhone8Plus
-            }
+            self = .iPhone8Plus
 
         case "iPhone10,3", "iPhone10,6":
-            if #available(iOS 11.0, *) {
-                self = .iPhoneX
-            }
+            self = .iPhoneX
 
         case "iPhone11,2":
-            if #available(iOS 12.0, *) {
-                self = .iPhoneXS
-            }
+            self = .iPhoneXS
 
         case "iPhone11,4", "iPhone11,6":
-            if #available(iOS 12.0, *) {
-                self = .iPhoneXSMax
-            }
+            self = .iPhoneXSMax
 
         case "iPhone11,8":
-            if #available(iOS 12.0, *) {
-                self = .iPhoneXR
-            }
+            self = .iPhoneXR
 
         case "iPhone12,1":
             if #available(iOS 13.0, *) {

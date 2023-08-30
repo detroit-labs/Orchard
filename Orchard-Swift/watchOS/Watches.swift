@@ -95,34 +95,22 @@ public enum Watches {
             self = .AppleWatch_42mm
 
         case "Watch2,6":
-            if #available(watchOS 3.0, *) {
-                self = .AppleWatchSeries1_38mm
-            }
+            self = .AppleWatchSeries1_38mm
 
         case "Watch2,7":
-            if #available(watchOS 3.0, *) {
-                self = .AppleWatchSeries1_42mm
-            }
+            self = .AppleWatchSeries1_42mm
 
         case "Watch2,3":
-            if #available(watchOS 3.0, *) {
-                self = .AppleWatchSeries2_38mm
-            }
+            self = .AppleWatchSeries2_38mm
 
         case "Watch2,4":
-            if #available(watchOS 3.0, *) {
-                self = .AppleWatchSeries2_42mm
-            }
+            self = .AppleWatchSeries2_42mm
 
         case "Watch3,1", "Watch3,3":
-            if #available(watchOS 4.0, *) {
-                self = .AppleWatchSeries3_38mm
-            }
+            self = .AppleWatchSeries3_38mm
 
         case "Watch3,2", "Watch3,4":
-            if #available(watchOS 4.0, *) {
-                self = .AppleWatchSeries3_42mm
-            }
+            self = .AppleWatchSeries3_42mm
 
         case "Watch4,1", "Watch4,3":
             if #available(watchOS 5.0, *) {

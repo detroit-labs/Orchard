@@ -16,9 +16,9 @@ make decisions based on that.
 
   spec.author             = { "Jeff Kelley" => "SlaunchaMan@gmail.com" }
 
-  spec.ios.deployment_target     = "9.0"
-  spec.watchos.deployment_target = "2.0"
-  spec.tvos.deployment_target    = "9.0"
+  spec.ios.deployment_target     = "12.0"
+  spec.watchos.deployment_target = "4.0"
+  spec.tvos.deployment_target    = "12.0"
 
   spec.source = { :git => "https://github.com/Detroit-Labs/Orchard.git",
                   :tag => "#{spec.version}" }

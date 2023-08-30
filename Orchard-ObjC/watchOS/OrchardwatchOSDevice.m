@@ -27,36 +27,24 @@ OrchardwatchOSDevice OrchardwatchOSDeviceFromNSString(NSString *string) {
         return OrchardwatchOSDeviceAppleWatch_42mm;
     }
     else if ([string isEqualToString:@"Watch2,6"]) {
-        if (@available(watchOS 3.0, *)) {
-            return OrchardwatchOSDeviceAppleWatchSeries1_38mm;
-        }
+        return OrchardwatchOSDeviceAppleWatchSeries1_38mm;
     }
     else if ([string isEqualToString:@"Watch2,7"]) {
-        if (@available(watchOS 3.0, *)) {
-            return OrchardwatchOSDeviceAppleWatchSeries1_42mm;
-        }
+        return OrchardwatchOSDeviceAppleWatchSeries1_42mm;
     }
     else if ([string isEqualToString:@"Watch2,3"]) {
-        if (@available(watchOS 3.0, *)) {
-            return OrchardwatchOSDeviceAppleWatchSeries2_38mm;
-        }
+        return OrchardwatchOSDeviceAppleWatchSeries2_38mm;
     }
     else if ([string isEqualToString:@"Watch2,4"]) {
-        if (@available(watchOS 3.0, *)) {
-            return OrchardwatchOSDeviceAppleWatchSeries2_42mm;
-        }
+        return OrchardwatchOSDeviceAppleWatchSeries2_42mm;
     }
     else if ([string orchard_isEqualToOneOfStrings:@[@"Watch3,1",
                                                      @"Watch3,3"]]) {
-        if (@available(watchOS 4.0, *)) {
-            return OrchardwatchOSDeviceAppleWatchSeries3_38mm;
-        }
+        return OrchardwatchOSDeviceAppleWatchSeries3_38mm;
     }
     else if ([string orchard_isEqualToOneOfStrings:@[@"Watch3,2",
                                                      @"Watch3,4"]]) {
-        if (@available(watchOS 4.0, *)) {
-            return OrchardwatchOSDeviceAppleWatchSeries3_42mm;
-        }
+        return OrchardwatchOSDeviceAppleWatchSeries3_42mm;
     }
     else if ([string orchard_isEqualToOneOfStrings:@[@"Watch4,1",
                                                      @"Watch4,3"]]) {

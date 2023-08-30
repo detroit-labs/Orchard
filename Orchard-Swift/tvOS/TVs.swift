@@ -35,9 +35,7 @@ public enum TVs {
             self = .AppleTVHD
 
         case "AppleTV6,2":
-            if #available(tvOS 11.0, *) {
-                self = .AppleTV4K
-            }
+            self = .AppleTV4K
 
         case "AppleTV11,1":
             if #available(tvOS 14.5, *) {
