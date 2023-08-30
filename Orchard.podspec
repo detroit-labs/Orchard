@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Orchard"
-  spec.version      = "1.13.0"
+  spec.version      = "1.14.0"
   spec.summary      = "Device identification for iOS, watchOS, and tvOS."
 
   spec.description  = <<-DESC

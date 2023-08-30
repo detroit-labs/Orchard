@@ -1,8 +1,18 @@
 # Orchard Change Log
 
+## [1.14.0](https://github.com/Detroit-Labs/Orchard/releases/tag/1.14.0)
+**Released:** 2023-08-30
+
+### Added
+- Support for Apple TV 4K (3nd Generation)
+
+### Updated
+- Support for Apple TV 4K (2nd Generation)
+
 ## [1.13.0](https://github.com/Detroit-Labs/Orchard/releases/tag/1.13.0)
 **Released:** 2022-10-05
 
+### Added
 - Support for iPhone 14, iPhone Plus, iPhone 14 Pro, iPhone 14 Pro Max
 - Support for Apple Watch SE (2nd Generation)
 - Support for Apple Watch Series 8
