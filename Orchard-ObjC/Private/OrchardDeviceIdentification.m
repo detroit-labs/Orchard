@@ -12,7 +12,7 @@
 
 #import "NSProcessInfo+OrchardUtilities.h"
 
-NSString *OrchardDeviceIdentifier() {
+NSString *OrchardDeviceIdentifier(void) {
     NSString *simulatorIdentifier = 
     NSProcessInfo.processInfo.simulatorIdentifier;
     
