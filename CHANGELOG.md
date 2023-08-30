@@ -4,7 +4,7 @@
 **Released:** 2023-08-30
 
 ### Added
-- Support for Apple TV 4K (3nd Generation)
+- Support for Apple TV 4K (3rd Generation)
 
 ### Updated
 - Support for Apple TV 4K (2nd Generation)
