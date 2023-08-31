@@ -40,9 +40,6 @@ public enum iPods {
         self = .unknown
 
         switch model {
-        case "iPod5,1":
-            self = .iPodTouch5
-
         case "iPod7,1":
             self = .iPodTouch6
 

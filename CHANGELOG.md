@@ -1,10 +1,18 @@
 # Orchard Change Log
 
+## [1.15.0](https://github.com/Detroit-Labs/Orchard/releases/tag/1.15.0)
+**Released:** 2023-08-30
+
+### Updated
+- Set minimum iOS deployment target to 12.0
+- Set minimum tvOS deployment target to 12.0
+- Set minimum watchOS deployment target to 4.0
+
 ## [1.14.0](https://github.com/Detroit-Labs/Orchard/releases/tag/1.14.0)
 **Released:** 2023-08-30
 
 ### Added
-- Support for Apple TV 4K (3nd Generation)
+- Support for Apple TV 4K (3rd Generation)
 
 ### Updated
 - Support for Apple TV 4K (2nd Generation)

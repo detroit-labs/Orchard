@@ -109,24 +109,11 @@ public enum iPads {
         self = .unknown
 
         switch model {
-        case "iPad2,1", "iPad2,2", "iPad2,3", "iPad2,4":
-            self = .iPad2
-
-        case "iPad3,1", "iPad3,2", "iPad3,3":
-            self = .iPad3
-
-        case "iPad3,4", "iPad3,5", "iPad3,6":
-            self = .iPad4
-
         case "iPad6,11", "iPad6,12":
-            if #available(iOS 10.3, *) {
-                self = .iPad5
-            }
+            self = .iPad5
 
         case "iPad7,5", "iPad7,6":
-            if #available(iOS 11.3, *) {
-                self = .iPad6
-            }
+            self = .iPad6
 
         case "iPad7,11", "iPad7,12":
             if #available(iOS 13.1, *) {
@@ -142,9 +129,6 @@ public enum iPads {
             if #available(iOS 15.0, *) {
                 self = .iPad9
             }
-
-        case "iPad2,5", "iPad2,6", "iPad2,7":
-            self = .iPadMini
 
         case "iPad4,4", "iPad4,5", "iPad4,6":
             self = .iPadMini2
@@ -187,24 +171,16 @@ public enum iPads {
             }
 
         case "iPad6,7", "iPad6,8":
-            if #available(iOS 9.1, *) {
-                self = .iPadPro12_9Inch
-            }
+            self = .iPadPro12_9Inch
 
         case "iPad6,3", "iPad6,4":
-            if #available(iOS 9.3, *) {
-                self = .iPadPro9_7Inch
-            }
+            self = .iPadPro9_7Inch
 
         case "iPad7,1", "iPad7,2":
-            if #available(iOS 10.3, *) {
-                self = .iPadPro12_9Inch2
-            }
+            self = .iPadPro12_9Inch2
 
         case "iPad7,3", "iPad7,4":
-            if #available(iOS 10.3, *) {
-                self = .iPadPro10_5Inch
-            }
+            self = .iPadPro10_5Inch
 
         case "iPad8,5", "iPad8,6", "iPad8,7", "iPad8,8":
             if #available(iOS 12.1, *) {

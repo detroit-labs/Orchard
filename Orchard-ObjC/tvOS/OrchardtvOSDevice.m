@@ -22,9 +22,7 @@ OrchardtvOSDevice OrchardtvOSDeviceFromNSString(NSString *string) {
         return OrchardtvOSDeviceAppleTVHD;
     }
     else if ([string isEqualToString:@"AppleTV6,2"]) {
-        if (@available(tvOS 11.0, *)) {
-            return OrchardtvOSDeviceAppleTV4K;
-        }
+        return OrchardtvOSDeviceAppleTV4K;
     }
     else if ([string isEqualToString:@"AppleTV11,1"]) {
         if (@available(tvOS 14.5, *)) {

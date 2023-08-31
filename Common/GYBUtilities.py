@@ -39,9 +39,9 @@ def longestEnumNameLength(deviceFamily = iOSDeviceFamily.IPHONE):
 				longest = length
 	return longest
 
-iOSDeploymentTarget=os.getenv('IPHONEOS_DEPLOYMENT_TARGET', '9.0')
-watchOSDeploymentTarget=os.getenv('WATCHOS_DEPLOYMENT_TARGET', '2.0')
-tvOSDeploymentTarget=os.getenv('TVOS_DEPLOYMENT_TARGET', '9.0')
+iOSDeploymentTarget=os.getenv('IPHONEOS_DEPLOYMENT_TARGET', '12.0')
+watchOSDeploymentTarget=os.getenv('WATCHOS_DEPLOYMENT_TARGET', '4.0')
+tvOSDeploymentTarget=os.getenv('TVOS_DEPLOYMENT_TARGET', '12.0')
 
 def versiontuple(v):
 	return tuple(map(int, v.split('.')))
